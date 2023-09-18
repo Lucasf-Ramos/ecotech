@@ -1,0 +1,79 @@
+body{padding: 0; margin: 0; background-color: rgb(235, 243, 240);}
+
+
+header{background-color: black; display: flex; flex-direction: row; justify-content:space-between; padding-left: 2%;}
+#logo{width: 7%;}
+
+
+#profile{width: 80%; border-radius: 100%;}
+#profile:hover{border: 3px solid green;}
+header a{width: 5%; margin: 1%; padding-top: 1%; }
+
+
+main{display: flex; flex-direction: row; justify-content: center; }
+
+
+
+#optionBar{
+  
+    width: 50%;
+    height: 100vh;
+    border-right: 3px solid;
+    border-image: linear-gradient(to bottom, transparent, gray, transparent);
+    border-image-slice: 1;
+   
+}
+#conteudo{
+    
+    width: 100%;
+    height: 100vh;
+   
+}
+form{margin: 10%; margin-top: 5%;}
+.textBox{width: 100%; height: 25px;
+    border-radius: 11px;
+    border-top-left-radius: 0 ;
+    padding: 1%;
+}
+#submit{width: 100%; height: 25px;
+    border-radius: 11px;
+    border-top-left-radius: 0 ;
+    padding: 2%;
+    padding-bottom: 4%;
+    background-color: black;
+    color:aliceblue;
+    border:0;
+}
+#submit:hover{background-color: rgb(35, 151, 87);}
+
+.sideBar{
+    font-size: 20px;
+    margin-top:21%;
+    margin-left: 10%;
+    list-style: none;
+}
+.sideBar li{margin-left: 10%; margin-bottom: 4%;}
+.sideBar p{color: rgb(117, 117, 117);}
+.botao{
+    padding: 2%;
+    text-decoration: none; color:rgb(0, 0, 0);
+    margin-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 11px;
+    border-top-left-radius: 0 ;}
+.botaoAtivo{
+    padding: 2%;
+    text-decoration: none; color:white;
+    margin-top: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+     
+    background-color: black;   border-radius: 11px;
+    border-top-left-radius: 0 ;
+}
+
+.botao:hover{background-color: rgb(35, 151, 87); color: white; margin-left: 11%;}
+.botaoAtivo:hover{background-color: rgb(35, 151, 87); color: white; margin-left: 11%;}
+
+footer{background-color: black; width: 100%;}
