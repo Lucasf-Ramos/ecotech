@@ -1,79 +1,46 @@
-body{padding: 0; margin: 0; background-color: rgb(235, 243, 240);}
+body{margin: 0; padding: 0; border: 0}
+header{background-color: #82AE64; padding: 1%; text-align: end;}
+header a{margin-right: 10px; color:white; text-decoration: none;}
+header a:hover{color:aquamarine; text-decoration: underline;}
 
+h2{text-align: center; cursor:default}
 
-header{background-color: black; display: flex; flex-direction: row; justify-content:space-between; padding-left: 2%;}
-#logo{width: 7%;}
+.regis_box{
+    font-size: 120%;
 
+     background-color: rgb(255, 255, 255);
+     border-radius: 11px;
+     width: 50%; 
+     padding: 1%; 
+     border:solid rgb(121, 122, 122);
 
-#profile{width: 80%; border-radius: 100%;}
-#profile:hover{border: 3px solid green;}
-header a{width: 5%; margin: 1%; padding-top: 1%; }
+     margin-top: 100%;
+     margin: 0 auto; /* Define as margens automáticas horizontalmente */
+     text-align: center; /* Opcional: centraliza o conteúdo dentro da div */
 
-
-main{display: flex; flex-direction: row; justify-content: center; }
-
-
-
-#optionBar{
-  
-    width: 50%;
-    height: 100vh;
-    border-right: 3px solid;
-    border-image: linear-gradient(to bottom, transparent, gray, transparent);
-    border-image-slice: 1;
-   
 }
-#conteudo{
-    
-    width: 100%;
-    height: 100vh;
-   
-}
-form{margin: 10%; margin-top: 5%;}
-.textBox{width: 100%; height: 25px;
-    border-radius: 11px;
-    border-top-left-radius: 0 ;
-    padding: 1%;
-}
-#submit{width: 100%; height: 25px;
-    border-radius: 11px;
-    border-top-left-radius: 0 ;
-    padding: 2%;
-    padding-bottom: 4%;
-    background-color: black;
+.bordasSuaves{border-radius: 11px; padding: 2%; width: 40%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
+.bordasSuaves:hover{border:solid #82AE64}
+
+
+.buttonColored{
+    border-radius: 11px; 
+    padding: 2%; 
+    width: 40%; 
+    margin-bottom: 1%; 
+    border:none; 
+    font-size: 120%;
+    background-color: #92B560; 
     color:aliceblue;
-    border:0;
-}
-#submit:hover{background-color: rgb(35, 151, 87);}
 
-.sideBar{
-    font-size: 20px;
-    margin-top:21%;
-    margin-left: 10%;
-    list-style: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
-.sideBar li{margin-left: 10%; margin-bottom: 4%;}
-.sideBar p{color: rgb(117, 117, 117);}
-.botao{
-    padding: 2%;
-    text-decoration: none; color:rgb(0, 0, 0);
-    margin-top: 10%;
-    padding-left: 5%;
-    padding-right: 5%;
-    border-radius: 11px;
-    border-top-left-radius: 0 ;}
-.botaoAtivo{
-    padding: 2%;
-    text-decoration: none; color:white;
-    margin-top: 10%;
-    padding-left: 5%;
-    padding-right: 5%;
-     
-    background-color: black;   border-radius: 11px;
-    border-top-left-radius: 0 ;
-}
+.buttonColored:hover{font-size: 140%; padding: 2.5%;}
 
-.botao:hover{background-color: rgb(35, 151, 87); color: white; margin-left: 11%;}
-.botaoAtivo:hover{background-color: rgb(35, 151, 87); color: white; margin-left: 11%;}
+.regis_infs{margin: 0 auto; text-align: center; display: flex; flex-direction: row; gap: 3%; justify-content: space-around; width: 50%;}
+.regis_infs i{ font-size: 130%;}
+.regis_icon p{width: 80%; margin: 0 auto;}
 
-footer{background-color: black; width: 100%;}
+.regis_icon{transition: background-color 0.3s, color 0.3s;}
+.regis_icon:hover{background-color: #82AE64; color:aliceblue;  padding: 1%; font-size: 110%; border-radius: 11px; cursor:default}
