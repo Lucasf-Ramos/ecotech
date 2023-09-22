@@ -1,7 +1,62 @@
 body{margin: 0; padding: 0; border: 0}
-header{background-color: #82AE64; padding: 1%; text-align: end;}
-header a{margin-right: 10px; color:white; text-decoration: none;}
-header a:hover{color:aquamarine; text-decoration: underline;}
+.header_green{background-color: #82AE64; padding: 1%; text-align: end;}
+.header_green a{margin-right: 10px; color:white; text-decoration: none;}
+.header_green a:hover{color:aquamarine; text-decoration: underline;}
+
+/*Parte do header preto*/
+.header_black{
+    background-color: #000000; 
+    padding: 1%; 
+    color:aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_black .icons{width: 10%; margin: 0 0; text-align: end;}
+.header_black .icons a{font-size: 170%; padding: 4%; color: aliceblue;}
+.header_black .icons a:hover{font-size: 170%; padding: 4%; color:#92B560;}
+
+#logo{width: 7%;}
+.header_black form{width: 50%; margin: 0 auto; text-align: center; margin: 0;}
+
+#pesquisa{
+    
+    padding: 2%; 
+    width: 70%; 
+   
+    border: 0;
+    margin: 0;
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s;
+
+    border-radius: 11px 0 0 11px;
+    border:none; 
+}
+
+
+#btnPesquisa{
+    width: 20%; 
+    margin: -4px; 
+    border: 0;
+    font-size: 100%;  
+    
+    padding: 1.85%; 
+    
+    
+    border:none; 
+    
+    background-color: #92B560; 
+    color:aliceblue;
+
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 0 11px 11px 0;
+
+    
+
+}
+
 
 h2{text-align: center; cursor:default}
 
@@ -9,7 +64,7 @@ h2{text-align: center; cursor:default}
     font-size: 120%;
 
      background-color: rgb(255, 255, 255);
-     border-radius: 11px;
+     border-radius: 20px;
      width: 50%; 
      padding: 1%; 
      border:solid rgb(121, 122, 122);
@@ -19,12 +74,12 @@ h2{text-align: center; cursor:default}
      text-align: center; /* Opcional: centraliza o conteúdo dentro da div */
 
 }
-.bordasSuaves{border-radius: 11px; padding: 2%; width: 40%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
+.bordasSuaves{border-radius: 20px; padding: 2%; width: 40%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
 .bordasSuaves:hover{border:solid #82AE64}
 
 
 .buttonColored{
-    border-radius: 11px; 
+    border-radius: 20px; 
     padding: 2%; 
     width: 40%; 
     margin-bottom: 1%; 
@@ -44,3 +99,31 @@ h2{text-align: center; cursor:default}
 
 .regis_icon{transition: background-color 0.3s, color 0.3s;}
 .regis_icon:hover{background-color: #82AE64; color:aliceblue;  padding: 1%; font-size: 110%; border-radius: 11px; cursor:default}
+
+/*Tela do perfil do cliente*/
+#profilePicture{width: 40%; border-radius: 100%;}
+.profile_box{display: flex; flex-direction: row; }
+.profile_infs{width: 40%;}
+.profile_box div{width: 50%;}
+
+/*Se for um dispositivo mobile*/
+@media(max-width: 634px){
+    .bordasSuaves{border-radius: 20px; padding: 3%; width: 90%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
+    .regis_box{
+        font-size: 120%;
+    
+         background-color: rgb(255, 255, 255);
+         border-radius: 20px;
+         width: 90%; 
+         padding: 1%; 
+         border:solid rgb(121, 122, 122);
+    
+         margin-top: 100%;
+         margin: 0 auto; /* Define as margens automáticas horizontalmente */
+         text-align: center; /* Opcional: centraliza o conteúdo dentro da div */
+    
+    }
+    .regis_infs{margin: 0 auto; text-align: center; display: flex; flex-direction:row; gap: 5%; justify-content: space-around; width: 50%; flex-wrap: wrap;}
+    .regis_infs i{ font-size: 100%; padding-top: 10%;}
+    h2{margin: 10% 10% ;}
+}

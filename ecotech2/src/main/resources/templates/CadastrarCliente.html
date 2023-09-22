@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
+    <script src="../static/javascript.js"></script>
+    <link rel="shortcut icon" href="../static/img/icone.ico">
+    <title>Cadastrar</title>
+</head>
+<body>
+    <header>
+        <div class="header_green"> <a href="#">Home</a> </div>
+        
+    </header>
+    <main>
+        <br/><br/><br/><br/>
+      <div class="regis_box">
+        <form onsubmit="return validarSenha()">
+            <h1>Cadastrar-se</h1>
+            <input type="text" required placeholder="Nome*" class="bordasSuaves">
+            <input type="text" required placeholder="Sobrenome*" class="bordasSuaves"><br/>
+
+            <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Cpf*" class="bordasSuaves" required>
+            <input type="text" pattern="\(\d{2}\) \d{4,5}-\d{4}" required placeholder="Telefone*" class="bordasSuaves"><br/>
+
+            <input type="date" required placeholder="data de nascimento*" class="bordasSuaves">
+            <input type="email" required placeholder="Email*" class="bordasSuaves"><br/>
+
+            <input type="password" required placeholder="digite sua senha*" class="bordasSuaves" id="senha1">
+            <input type="password" required placeholder="repita sua senha*" class="bordasSuaves" id="senha2"><br/><br/>
+
+            <input type="submit" class="buttonColored" value="Cadastrar"><br/><br/>
+        </form>
+      </div>
+      
+      <br><br><br/>
+
+      <h2>Usamos seu cadastro de forma 100% segura para:</h2>
+      <br>
+      <div class="regis_infs">
+            <div class="regis_icon">
+                <i class="fa-regular fa-user"></i>
+                <p>Identificar seu perfil</p>
+            </div>
+
+            <div class="regis_icon">
+                <i class="fa-regular fa-bell"></i>
+                <p>Notificar sobre o andamento do seu pedido</p>
+            </div>
+
+            <div class="regis_icon">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <p>Gerenciar seu histórico de compras</p>
+            </div>
+
+            <div class="regis_icon">
+                <i class="fa-regular fa-file"></i>
+                <p>Identificar seu perfil</p>
+            </div>
+      </div>
+
+
+      <br><br>
+      <br><br>
+
+
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+</html>
