@@ -36,18 +36,22 @@
         <div class="regis_box profile_box">
             <div>
                 <img src="../static/img/profilePicture.png" id="profilePicture"><br><br><br>
-                <a href="EditarPerfil.html"> &nbsp Editar perfil&nbsp</a><br>
-                <a href="#">Alterar Senha</a><br>
-                <a href="#" id="logOut">&nbsp&nbsp&nbsp&nbsp LogOut &nbsp&nbsp&nbsp&nbsp</a><br>
+                
+                <a href="#">Alterar</a><br>
+                <a href="TelaPerfil.html" id="logOut">cancelar</a><br>
             </div>
             <div id="profile_infsBox"> 
                 <h1>Seu perfil</h1>
                 <div class="profile_infs">
-                    <p>Nome: Mariana Fernandes</p>
-                    <p>Endereço: Rua das Flores 321</p>
-                    <p>Cpf: xxx.xxx.xxx-xx</p> 
-                    <p>Cep: 12344321</p>
-                    <p>telefone: </p>
+                    <form>
+                        <input type="text" required placeholder="Nome" value=""><br><br>
+                        <input type="text" required placeholder="Endereço" value=""><br><br>
+                        <input type="text" required placeholder="Cpf" value=""><br><br>
+                        <input type="text" required placeholder="Cep" value=""><br><br>
+                        <input type="text" required placeholder="Telefone" value=""><br>
+                    </form>
+                    <!--Quando estiver programando o value recebe a variavel do usuario atual-->
+                    
 
                    
                 </div>
