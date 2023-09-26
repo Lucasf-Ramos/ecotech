@@ -10,6 +10,6 @@ public class ClienteController {
 	
 	@GetMapping("/novo-cliente")
 	public String novocliente(){
-		return "RegistrarCliente";
+		return "CadastrarCliente";
 	}
 }
