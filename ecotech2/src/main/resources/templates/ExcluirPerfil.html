@@ -8,13 +8,13 @@
     <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
     <script src="/javascript.js"></script>
     <link rel="shortcut icon" href="/img/icone.ico">
-    <title>Perfilr</title>
+    <title>Perfil</title>
 </head>
 <body>
     <header>
         <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
         <div class="header_black">
-            <img src="../static/img/echoTech2.png" id="logo">
+            <img src="/echoTech2.png" id="logo">
             <form>
                 <input type="search" id="pesquisa" placeholder="Pesquise aqui">
                 <input type="submit" id="btnPesquisa" value="pesquisar">
@@ -49,25 +49,39 @@
         <br><br>
         <div class="regis_box profile_box">
             <div>
-                <img src="../static/img/profilePicture.png" id="profilePicture"><br><br><br>
-                <a href="EditarPerfil.html"> &nbsp Editar perfil&nbsp</a><br>
-                <a href="#">Alterar Senha</a><br>
-                <a href="#" id="logOut">&nbsp&nbsp&nbsp&nbsp LogOut &nbsp&nbsp&nbsp&nbsp</a><br>
+                
+                
+                <a href="#">Excluir</a><br>
+                <a href="EditarPerfil.html" id="logOut">cancelar</a><br>
+              
             </div>
             <div id="profile_infsBox"> 
-                <h1>Seu perfil</h1>
+                <h1>Deseja Excluir seu perfil?</h1>
                 <div class="profile_infs">
-                    <p>Nome: Mariana Fernandes</p>
-                    <p>Endereço: Rua das Flores 321</p>
-                    <p>Cpf: xxx.xxx.xxx-xx</p> 
-                    <p>Cep: 12344321</p>
-                    <p>telefone: </p>
-
+                    <form>
+                        <input type="text" required placeholder="para excluir sua conta digite sua senha*" value=""><br><br>
+                        <textarea class="bordasSuaves" placeholder="Conte-nos o Motivo" style="width: 300%; padding: 5%;" rows="10"></textarea>
+                        
+                        <p>
+                            <input type="checkbox" name="checkbox" />
+                            Realmente desejo excluir minha conta*
+                        </p>
+                        
+                    
+                   
+                        
+                    </form>
+                  
+                    <!--Quando estiver programando o value recebe a variavel do usuario atual-->
+                    
+                    
                    
                 </div>
+                
             </div>
-           
+            
         </div>
+       
         <br><br><br>
     </main>
     <footer>
@@ -104,9 +118,9 @@
             <div class="footer-section">
                 <h3>Formas de Pagamento</h3>
                 <ul class="payment-icons">
-                    <img src="../static/img/mastercard.png" alt="Visa">
-                    <img src="../static/img/visa.png" alt="MasterCard">
-                    <img src="../static/img/pix.png" alt="MasterCard">
+                    <img src="/mastercard.png" alt="Visa">
+                    <img src="/visa.png" alt="MasterCard">
+                    <img src="/pix.png" alt="MasterCard">
                 </ul>
             </div>
         </div>
