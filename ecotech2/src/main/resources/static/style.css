@@ -330,13 +330,13 @@ hr {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
-.buttonColored:hover{font-size: 140%; padding: 2.5%;}
+.buttonColored:hover{ background-color: #80837d; }
 
 .regis_infs{margin: 0 auto; text-align: center; display: flex; flex-direction: row; gap: 3%; justify-content: space-around; width: 50%;}
 .regis_infs i{ font-size: 130%;}
 .regis_icon p{width: 80%; margin: 0 auto;}
 
-.regis_icon{transition: background-color 0.3s, color 0.3s;}
+.regis_icon{transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.4s; }
 .regis_icon:hover{background-color: #82AE64; color:aliceblue;  padding: 1%; font-size: 110%; border-radius: 11px; cursor:default}
 
 
