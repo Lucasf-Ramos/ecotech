@@ -1,5 +1,7 @@
 package ecotech.tcc.demo.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,11 +18,24 @@ public class Cliente {
 	private Long id;
 	
 	private String nome;
+	private String sobrenome;
+
+	private LocalDate dataNascimento;
+	
+
 	private String email;
 	private String cpf;
 	private String telefone;
 	private boolean codStatusUsuario;
 	
+	private String senha;
+	
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 	public Long getId() {
 		return id;
 	}
@@ -57,7 +72,17 @@ public class Cliente {
 	public void setCodStatusUsuario(boolean codStatusUsuario) {
 		this.codStatusUsuario = codStatusUsuario;
 	}
-	
-	
+	public String getSobrenome() {
+		return sobrenome;
+	}
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+	public LocalDate getDataNascimento() {
+		return dataNascimento;
+	}
+	public void setDataNascimento(LocalDate dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
 	
 }

@@ -22,19 +22,19 @@
     <main>
         <br/><br/><br/><br/>
       <div class="regis_box">
-        <form onsubmit="return validarSenha()">
+        <form onsubmit=" validarSenha()" th:object="${cliente}">
             <h1>Cadastrar-se</h1>
-            <input type="text" required placeholder="Nome*" class="bordasSuaves">
-            <input type="text" required placeholder="Sobrenome*" class="bordasSuaves"><br/>
+            <input type="text" th:field="*{nome}" required placeholder="Nome*" class="bordasSuaves">
+            <input type="text" th:field="*{sobrenome}" required placeholder="Sobrenome*" class="bordasSuaves"><br/>
 
-            <input type="text" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Cpf*" class="bordasSuaves" required>
-            <input type="text" pattern="\(\d{2}\) \d{4,5}-\d{4}" required placeholder="Telefone*" class="bordasSuaves"><br/>
+            <input type="text" th:field="*{cpf}" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="Cpf*" class="bordasSuaves" required>
+            <input type="text" th:field="*{telefone}" pattern="\(\d{2}\) \d{4,5}-\d{4}" required placeholder="Telefone*" class="bordasSuaves"><br/>
 
-            <input type="date" required placeholder="data de nascimento*" class="bordasSuaves">
-            <input type="email" required placeholder="Email*" class="bordasSuaves"><br/>
+            <input type="date" th:field="*{dataNascimento}" required placeholder="data de nascimento*" class="bordasSuaves">
+            <input type="email" th:field="*{email}" required placeholder="Email*" class="bordasSuaves"><br/>
 
-            <input type="password" required placeholder="digite sua senha*" class="bordasSuaves" id="senha1">
-            <input type="password" required placeholder="repita sua senha*" class="bordasSuaves" id="senha2"><br/><br/>
+            <input type="password" th:field="*{senha}" required placeholder="digite sua senha*" class="bordasSuaves" id="senha1">
+            <input type="password"  required placeholder="repita sua senha*" class="bordasSuaves" id="senha2"><br/><br/>
 
             <input type="submit" class="buttonColored" value="Cadastrar"><br/><br/>
         </form>
