@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
+    <script src="../static/javascript.js"></script>
+    <link rel="shortcut icon" href="../static/img/icone.ico">
+    <title>Perfilr</title>
+</head>
+<body onload="plusSlides(0)">
+    <header>
+        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_black">
+            <img src="../static/img/echoTech2.png" id="logo">
+            <form>
+                <input type="search" id="pesquisa" placeholder="Pesquise aqui">
+                <input type="submit" id="btnPesquisa" value="pesquisar">
+            </form>
+
+            <div class="icons">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                
+                <div class="dropdown">
+                    <a  class="dropdown-button"><i class="fa-solid fa-bars"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Smartphones</a>
+                        <a href="#">Notebooks</a>
+                        <a href="#">Smartwatches e Buds</a>
+                        <a href="#">Tablets</a>
+                        <a href="#">Acessórios</a>
+                        <a href="#">TV e AV</a>
+                        <a href="#">Eletrodomésticos</a>
+                        <a href="#">Monitores</a>
+                        <a href="#">Ar-condicionádos</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
+
+    </header>
+    <main>
+       
+            <!-- Slideshow -->
+            <div class="slideshow-container" >
+
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="../static/img/img1.jpg" >
+                
+                </div>
+            
+                <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="../static/img/img2.jpg">
+                
+                </div>
+            
+                <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="../static/img/img3.jpg">
+               
+                </div>
+            
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <!-- circulos  -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <br>
+            <br>
+
+            <h2>Populares</h2>
+            <div class="inicio_fileira">
+
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+              
+                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <h2>ofertas</h2>
+            <div class="inicio_fileira">
+
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+              
+                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+            <h2>Novidades</h2>
+            <div class="inicio_fileira">
+
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+                <div class="inicio_itenContent">
+                    <img src="../static/img/img1.jpg" alt="">
+                    <h3>Nome produto</h3>
+                    <p>R$00.00</p>
+                    <br>
+                    <a href="" class="comprar">Comprar Agora!</a>
+                  
+                    <br>
+                </div>
+              
+                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+            </div>
+
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Produtos</h3>
+                <ul>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Notebooks</a></li>
+                    <li><a href="#">Smartwatches e Buds</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="#">TV e AV</a></li>
+                    <li><a href="#">Eletrodomésticos</a></li>
+                    <li><a href="#">Monitores</a></li>
+                    <li><a href="#">Ar-condicionados</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Formas de Pagamento</h3>
+                <ul class="payment-icons">
+                    <img src="../static/img/mastercard.png" alt="Visa">
+                    <img src="../static/img/visa.png" alt="MasterCard">
+                    <img src="../static/img/pix.png" alt="MasterCard">
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p style="font-size: larger;">Brasil</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>               
+        </div>
+        </div>
+    </footer>
+</body>
+</html>
