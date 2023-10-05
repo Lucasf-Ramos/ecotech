@@ -523,6 +523,51 @@ hr {
 .visu_Icon:hover{color:#82AE64}
 
 
+/*__ Login __*/
+.login-box h2 {
+    margin-top: 0;
+}
+
+.login-box input[type="email"] {
+    width: 20%;
+    position: absolute;
+    left: 39%;
+    padding: 9px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box button {
+    background-color: #161616; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.password-input input[type="password"] {
+    border-radius: 5px;
+}
+.password-input input[type="password"]:focus {
+    border-color: #82AE64;
+    box-shadow: 0 0 5px rgba(130, 174, 100, 0.5);
+}
+
+.password-input .toggle-password:hover {
+    color: #82AE64;
+    border-radius: 5px;
+}
+
+.continue-login-hover:hover {
+    background-color:#313131;
+}
+
+.continue-senha-hover:hover {
+    background-color:#313131;
+}
+
 
 
 /*Se for um dispositivo mobile*/
