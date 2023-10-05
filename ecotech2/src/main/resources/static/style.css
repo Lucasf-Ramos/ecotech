@@ -57,6 +57,28 @@ body{margin: 0; padding: 0; border: 0}
 
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #5bd553 #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #ffffff;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #5bd553;
+    border-radius: 5px;
+    border: 4px none #ffffff;
+  }
+
 
 h2{text-align: center; cursor:default}
 
@@ -249,7 +271,7 @@ hr {
 .inicio_fileira{
     
     align-items: center;
-    width: 100%;
+    width: 90%;
     
     display: flex;
     flex-direction: row;
@@ -497,7 +519,8 @@ hr {
   }
 
 
-
+.visu_Icon{color:#bbb; width: 100%; font-size: 150%; margin: 2%; transition: color 0.2s;}
+.visu_Icon:hover{color:#82AE64}
 
 
 
