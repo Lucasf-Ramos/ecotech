@@ -36,10 +36,8 @@ public class ClienteController {
 		return "redirect:/ecotech/cliente/index";
 	}
 	
-	//CARREGAR HOME
 	
-	@GetMapping("/index")
-	public String home() {
-		return "index";
-	}
+	
+	
+	
 }
