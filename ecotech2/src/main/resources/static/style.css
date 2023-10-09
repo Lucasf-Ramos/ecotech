@@ -548,6 +548,7 @@ hr {
     margin: 0 auto;
 }
 
+
 .loginForm input {
     border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;
 
@@ -560,7 +561,23 @@ hr {
 }
 
 .senha{
-    border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;
+    border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 5%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;
+}
+
+.continue-senha-hover:hover{
+    background-color:#313131;
+}
+
+.esqueci-senha{
+    font-size: 15px;
+    text-align: center;
+    padding-left: -9%;
+    color: rgb(172, 172, 172);
+}
+
+.esqueci-senha:hover{
+    color: #161616;
+    
 }
 
 .password-input .toggle-password:hover {
@@ -571,6 +588,84 @@ hr {
 
 .login_button:hover {
     background-color:#313131;
+}
+
+
+
+
+/*____Tela de pesquisa______*/
+
+
+.filter-box {
+    width: 20%; /* Largura da caixa de filtro */
+    padding: 20px;
+    border: 1px solid #949494;
+    text-align: left;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-top: 19%;
+    padding-bottom: 5%;
+    border-radius: 5%;
+    margin-right: 2.5%;
+}
+    
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.marcaFilter {
+    border-radius: 3%;
+}
+
+
+.searchProduct-list {
+        
+        padding-left: 10%;
+        justify-content: center;
+        gap: 200px;
+}
+
+.search_itenContent {
+        background-color: #fff;
+        border: solid 3px rgb(192, 192, 192);
+        border-radius: 10px;
+        padding: 1%;
+        display: flex;
+        align-items: center;
+        width: 60%;
+        height: 150px;
+        transition: width 0.5s, height 0.5s, font-size 0.5s;
+}
+
+
+.search_itenContent img{background-color: #000; width: 25%; height: 130px; border-radius: 5px;}
+
+.search_itenContent p {
+    color: #82AE64;
+    margin: 2%;
+    flex-grow: 1;
+}
+
+.search_itenContent h3{margin: 2%;}
+
+.search_itenContent:hover {width: 65%; height: 170px; font-size: 120%;}
+.view-button {
+    background-color: #82AE64;
+    color: #fff;
+    text-decoration: none;
+    height: 20px;
+    padding: 8px 10px;
+    border-radius: 5px;
+    margin-left: auto; /* Move o botão para a direita */
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.view-button:hover {
+    background-color: #4C7E47;
 }
 
 

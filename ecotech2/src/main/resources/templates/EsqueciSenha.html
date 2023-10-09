@@ -8,25 +8,49 @@
     <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
     <script src="../static/javascript.js"></script>
     <link rel="shortcut icon" href="../static/img/icone.ico">
-    <title>Login</title>
+    <title>Esqueci minha senha</title>
 </head>
 <body>
     <header>
         <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
-
     </header>
-    <main>
-      <br><br><br><br><br><br><br><br><br><br>
-            <div class="login-box"><br><br>
-                <h2>Insira seu e-mail para se cadastrar ou entrar</h2><br><br>
-                <form action="processar_login.php" method="post" class="loginForm">
-                    <input type="email" name="email" id="email" placeholder="E-mail" required>
-                    <br><br><br><br><br>
-                    <button class="login_button" type="submit">Continuar</button>
-                </form><br><br><br>
+    <main><br><br><br><br>
+        <div class="container">
+            <div class="login-box"><br>
+                <h1>Insira seu email para receber o código</h1><br><br>
+                <h5>Enviamos um código para xxx@gmail.com</h5>
+                <form action="processar_codigo.php" method="post">
+                    <div class="codigo-input">
+                        <input maxlength="6" keyboardType="numeric" style="border-radius: 5px; text-align: center;" type="text" name="codigo" id="codigo" placeholder="*******" required>
+                    </div>
+                    <br><br>
+                        <a href="EsqueciSenha2.html" style="margin: 0 auto;
+                        background-color: #161616; /* Cor de fundo do botão */
+                        color: #fff;
+                        left: 48%;
+                        border: none;
+                        padding: 15px 40px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin: 0 auto; text-decoration: none" class="esqueci-senha">Continuar</a>
+                </form><br><br>
             </div>
+        </div><br><br><br><br><br><br>
     </main>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <script>
+        function togglePasswordVisibility() {
+            const senhaInput = document.getElementById('senha');
+            const toggleButton = document.querySelector('.toggle-password');
+            
+            if (senhaInput.type === 'password') {
+                senhaInput.type = 'text';
+                toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+            } else {
+                senhaInput.type = 'password';
+                toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+            }
+        }
+    </script>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
