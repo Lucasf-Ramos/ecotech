@@ -137,7 +137,7 @@ public class ClienteController {
 	@GetMapping("/excluir")
 	public String excluir() {
 		usuarioAtual.setCodStatusUsuario(false);
-		usuarioAtual.setEmail(null);
+		usuarioAtual.setEmail(null); 
 		clienteRepository.save(usuarioAtual);
 		usuarioAtual = null;
 		
