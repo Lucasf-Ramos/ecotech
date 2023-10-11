@@ -4,35 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
-    <script src="../static/javascript.js"></script>
-    <link rel="shortcut icon" href="../static/img/icone.ico">
+    <script src="/javascript.js"></script>
+    <link rel="shortcut icon" href="/img/icone.ico">
     <title>Login</title>
 </head>
 <body>
     <header>
-        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_green"> <a th:href="@{/ecotech/cliente/index}">Home</a> </div>
 
     </header>
     <main>
       <br><br><br><br><br><br>
             <div class="login-box"><br><br>
                 <h2>Insira seu E-mail para se cadastrar ou entrar</h2><br><br>
-                <form action="processar_login.php" method="post" class="loginForm">
+                <form th:action="@{/ecotech/cliente/login}" th:object="${cliente}" method="post" class="loginForm">
                     <h4>Insira seu E-mail</h4>
-                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                    <input type="email" name="email" id="email" placeholder="E-mail" required th:field="*{email}">
                     <br><h4>Insira sua senha</h4>
                     <div class="password-input">
-                        <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                        <input type="password" name="senha" id="senha" placeholder="Senha" required th:field="*{senha}">
                         <span class="toggle-password" onclick="togglePasswordVisibility()">
                             <i id="toggleIcon" class="fas fa-eye"></i>
                         </span>
-                        <a href="EsqueciSenha.html" class="esqueci-senha"><br>Esqueci minha senha</a>
+                        <a href="/ecotech/cliente/novo-cliente" class="esqueci-senha"><br>Criar Conta</a>
+                         <a href="EsqueciSenha.html" class="esqueci-senha"><br>Esqueci minha senha</a>
                     </div>
                     
                     <br><br><br><br>
-                    <a href="index.html" style="margin: 0 auto;
+                  
+                        
+                        <input type="submit" value="continuar"  style="margin: 0 auto;
                         background-color: #161616; /* Cor de fundo do botão */
                         color: #fff;
                         left: 48%;
@@ -40,7 +43,7 @@
                         padding: 15px 40px;
                         border-radius: 5px;
                         cursor: pointer;
-                        margin: 0 auto; text-decoration: none" class="esqueci-senha">Continuar</a>
+                        margin: 0 auto; text-decoration: none" >
                 </form><br><br><br>
             </div>
     </main>

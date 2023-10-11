@@ -14,7 +14,7 @@
     <header>
         <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
         <div class="header_black">
-            <img src="../static/img/echoTech2.png" id="logo">
+            <img src="/img/echoTech2.png" id="logo">
             <form>
                 <input type="search" id="pesquisa" placeholder="Pesquise aqui">
                 <input type="submit" id="btnPesquisa" value="pesquisar">
@@ -47,34 +47,48 @@
     </header>
     <main>
         <br><br>
+        <form th:action="@{/ecotech/cliente/update}" th:object="${cliente}" method="post">
         <div class="regis_box profile_box">
             <div>
-                <img src="../static/img/profilePicture.png" id="profilePicture"><br><br><br>
+                <img src="/img/profilePicture.png" id="profilePicture"><br><br><br>
+                <input type="submit" class="buttonColored" value="Finalizar">
                 
-                <a href="#">Alterar</a><br>
-                <a href="TelaPerfil.html" id="logOut">cancelar</a><br>
-                <a href="ExcluirPerfil.html" id="logOut">Excluir conta</a><br>
+                
             </div>
             <div id="profile_infsBox"> 
                 <h1>Seu perfil</h1>
                 <div class="profile_infs">
-                    <form>
-                        <input type="text" required placeholder="Nome" value=""><br><br>
-                        <input type="text" required placeholder="Endereço" value=""><br><br>
-                        <input type="text" required placeholder="Cpf" value=""><br><br>
-                        <input type="text" required placeholder="Cep" value=""><br><br>
-                        <input type="text" required placeholder="Telefone" value=""><br>
-
+                    
+                    	nome<br>
+                        <input type="text" required placeholder="Nome" th:field="*{nome}"><br><br>
+                        
+                        sobrenome<br>
+                         <input type="text" required placeholder="Sobrenome" th:field="*{sobrenome}"><br><br>
+                         
+                         cpf:<br>
+                        <input type="text" required placeholder="Cpf" th:field="*{cpf}"><br><br>
+                        
+                        telefone<br>
+                        <input type="text" required placeholder="Telefone" th:field="*{telefone}"><br><br>
+                        
+                        email<br>
+                         <input type="email" required placeholder="email" th:field="*{email}"><br><br>
+                         
+                         nascimento<br>
+                         <input type="date" required placeholder="data de Nascimento" th:field="*{dataNascimento}"><br><br>
+                          
+                          senha:<br>
+                         <input type="text" required placeholder="senha" th:field="*{senha}"><br><br>
+						
                         <br>
                         
-                    </form>
-                    <!--Quando estiver programando o value recebe a variavel do usuario atual-->
+                  
                     
                     
                    
                 </div>
             </div>
-           
+            </form>
         </div>
         <br><br><br>
     </main>

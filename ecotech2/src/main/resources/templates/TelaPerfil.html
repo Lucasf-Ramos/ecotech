@@ -12,9 +12,9 @@
 </head>
 <body>
     <header>
-        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_green"> <a th:href="@{/ecotech/cliente/index}">Home</a> </div>
         <div class="header_black">
-            <img src="../static/img/echoTech2.png" id="logo">
+            <img src="/img/echoTech2.png" id="logo">
             <form>
                 <input type="search" id="pesquisa" placeholder="Pesquise aqui">
                 <input type="submit" id="btnPesquisa" value="pesquisar">
@@ -49,20 +49,19 @@
         <br><br>
         <div class="regis_box profile_box">
             <div>
-                <img src="../static/img/profilePicture.png" id="profilePicture"><br><br><br>
-                <a href="EditarPerfil.html"> &nbsp Editar perfil&nbsp</a><br>
-                <a href="#">Alterar Senha</a><br>
-                <a href="#" id="logOut">&nbsp&nbsp&nbsp&nbsp LogOut &nbsp&nbsp&nbsp&nbsp</a><br>
+                <img src="/img/profilePicture.png" id="profilePicture"><br><br><br>
+                <a href="/ecotech/cliente/editar">Editar</a><br>
+                <a href="/ecotech/cliente/logout" id="logOut">LogOut</a><br>
+                <a href="/ecotech/cliente/excluir" id="logOut">Excluir conta</a><br>
             </div>
             <div id="profile_infsBox"> 
                 <h1>Seu perfil</h1>
-                <div class="profile_infs">
-                    <p>Nome: Mariana Fernandes</p>
-                    <p>Endereço: Rua das Flores 321</p>
-                    <p>Cpf: xxx.xxx.xxx-xx</p> 
-                    <p>Cep: 12344321</p>
-                    <p>telefone: </p>
-
+                <div class="profile_infs" th:each="c : ${cliente}">
+                    <p>nome: <span th:text="${c.nome}"></span> <span th:text="${c.sobrenome}"></span></p>
+                    <p>Cpf: <span th:text="${c.cpf}"></span></p> 
+                    <p>telefone: <span th:text="${c.telefone}"></span> </p>
+					<p>email: <span th:text="${c.email}"></span></p>
+					
                    
                 </div>
             </div>

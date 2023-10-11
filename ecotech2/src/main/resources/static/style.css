@@ -402,7 +402,9 @@ hr {
     width: 300%; 
     background-color: rgb(236, 236, 236);}
 
-.profile_box input[type="text"]{border-radius: 10px; padding: 7%; width: 300%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
+.profile_box input{border-radius: 10px; padding: 7%; width: 300%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
+.profile_box input[type="submit"]{border-radius: 15px; padding: 7%; width: 90%; margin-bottom: 1%; border:none rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
+
 .profile_box h1{
     margin-top: 0%;  
    
