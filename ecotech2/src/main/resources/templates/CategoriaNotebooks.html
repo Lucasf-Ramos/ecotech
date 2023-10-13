@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/img/icone.ico">
+    <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
+    <script src="/javascript.js"></script>
+    <title>Página de Busca</title>
+    <style>
+        .search-box {
+            margin: 20px auto;
+            width: 50%;
+        }
+        .product-list {
+            text-align: left;
+            margin-left: 20px; /* Ajuste a margem esquerda conforme necessário */
+            display: flex;
+            flex-direction: column;
+        }
+        .product-box {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 200px;
+            text-align: center;
+        }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_black">
+            <img src="/img/echoTech2.png" id="logo">
+            <form>
+                <input type="search" id="pesquisa" placeholder="Pesquise aqui">
+                <input type="submit" id="btnPesquisa" value="pesquisar">
+            </form>
+
+            <div class="icons">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                
+                <div class="dropdown">
+                    <a  class="dropdown-button"><i class="fa-solid fa-bars"></i></a>
+                    <div class="dropdown-content">
+                        <a href="CategoriaSmartphone.html">Smartphones</a>
+                        <a href="CategoriaNotebooks.html">Notebooks</a>
+                        <a href="CategoriaSmartwatches&Buds.html">Smartwatches e Buds</a>
+                        <a href="CategoriaTablets.html">Tablets</a>
+                        <a href="CategoriaAcessorios.html">Acessórios</a>
+                        <a href="CategoriaTv&Av.html">TV e AV</a>
+                        <a href="CategoriaEletrodomesticos.html">Eletrodomésticos</a>
+                        <a href="CategoriaMonitores.html">Monitores</a>
+                        <a href="CategoriaArCondicionado.html">Ar-condicionádos</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </header>
+    <main>
+        <br><h2>Categoria: Notebooks</h2><br><br><br><br>
+        <div class="searchProduct-list">
+            <div class="search_itenContent">
+                <img src="..\static\img\img3.jpg" alt="Produto 1" class="product-image">
+                <p>Produto 1</p>
+               <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>    
+            </div><br>
+            <div class="search_itenContent">
+                <img src="..\static\img\img3.jpg" alt="Produto 2" class="product-image">
+                <p>Produto 2</p>
+                <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>  
+            </div><br>
+            <div class="search_itenContent">
+                <img src="..\static\img\img3.jpg" alt="Produto 3" class="product-image">
+                <p>Produto 3</p>
+                <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>  
+            </div><br>
+            <div class="search_itenContent">
+                <img src="..\static\img\img3.jpg" alt="Produto 4" class="product-image">
+                <p>Produto 4</p>
+                <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>  
+            </div>
+            <br><br><br><br>
+        </div>
+    </main>
+    <div class="filter-box">
+        <h2>Filtrar</h2>
+        <label for="marca">Marca:</label>
+        <select id="marca" class="marcaFilter">
+            <option value="marca1">Marca 1</option>
+            <option value="marca2">Marca 2</option>
+            <option value="marca3">Marca 3</option>
+        </select>
+        <label for="preco">Produto:</label>
+        <select id="preco" class="marcaFilter">
+            <option value="prod1">Produto 1</option>
+            <option value="prod2">Produto 2</option>
+            <option value="prod3">Produto 3</option>
+        </select>
+        <label for="preco">Preço:</label>
+        <select id="preco" class="marcaFilter">
+            <option value="precoCres">Crescente</option>
+            <option value="precoDec">Decrescente</option>
+        </select>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Produtos</h3>
+                <ul>
+                    <li> <a href="CategoriaSmartphone.html">Smartphones</a></li>
+                    <li> <a href="CategoriaNotebooks.html">Notebooks</a></li>
+                    <li> <a href="CategoriaSmartwatches&Buds.html">Smartwatches e Buds</a></li>
+                    <li> <a href="CategoriaTablets.html">Tablets</a></li>
+                    <li> <a href="CategoriaAcessorios.html">Acessórios</a></li>
+                    <li> <a href="CategoriaTv&Av.html">TV e AV</a></li>
+                    <li> <a href="CategoriaEletrodomesticos.html">Eletrodomésticos</a></li>
+                    <li> <a href="CategoriaMonitores.html">Monitores</a></li>
+                    <li> <a href="CategoriaArCondicionado.html">Ar-condicionádos</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suporte</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Fale Conosco</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociais</h3>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Formas de Pagamento</h3>
+                <ul class="payment-icons">
+                    <img src="../static/img/mastercard.png" alt="Visa">
+                    <img src="../static/img/visa.png" alt="MasterCard">
+                    <img src="../static/img/pix.png" alt="MasterCard">
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <div class="footer-left">
+                <p style="font-size: larger;">Brasil</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Termos de Uso</a>
+            </div>               
+        </div>
+        </div>
+    </footer>
+</body>
+</html>
