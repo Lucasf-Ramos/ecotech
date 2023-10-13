@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="/style.css">
     <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
     <script src="/javascript.js"></script>
     <link rel="shortcut icon" href="/img/icone.ico">
@@ -12,7 +12,7 @@
 </head>
 <body onload="plusSlides(0)">
     <header>
-        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_green"> <a th:href="@{/ecotech/cliente/index}">Home</a> </div>
         <div class="header_black">
             <img src="/img/echoTech2.png" id="logo">
             <form>
@@ -21,25 +21,27 @@
             </form>
 
             <div class="icons">
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="/ecotech/cliente/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="/ecotech/cliente/favorito"><i class="fa-solid fa-heart"></i></a>
                 
                 <div class="dropdown">
                     <a  class="dropdown-button"><i class="fa-solid fa-bars"></i></a>
                     <div class="dropdown-content">
-                        <a href="#">Smartphones</a>
-                        <a href="#">Notebooks</a>
-                        <a href="#">Smartwatches e Buds</a>
-                        <a href="#">Tablets</a>
-                        <a href="#">Acessórios</a>
-                        <a href="#">TV e AV</a>
-                        <a href="#">Eletrodomésticos</a>
-                        <a href="#">Monitores</a>
-                        <a href="#">Ar-condicionádos</a>
+                        <a href="/ecotech/cliente/categoria">Smartphones</a>
+                        <a href="/ecotech/cliente/categoria">Notebooks</a>
+                        <a href="/ecotech/cliente/categoria">Smartwatches e Buds</a>
+                        <a href="/ecotech/cliente/categoria">Tablets</a>
+                        <a href="/ecotech/cliente/categoria">Acessórios</a>
+                        <a href="/ecotech/cliente/categoria">TV e AV</a>
+                        <a href="/ecotech/cliente/categoria">Eletrodomésticos</a>
+                        <a href="/ecotech/cliente/categoria">Monitores</a>
+                        <a href="/ecotech/cliente/categoria">Ar-condicionádos</a>
                     </div>
                 </div>
                 
             </div>
+            
+        </div>
             
         </div>
 
@@ -50,7 +52,7 @@
         <div class="visu_main" style="display: flex; flex-direction: row; margin: 5%; margin-bottom: 0;">
             <div class="visu_div" style="display: flex; flex-direction:row; width: 40%; ">
                 
-                <img src="../static/img/img1.jpg" style="width: 85%; border-radius: 10px;">
+                <img src="/img/img1.jpg" style="width: 85%; border-radius: 10px;">
               
                  
             </div>
@@ -66,9 +68,9 @@
                 <div class="regis_box" style="margin: 0 0; padding-left: 5%; text-align: start; border:solid rgb(188, 188, 188)">
                     <h3 style="text-align: start;">R$ 100,00</h2>
 
-
-                    <a href="" class="buttonColored" style="text-decoration: none; border-radius: 10px; text-align: start; background-color: #a2de79;">Comprar Agora</a><br><br>
-                    <a href="" class="buttonColored" style="text-decoration: none; border-radius: 10px; text-align: start; background-color: #44c767;">Adicionar ao Carrinho</a><br><br>
+                            <br>
+                    <a href="/ecotech/cliente/carrinho" class="buttonColored" style="text-decoration: none; border-radius: 10px; text-align: start; background-color: #a2de79;">Comprar Agora</a><br><br>
+                    <a href="/ecotech/cliente/carrinho" class="buttonColored" style="text-decoration: none; border-radius: 10px; text-align: start; background-color: #44c767;">Adicionar ao Carrinho</a><br><br>
                 </div>
                 
             </div>
@@ -120,9 +122,9 @@
             <div class="footer-section">
                 <h3>Formas de Pagamento</h3>
                 <ul class="payment-icons">
-                    <img src="../static/img/mastercard.png" alt="Visa">
-                    <img src="../static/img/visa.png" alt="MasterCard">
-                    <img src="../static/img/pix.png" alt="MasterCard">
+                    <img src="/img/mastercard.png" alt="Visa">
+                    <img src="/img/visa.png" alt="MasterCard">
+                    <img src="/img/pix.png" alt="MasterCard">
                 </ul>
             </div>
         </div>

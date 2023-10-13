@@ -137,7 +137,7 @@ public class ClienteController {
 	@GetMapping("/excluir")
 	public String excluir() {
 		usuarioAtual.setCodStatusUsuario(false);
-		usuarioAtual.setEmail(null);
+		usuarioAtual.setEmail(null); 
 		clienteRepository.save(usuarioAtual);
 		usuarioAtual = null;
 		
@@ -148,6 +148,30 @@ public class ClienteController {
 	public String Fav() {
 		return "ListaFavoritos";
 	}
-
+	@GetMapping("/carrinho")
+	public String Car() {
+		return "carrinho";
+	}
+	@GetMapping("/visualizar")
+	public String Visu() {
+		return "VisualizarProduto";
+	}
+	@GetMapping("/busca")
+	public String Busca() {
+		return "busca";
+	}
+	@GetMapping("/senha")
+	public String Senha() {
+		return "EsqueciSenha";
+	}
+	@GetMapping("/senha2")
+	public String Senha2() {
+		return "EsqueciSenha2";
+	}
+	@GetMapping("/categoria")
+	public String Categ() {
+		return "categoria";
+	}
+	
 	
 }
