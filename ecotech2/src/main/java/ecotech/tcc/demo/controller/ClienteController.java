@@ -144,7 +144,10 @@ public class ClienteController {
 		return "redirect:/ecotech/cliente/index";
 	}
 	
-
+	@GetMapping("/favorito")
+	public String Fav() {
+		return "ListaFavoritos";
+	}
 
 	
 }
