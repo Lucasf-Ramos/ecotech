@@ -12,19 +12,19 @@
 </head>
 <body>
     <header>
-        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_green"> <a th:href="@{/ecotech/cliente/index}">Home</a> </div>
     </header>
     <main><br><br><br><br>
         <div class="container">
             <div class="login-box"><br>
                 <h1>Insira seu email para receber o código</h1><br><br>
                 <h5>Enviamos um código para xxx@gmail.com</h5>
-                <form action="processar_codigo.php" method="post">
+                <form th:action="@{/ecotech/cliente/senha2}" method="post">
                     <div class="codigo-input">
                         <input maxlength="6" keyboardType="numeric" style="border-radius: 5px; text-align: center;" type="text" name="codigo" id="codigo" placeholder="*******" required>
                     </div>
                     <br><br>
-                        <a href="EsqueciSenha2.html" style="margin: 0 auto;
+                        <a th:href="@{/ecotech/cliente/senha2}" style="margin: 0 auto;
                         background-color: #161616; /* Cor de fundo do botão */
                         color: #fff;
                         left: 48%;

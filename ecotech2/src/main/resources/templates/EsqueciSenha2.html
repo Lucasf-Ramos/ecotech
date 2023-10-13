@@ -12,14 +12,14 @@
 </head>
 <body>
     <header>
-        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_green"> <a th:href="@{/ecotech/cliente/index}">Home</a> </div>
 
     </header>
     <main><br><br><br><br><br><br><br><br>
         <div class="container">
             <div class="login-box"><br><br>
                 <h2>Insira sua nova senha</h2><br><br>
-                <form action="processar_login.php" method="post">
+                <form td:action="@{/ecotech/cliente/login}" method="post">
                     <div class="password-input">
                         <input type="password" name="senha" id="senha" placeholder="Senha" required>
                         <span class="toggle-password" onclick="togglePasswordVisibility()">
@@ -27,7 +27,7 @@
                         </span>
                     </div>
                     <br><br><br><br>
-                    <a href="Login.html" style="margin: 0 auto;
+                    <a th:href="@{/ecotech/cliente/login}" style="margin: 0 auto;
                     background-color: #161616; /* Cor de fundo do botão */
                     color: #fff;
                     left: 48%;
