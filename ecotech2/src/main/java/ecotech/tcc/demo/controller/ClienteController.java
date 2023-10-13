@@ -150,7 +150,7 @@ public class ClienteController {
 	}
 	@GetMapping("/carrinho")
 	public String Car() {
-		return "carrinho";
+		return "Carrinho";
 	}
 	@GetMapping("/visualizar")
 	public String Visu() {
@@ -171,6 +171,10 @@ public class ClienteController {
 	@GetMapping("/categoria")
 	public String Categ() {
 		return "categoria";
+	}
+	@GetMapping("/finalizar")
+	public String fim() {
+		return "finalizar";
 	}
 	
 	

@@ -942,7 +942,7 @@ aside .box footer {
           justify-content: space-between;
 }
 
-aside > button {
+aside > a {
   border-radius: 5px;
   border: 0;
   padding: 15px 0;
@@ -953,9 +953,11 @@ aside > button {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 16px;
+  text-align: center;
+  text-decoration: none;
 }
 
-aside > button:hover {
+aside > a:hover {
   background: #73b646;
 }
 /*# sourceMappingURL=styles.css.map */
