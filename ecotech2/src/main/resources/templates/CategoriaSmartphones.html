@@ -35,7 +35,7 @@
 </head>
 <body>
     <header>
-        <div class="header_green"> <a href="#">Seja bem vindo de volta <i>nome usuário</i></a> </div>
+        <div class="header_green"> <a th:href="@{/ecotech/cliente/index}">Home</a> </div>
         <div class="header_black">
             <img src="/img/echoTech2.png" id="logo">
             <form>
@@ -44,25 +44,27 @@
             </form>
 
             <div class="icons">
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="#"><i class="fa-solid fa-heart"></i></a>
+                <a href="/ecotech/cliente/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="/ecotech/cliente/favorito"><i class="fa-solid fa-heart"></i></a>
                 
                 <div class="dropdown">
                     <a  class="dropdown-button"><i class="fa-solid fa-bars"></i></a>
                     <div class="dropdown-content">
-                        <a href="CategoriaSmartphone.html">Smartphones</a>
-                        <a href="CategoriaNotebooks.html">Notebooks</a>
-                        <a href="CategoriaSmartwatches&Buds.html">Smartwatches e Buds</a>
-                        <a href="CategoriaTablets.html">Tablets</a>
-                        <a href="CategoriaAcessorios.html">Acessórios</a>
-                        <a href="CategoriaTv&Av.html">TV e AV</a>
-                        <a href="CategoriaEletrodomesticos.html">Eletrodomésticos</a>
-                        <a href="CategoriaMonitores.html">Monitores</a>
-                        <a href="CategoriaArCondicionado.html">Ar-condicionádos</a>
+                        <a href="/ecotech/cliente/categoria">Smartphones</a>
+                        <a href="/ecotech/cliente/categoria2">Notebooks</a>
+                        <a href="/ecotech/cliente/categoria">Smartwatches e Buds</a>
+                        <a href="/ecotech/cliente/categoria">Tablets</a>
+                        <a href="/ecotech/cliente/categoria">Acessórios</a>
+                        <a href="/ecotech/cliente/categoria">TV e AV</a>
+                        <a href="/ecotech/cliente/categoria">Eletrodomésticos</a>
+                        <a href="/ecotech/cliente/categoria">Monitores</a>
+                        <a href="/ecotech/cliente/categoria">Ar-condicionádos</a>
                     </div>
                 </div>
                 
             </div>
+            
+        </div>
             
         </div>
     </header>
@@ -70,24 +72,24 @@
         <br><h2>Categoria: Smartphones</h2><br><br><br><br>
         <div class="searchProduct-list">
             <div class="search_itenContent">
-                <img src="..\static\img\img3.jpg" alt="Produto 1" class="product-image">
+                <img src="\img\prod2.jpeg" alt="Produto 1" class="product-image">
                 <p>Produto 1</p>
-               <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>    
+               <a href="/ecotech/cliente/visualizar" class="view-button">Visualizar Produto</a>    
             </div><br>
             <div class="search_itenContent">
-                <img src="..\static\img\img3.jpg" alt="Produto 2" class="product-image">
+                <img src="\img\img3.jpg" alt="Produto 2" class="product-image">
                 <p>Produto 2</p>
-                <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>  
+                <a href="/ecotech/cliente/visualizar" class="view-button">Visualizar Produto</a>  
             </div><br>
             <div class="search_itenContent">
-                <img src="..\static\img\img3.jpg" alt="Produto 3" class="product-image">
+                <img src="\img\img3.jpg" alt="Produto 3" class="product-image">
                 <p>Produto 3</p>
-                <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>  
+                <a href="/ecotech/cliente/visualizar" class="view-button">Visualizar Produto</a>  
             </div><br>
             <div class="search_itenContent">
-                <img src="..\static\img\img3.jpg" alt="Produto 4" class="product-image">
+                <img src="\img\img3.jpg" alt="Produto 4" class="product-image">
                 <p>Produto 4</p>
-                <a href="VisualizarProduto.html" class="view-button">Visualizar Produto</a>  
+                <a href="/ecotech/cliente/visualizar" class="view-button">Visualizar Produto</a>  
             </div>
             <br><br><br><br>
         </div>
@@ -146,9 +148,10 @@
             <div class="footer-section">
                 <h3>Formas de Pagamento</h3>
                 <ul class="payment-icons">
-                    <img src="../static/img/mastercard.png" alt="Visa">
-                    <img src="../static/img/visa.png" alt="MasterCard">
-                    <img src="../static/img/pix.png" alt="MasterCard">
+                    <img src="/img/mastercard.png" alt="Visa">
+                    <img src="/img/visa.png" alt="MasterCard">
+                    <img src="/img/pix.png" alt="MasterCard">
+
                 </ul>
             </div>
         </div>

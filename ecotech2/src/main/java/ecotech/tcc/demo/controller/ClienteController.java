@@ -146,7 +146,7 @@ public class ClienteController {
 	
 	@GetMapping("/favorito")
 	public String Fav() {
-		return "ListaFavoritos";
+		return "Favorito";
 	}
 	@GetMapping("/carrinho")
 	public String Car() {
@@ -156,7 +156,7 @@ public class ClienteController {
 	public String Visu() {
 		return "VisualizarProduto";
 	}
-	@GetMapping("/busca")
+	@PostMapping("/busca")
 	public String Busca() {
 		return "busca";
 	}
@@ -170,11 +170,16 @@ public class ClienteController {
 	}
 	@GetMapping("/categoria")
 	public String Categ() {
-		return "categoria";
+		return "CategoriaSmartphones";
 	}
+	@GetMapping("/categoria2")
+	public String Categ2() {
+		return "CategoriaNotebooks";
+	}
+	
 	@GetMapping("/finalizar")
 	public String fim() {
-		return "finalizar";
+		return "pagamento";
 	}
 	
 	

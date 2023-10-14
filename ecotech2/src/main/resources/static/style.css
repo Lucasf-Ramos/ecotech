@@ -284,11 +284,11 @@ hr {
     border: solid  3px rgb(192, 192, 192);
     border-radius: 10px;
     padding: 1%;
-
+ 
     width: 15%;
     transition: width 0.5s, font-size 0.5s;
 }
-.inicio_itenContent img{background-color: #000; width: 100%; border-radius: 5px;}
+.inicio_itenContent img{background-color: #000; width: 100%; border-radius: 5px; width: 13vw; height: 13vw; object-fit:fill; text-align: center; margin: 0 auto;}
 .inicio_itenContent p{color:#82AE64; margin: 2%;}
 .inicio_itenContent h3{margin: 2%;}
 
@@ -431,7 +431,11 @@ hr {
   .slideshow-container img {
     width: 100%;
     height: 300px;
-    object-fit:cover; /* A imagem será redimensionada e cortada para preencher o contêiner */
+    object-fit:contain; /* A imagem será redimensionada e cortada para preencher o contêiner */
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    border: 0;
   }
   
   /* Hide the images by default */
@@ -961,3 +965,86 @@ aside > a:hover {
   background: #73b646;
 }
 /*# sourceMappingURL=styles.css.map */
+
+
+.circle-container {
+  width: 150px; /* Largura do container para ilustração */
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  background-color: #CACACA;
+  border-radius: 50%;
+  float: left; /* Faz com que o círculo flutue à esquerda */
+  margin-right: 10px; /* Espaço entre o círculo e a palavra */
+  margin-bottom: -23px; /* Ajuste para mover a palavra para cima */
+  color: white;
+  font-size: 22px;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 40px;
+  margin-left: 270px;
+  line-height: 1.5;
+ 
+}
+
+.entrega {
+  float: left; /* Faz com que a palavra flutue à esquerda */
+  margin-top: 0px;
+  margin-left: 310px;
+  
+
+}
+.arrow {
+  font-size: 24px;
+  position: relative; /* Define a posição relativa */
+  margin-right: 20px; /* Adiciona espaço à direita */
+  margin-top: -8px; /* Move para cima */
+}
+.pagamento {
+  margin-top: 30px; 
+  margin-left: 264px;
+  font-size: 15px;
+  font-weight: bold; }
+
+hr {
+  color: #333; /* Cor da linha */
+  background-color: #AEB1B2; /* Cor de fundo da linha (se houver espaçamento) */
+  width: 50%; /* Define a largura da linha */
+  height: 1px; /* Define a espessura da linha */
+  border: none; /* Remove a borda padrão */
+  margin-left: 19%;
+      
+  }
+
+.pag_img{
+   width: 30px;
+  height: 30px;
+  margin-left: 264px;
+
+  }
+
+.pix {
+  float: left; 
+  margin-top: -45px;
+  margin-left: 310px;
+  }
+  
+.debito {
+  float: left;
+  margin-top: -45px;
+  margin-left: 310px;
+      }
+
+.credito {
+  float: left; 
+  margin-top: -45px;
+  margin-left: 310px;
+          }
+
+.boleto {
+  float: left; 
+  margin-top: -45px;
+  margin-left: 310px;
+              }
