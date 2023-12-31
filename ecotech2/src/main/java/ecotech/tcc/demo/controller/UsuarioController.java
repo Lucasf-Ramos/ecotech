@@ -13,27 +13,27 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
-import ecotech.tcc.demo.model.Cliente;
-import ecotech.tcc.demo.repository.ClienteReopository;
+import ecotech.tcc.demo.model.Usuario;
+import ecotech.tcc.demo.repository.UsuarioReopository;
 
 @Controller
 @RequestMapping("/ecotech/cliente")
 
 //carregar o formulario de cadastro do cliente
-public class ClienteController {
+public class UsuarioController {
 	
 	@Autowired
-	private ClienteReopository clienteRepository;
+	private UsuarioReopository clienteRepository;
 	
 
-	private Cliente usuarioAtual; //o usuario que esta logado na conta atualmente
+	public static Usuario usuarioAtual; //o usuario que esta logado na conta atualmente
 	
 	
 	
 	
 	
 	@GetMapping("/perfil")
-	public String telaPerfil(Model model, Cliente cliente) {
+	public String telaPerfil(Model model, Usuario cliente) {
 		if(usuarioAtual != null) {
 			model.addAttribute("cliente", usuarioAtual); //puxa o id do usuario que esta logado na conta atualmente
 			return "TelaPerfil";
@@ -48,7 +48,7 @@ public class ClienteController {
 		return "EditarPerfil";
 	}
 	@PostMapping("/update")
-	public String atualizar(Cliente cliente, BindingResult result) {
+	public String atualizar(Usuario cliente, BindingResult result) {
 		
 		usuarioAtual.setNome(cliente.getNome());
 		usuarioAtual.setSobrenome(cliente.getSobrenome());
@@ -79,17 +79,17 @@ public class ClienteController {
 
 
 	@GetMapping("/login")
-	public String login(Cliente cliente, Model model) {
+	public String login(Usuario cliente, Model model) {
 		
 		model.addAttribute("cliente", cliente);
 		return "Login";
 	}
 		
 	@PostMapping("/login")
-	public String efetuarLogin(Cliente cliente, Model model) {
+	public String efetuarLogin(Usuario cliente, Model model) {
 	
 		String page = "redirect:/ecotech/cliente/login";
-		Cliente clientedb = clienteRepository.findByEmail(cliente.getEmail());
+		Usuario clientedb = clienteRepository.findByEmail(cliente.getEmail());
 		if(clientedb != null && cliente.getSenha().equals(clientedb.getSenha()) && clientedb.isCodStatusUsuario()) {
 			page = "redirect:/ecotech/cliente/perfil";
 			
@@ -103,7 +103,7 @@ public class ClienteController {
 	
 		
 	@GetMapping("/novo-cliente")
-	public String novocliente(Cliente cliente, Model model){
+	public String novocliente(Usuario cliente, Model model){
 		
 		
 		
@@ -115,16 +115,16 @@ public class ClienteController {
 	}
 	
 	@PostMapping("/add-cliente")
-	public String addCliente(Cliente cliente, Model model) {
+	public String addCliente(Usuario cliente, Model model) {
 		
 		cliente.setCodStatusUsuario(true);
-		Cliente clientedb = clienteRepository.findByEmail(cliente.getEmail());
+		Usuario clientedb = clienteRepository.findByEmail(cliente.getEmail());
 		if(clientedb != null && clientedb.isCodStatusUsuario())
 		{
 			return "redirect:/ecotech/cliente/novo-cliente";
 		}
 		else {
-			Cliente clienteDb = clienteRepository.save(cliente);
+			Usuario clienteDb = clienteRepository.save(cliente);
 			return "redirect:/ecotech/cliente/login";
 		}
 	
@@ -144,43 +144,6 @@ public class ClienteController {
 		return "redirect:/ecotech/cliente/index";
 	}
 	
-	@GetMapping("/favorito")
-	public String Fav() {
-		return "Favorito";
-	}
-	@GetMapping("/carrinho")
-	public String Car() {
-		return "Carrinho";
-	}
-	@GetMapping("/visualizar")
-	public String Visu() {
-		return "VisualizarProduto";
-	}
-	@PostMapping("/busca")
-	public String Busca() {
-		return "busca";
-	}
-	@GetMapping("/senha")
-	public String Senha() {
-		return "EsqueciSenha";
-	}
-	@GetMapping("/senha2")
-	public String Senha2() {
-		return "EsqueciSenha2";
-	}
-	@GetMapping("/categoria")
-	public String Categ() {
-		return "CategoriaSmartphones";
-	}
-	@GetMapping("/categoria2")
-	public String Categ2() {
-		return "CategoriaNotebooks";
-	}
-	
-	@GetMapping("/finalizar")
-	public String fim() {
-		return "pagamento";
-	}
 	
 	
 }

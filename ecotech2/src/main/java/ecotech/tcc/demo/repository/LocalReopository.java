@@ -7,7 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import ecotech.tcc.demo.model.Cliente;
+import ecotech.tcc.demo.model.Local;
+import ecotech.tcc.demo.model.Usuario;
 
 
 /**
@@ -16,10 +17,10 @@ import ecotech.tcc.demo.model.Cliente;
  */
 
 @Repository
-public interface ClienteReopository extends JpaRepository<Cliente, Long>{
+public interface LocalReopository extends JpaRepository<Local, Long>{
 	
 	@Query(value="SELECT * from cliente c where c.email=?", nativeQuery = true)
-	Cliente findByEmail (String email);
+	Usuario findByEmail (String email);
 	void deleteById(Long id);
 }
  

@@ -12,14 +12,34 @@
 </head>
 <body>
     <header>
-        <div class="header_green"> <a th:href="@{/ecotech/cliente/index}">Home</a> </div>
+        <div class="header_green"> <a href="/ecotech/cliente/index">Home</a> </div>
+        <div class="header_black">
+            <img src="/img/echoTech2.png" id="logo">
+           
+
+            <div class="icons">
+                
+                
+                <div class="dropdown">
+                    <a  class="dropdown-button"><i class="fa-solid fa-bars"></i></a>
+                    <div class="dropdown-content">
+                        <a href="/ecotech/cliente/perfil" style="font-size: 100%;">Login Funcionario</a>
+                        <a href="/ecotech/locais/todos-locais" style="font-size: 100%;">Editar Locais</a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+
 
     </header>
     <main>
       <br><br><br><br><br><br>
             <div class="login-box"><br><br>
                 <h2>Insira seu E-mail para se cadastrar ou entrar</h2><br><br>
-                <form th:action="@{/ecotech/cliente/login}" th:object="${cliente}" method="post" class="loginForm">
+                <form th:action="@{/ecotech/cliente/login}" th:object="${usuario}" method="post" class="loginForm">
                     <h4>Insira seu E-mail</h4>
                     <input type="email" name="email" id="email" placeholder="E-mail" required th:field="*{email}">
                     <br><h4>Insira sua senha</h4>

@@ -15,27 +15,17 @@
         <div class="header_green"> <a href="/ecotech/cliente/perfil">Perfil</a> </div>
         <div class="header_black">
             <img src="/img/echoTech2.png" id="logo">
-            <form th:action="@{/ecotech/cliente/busca}" method="post">
-                <input type="search" id="pesquisa" placeholder="Pesquise aqui">
-                <input type="submit" id="btnPesquisa" value="pesquisar">
-            </form>
+           
 
             <div class="icons">
-                <a href="/ecotech/cliente/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="/ecotech/cliente/favorito"><i class="fa-solid fa-heart"></i></a>
+                
                 
                 <div class="dropdown">
                     <a  class="dropdown-button"><i class="fa-solid fa-bars"></i></a>
                     <div class="dropdown-content">
-                        <a href="/ecotech/cliente/categoria">Smartphones</a>
-                        <a href="/ecotech/cliente/categoria">Notebooks</a>
-                        <a href="/ecotech/cliente/categoria">Smartwatches e Buds</a>
-                        <a href="/ecotech/cliente/categoria">Tablets</a>
-                        <a href="/ecotech/cliente/categoria">Acessórios</a>
-                        <a href="/ecotech/cliente/categoria">TV e AV</a>
-                        <a href="/ecotech/cliente/categoria">Eletrodomésticos</a>
-                        <a href="/ecotech/cliente/categoria">Monitores</a>
-                        <a href="/ecotech/cliente/categoria">Ar-condicionádos</a>
+                        <a href="/ecotech/cliente/perfil" style="font-size: 100%;">Login Funcionario</a>
+                        <a href="/ecotech/locais/todos-locais" style="font-size: 100%;">Editar Locais</a>
+                        
                     </div>
                 </div>
                 
@@ -81,130 +71,10 @@
             </div>
             <br>
             <br>
+            <br>
+            <br>
 
-            <h2>Populares</h2>
-            <div class="inicio_fileira">
-
-                <div class="inicio_itenContent">
-                    <img src="/img/prod2.jpeg" alt="">
-                    <h3>FairPhone</h3>
-                    <p>R$1000.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod3.jpeg" alt="">
-                    <h3>Carregador solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod4.jpeg" alt="">
-                    <h3>Mini carregador solar</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$50.00</span>R$40.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod5.jpeg" alt="">
-                    <h3>Controle com bateria solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-              
-                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>
-
-            <h2>ofertas</h2>
-            <div class="inicio_fileira">
-
-                <div class="inicio_itenContent">
-                    <img src="/img/prod9.jpeg" alt="">
-                    <h3>PowerBank</h3>
-                    <p><span style="text-decoration:line-through; font-size: 80%;">R$100.00</span> R$90.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod8.jpeg" alt="">
-                    <h3>eco headset</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$100.00</span> R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod4.jpeg" alt="">
-                    <h3>Mini carregador solar</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$50.00</span>R$40.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod5.jpeg" alt="">
-                    <h3>Controle com bateria solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-              
-                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>
-
-            <h2>Novidades</h2>
-            <div class="inicio_fileira">
-
-                <div class="inicio_itenContent">
-                    <img src="/img/prod2.jpeg" alt="">
-                    <h3>FairPhone</h3>
-                    <p>R$1000.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod3.jpeg" alt="">
-                    <h3>Carregador solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod4.jpeg" alt="">
-                    <h3>Mini carregador solar</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$50.00</span>R$40.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod5.jpeg" alt="">
-                    <h3>Controle com bateria solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-              
-                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>
-
+           
     </main>
     <footer>
         <div class="footer-content">
