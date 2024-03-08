@@ -74,8 +74,14 @@ public class UsuarioController {
 	public String index() {
 		return "index";
 	}
-	
-	
+	@GetMapping("/header")
+	public String header() {
+		return "header";
+	}
+	@GetMapping("/footer")
+	public String footer() {
+		return "footer";
+	}
 
 
 	@GetMapping("/login")
