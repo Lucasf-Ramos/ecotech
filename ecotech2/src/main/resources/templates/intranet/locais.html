@@ -8,16 +8,20 @@
     <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
     <script src="/javascript.js"></script>
     <link rel="shortcut icon" href="/img/icone.ico">
-    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  
+    <title>Perfilr</title>
 </head>
 <body>
-    <header class="black">
+   <header class="black">
         <!-- Logo -->
         <img src="/img/logo.png" alt="Logo" class="logo">
         <!-- Menu -->
         <nav>
             <a href="/ecotech/cliente/index">Home</a>
-            
+            <a href="/ecotech/cliente/perfil">Tela Perfil</a>
+               <a href="/ecotech/locais/todos-locais">Centros de coleta</a>
         </nav>
        <br>       <br>
 
@@ -25,40 +29,49 @@
        
     </header>
 
-
     <main>
-      <br><br><br><br><br><br>
-            <div class="login-box"><br><br>
-                <h2>Insira seu E-mail para se cadastrar ou entrar</h2><br><br>
-                <form th:action="@{/ecotech/cliente/login}" th:object="${usuario}" method="post" class="loginForm">
-                    <h4>Insira seu E-mail</h4>
-                    <input type="email" name="email" id="email" placeholder="E-mail" required th:field="*{email}">
-                    <br><h4>Insira sua senha</h4>
-                    <div class="password-input">
-                        <input type="password" name="senha" id="senha" placeholder="Senha" required th:field="*{senha}">
-                        
-                        
-                        <a href="/ecotech/cliente/novo-cliente" class="esqueci-senha"><br>Criar Conta</a>
-                         <a href="/ecotech/cliente/senha" class="esqueci-senha"><br>Esqueci minha senha</a>
-                    </div>
-                    
-                    <br><br><br><br>
-                  
-                         
-                        <input type="submit" value="continuar"  style="margin: 0 auto;
-                        background-color: #161616; /* Cor de fundo do botão */
-                        color: #fff;
-                        left: 48%;
-                        border: none;
-                        padding: 15px 40px;
-                        border-radius: 5px;
-                        cursor: pointer;
-                        margin: 0 auto; text-decoration: none" >
-                </form><br><br><br>
-            </div>
-    </main>
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br>
         
+          <a th:href="@{/ecotech/locais/novo-local}" class="btn btn-primary m-2">
+             	<i class="fas fa-cart-plus ml-2"></i>
+             	Novo Produto
+            </a>
+        
+            <div>
+                <h2 class="my-5">Locais</h2>
+                <table class="table table-striped table-responsive-md">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Endereço</th>
+                            <th>Email</th>
+                            <th>CNPJ</th>
+                            <th>Telefone</th>
+                            <th>Status</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="local : ${locais}">
+                            <td th:text="${local.id}"></td>
+                            <td th:text="${local.nome}"></td>
+                            <td th:text="${local.endereco}"></td>
+                            <td th:text="${local.email}"></td>
+                            <td th:text="${local.cnpj}"></td>
+                            <td th:text="${local.telefone}"></td>
+                            <td th:text="${local.codStatus ? 'Ativo' : 'Inativo'}"></td>
+                            <td>
+                                <a th:href="@{/ecotech/locais/editar-local/{id}(id=${local.id})}" class="btn btn-primary">
+                                    <i class="fas fa-edit ml-2"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+        </div> 
+    </main>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
@@ -92,10 +105,11 @@
             </div>
             <div class="footer-section">
                 <h3>Formas de Pagamento</h3>
-                <ul class="payment-icons">
+              <ul class="payment-icons">
                     <img src="/img/mastercard.png" alt="Visa">
                     <img src="/img/visa.png" alt="MasterCard">
                     <img src="/img/pix.png" alt="MasterCard">
+                </ul>
                 </ul>
             </div>
         </div>

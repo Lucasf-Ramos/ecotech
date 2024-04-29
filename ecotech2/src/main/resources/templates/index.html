@@ -1,263 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
     <script src="/javascript.js"></script>
     <link rel="shortcut icon" href="/img/icone.ico">
-    <title>Perfilr</title>
+    <title>Inicio</title>
+
+  
 </head>
-<body onload="plusSlides(0)">
-    <header>
-        <div class="header_green"> <a href="/ecotech/cliente/perfil">Perfil</a> </div>
-        <div class="header_black">
-            <img src="/img/echoTech2.png" id="logo">
-            <form th:action="@{/ecotech/cliente/busca}" method="post">
-                <input type="search" id="pesquisa" placeholder="Pesquise aqui">
-                <input type="submit" id="btnPesquisa" value="pesquisar">
-            </form>
-
-            <div class="icons">
-                <a href="/ecotech/cliente/carrinho"><i class="fa-solid fa-cart-shopping"></i></a>
-                <a href="/ecotech/cliente/favorito"><i class="fa-solid fa-heart"></i></a>
-                
-                <div class="dropdown">
-                    <a  class="dropdown-button"><i class="fa-solid fa-bars"></i></a>
-                    <div class="dropdown-content">
-                        <a href="/ecotech/cliente/categoria">Smartphones</a>
-                        <a href="/ecotech/cliente/categoria">Notebooks</a>
-                        <a href="/ecotech/cliente/categoria">Smartwatches e Buds</a>
-                        <a href="/ecotech/cliente/categoria">Tablets</a>
-                        <a href="/ecotech/cliente/categoria">Acessórios</a>
-                        <a href="/ecotech/cliente/categoria">TV e AV</a>
-                        <a href="/ecotech/cliente/categoria">Eletrodomésticos</a>
-                        <a href="/ecotech/cliente/categoria">Monitores</a>
-                        <a href="/ecotech/cliente/categoria">Ar-condicionádos</a>
-                    </div>
-                </div>
-                
-            </div>
-            
-        </div>
+<body onload="showSlides(0)">
+   <header class="black">
+        <!-- Logo -->
+        <img src="/img/logo.png" alt="Logo" class="logo">
+        <!-- Menu -->
+        <nav>
+            <a href="recursos.html">Recursos</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="centraldeajuda.html">Central de Ajuda</a>
+            <a href="baixar.html">Baixar</a>
+        </nav>
+       <br>       <br>
 
 
-    </header>
-    <main>
        
-            <!-- Slideshow -->
-            <div class="slideshow-container" >
+    </header>
+  <div class="div-container">
+    <div class="text-container"><br>
+      <p class="titulo">Bem-vindo ao EcoTech:</p>
+      <p class="subtitulo">Seu guia inteligente para um estilo <br> de vida sustentável</p>
+      <p class="texto1">Mais que um aplicativo, uma comunidade comprometida <br> com a sustentabilidade. 
+        <br> Facilitamos a busca por pontos de coleta, promovendo <br> práticas ecológicas, incentivando mudanças positivas.</p>
+    </div>
+    <img src="/img/logoeco.png" alt="Logo Eco" class="logo-eco">
+  </div>
+  
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 
+ <div class="slide-navigation">
+			    <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+			    
+			  </div>
+			  <div class="slideshow-container">
+			    <div class="mySlides fade">
+			      <img src="/img/imagem1.png" alt="Imagem 1">
+			      <div class="slide-text" style="font-size: 150%;">Localização simples e rápida </div>
+			      <div class="slide-text2" style="top:-15%">Encontre pontos de coleta próximos em questão de segundos</div>
+			    </div>
+			  
+			    <div class="mySlides fade">
+			      <img src="/img/imagem2.png" alt="Imagem 2">
+			      <div class="slide-text" style="font-size: 150%;">Detalhes abrangentes </div>
+			      <div class="slide-text2" style="top:-15%"> Informações detalhadas sobre cada ponto de coleta </div>
+			    </div>
+			  
+			    <div class="mySlides fade">
+			      <img src="/img/imagem3.jpg" alt="Imagem 3">
+			      <div class="slide-text" style="font-size: 150%;">Descubra o caminho certo </div>
+			      <div class="slide-text2" style="top:-15%">Identifique o grupo de reciclagem para seus resíduos </div>
+			    </div>
+			  </div>
+			  
+			  <br><br><br><br>
+			  <div style="text-align:center">
+			    <span class="dot" onclick="currentSlide(1)"></span>
+			    <span class="dot" onclick="currentSlide(2)"></span>
+			    <span class="dot" onclick="currentSlide(3)"></span>
+			  </div>
+			  <div class="next" onclick="plusSlides(1)">&#10095;</div> 
+			  </div>
+			  </div>
+  
 
-                <!-- Full-width images with number and caption text -->
-                <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="/img/banner1.jpeg" >
-                
-                </div>
-            
-                <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="/img/banner2.jpeg">
-                
-                </div>
-            
-                <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="/img/banner3.jpeg">
-               
-                </div>
-            
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <!-- circulos  -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-            <br>
-            <br>
+<div id="bottomInf">
+	  <img src="/img/celular1.png"  class="imagem2">
+ <div class="titulo2">
+	 
+    <h2>Faça Parte da Mudança - Baixe Agora</h2>
+    <h5 style="color:#303030";>Transforme suas escolhas diárias em ações positivas para o planeta. 
+      <br> Junte-se à comunidade EcoTech - Baixe agora e embarque nesta <br> jornada rumo a um futuro mais sustentável! 🌳🌏</h5>
+  </div>
+   
+   <?xml version="1.0" standalone="no"?>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#82ae64" fill-opacity="1" d="M0,192L60,186.7C120,181,240,171,360,192C480,213,600,267,720,240C840,213,960,107,1080,58.7C1200,11,1320,21,1380,26.7L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+ 
 
-            <h2>Populares</h2>
-            <div class="inicio_fileira">
+  </svg>  
+  
+</div>
+ <footer>
+    <!-- Seção de suporte -->
+    <div class="footer-section">
+        <h3>Suporte</h3>
+        <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+        </ul>
+    </div>
 
-                <div class="inicio_itenContent">
-                    <img src="/img/prod2.jpeg" alt="">
-                    <h3>FairPhone</h3>
-                    <p>R$1000.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod3.jpeg" alt="">
-                    <h3>Carregador solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod4.jpeg" alt="">
-                    <h3>Mini carregador solar</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$50.00</span>R$40.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod5.jpeg" alt="">
-                    <h3>Controle com bateria solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-              
-                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>
+    <!-- Seção de redes sociais -->
+    <div class="footer-section">
+        <h3>Redes Sociais</h3>
+        <ul class="social-icons">
+            <li><a href="#"><i class="fa fa-whatsapp" style="font-size:24px"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" style="font-size:24px"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
+        </ul>
+    </div>
 
-            <h2>ofertas</h2>
-            <div class="inicio_fileira">
+    <!-- Seção de intranet -->
+    <div class="footer-section">
+        <h3>Intranet</h3>
+        <ul>
+            <li><a href="/ecotech/locais/todos-locais">Acesso funcionário</a></li>
+        </ul>
+    </div>
 
-                <div class="inicio_itenContent">
-                    <img src="/img/prod9.jpeg" alt="">
-                    <h3>PowerBank</h3>
-                    <p><span style="text-decoration:line-through; font-size: 80%;">R$100.00</span> R$90.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod8.jpeg" alt="">
-                    <h3>eco headset</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$100.00</span> R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod4.jpeg" alt="">
-                    <h3>Mini carregador solar</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$50.00</span>R$40.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod5.jpeg" alt="">
-                    <h3>Controle com bateria solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-              
-                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>
+    <!-- Linha divisória -->
+    <hr>
 
-            <h2>Novidades</h2>
-            <div class="inicio_fileira">
-
-                <div class="inicio_itenContent">
-                    <img src="/img/prod2.jpeg" alt="">
-                    <h3>FairPhone</h3>
-                    <p>R$1000.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod3.jpeg" alt="">
-                    <h3>Carregador solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod4.jpeg" alt="">
-                    <h3>Mini carregador solar</h3>
-                    <p><p><span style="text-decoration:line-through; font-size: 80%;">R$50.00</span>R$40.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-                <div class="inicio_itenContent">
-                    <img src="/img/prod5.jpeg" alt="">
-                    <h3>Controle com bateria solar</h3>
-                    <p>R$50.00</p>
-                    <br>
-                    <a href="/ecotech/cliente/visualizar" class="comprar">Comprar Agora!</a>
-                  
-                    <br>
-                </div>
-              
-                <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
-            </div>
-
-    </main>
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Produtos</h3>
-                <ul>
-                    <li><a href="#">Smartphones</a></li>
-                    <li><a href="#">Notebooks</a></li>
-                    <li><a href="#">Smartwatches e Buds</a></li>
-                    <li><a href="#">Tablets</a></li>
-                    <li><a href="#">Acessórios</a></li>
-                    <li><a href="#">TV e AV</a></li>
-                    <li><a href="#">Eletrodomésticos</a></li>
-                    <li><a href="#">Monitores</a></li>
-                    <li><a href="#">Ar-condicionados</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Suporte</h3>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Fale Conosco</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Redes Sociais</h3>
-                <ul class="social-icons">
-                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Formas de Pagamento</h3>
-                <ul class="payment-icons">
-                    <img src="/img/mastercard.png" alt="Visa">
-                    <img src="/img/visa.png" alt="MasterCard">
-                    <img src="/img/pix.png" alt="MasterCard">
-                </ul>
-                </ul>
-            </div>
+    <!-- Seção inferior do rodapé -->
+    <div class="footer-bottom">
+        <div class="footer-left">
+            <p style="font-size: larger;">Brasil</p>
         </div>
-        <hr>
-        <div class="footer-bottom">
-            <div class="footer-left">
-                <p style="font-size: larger;">Brasil</p>
-            </div>
-            <div class="footer-links">
-                <a href="#">Política de Privacidade</a>
-                <a href="#">Termos de Uso</a>
-            </div>               
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
         </div>
-        </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

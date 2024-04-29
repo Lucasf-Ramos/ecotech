@@ -36,15 +36,16 @@
                     <br><h4>Insira sua senha</h4>
                     <div class="password-input">
                         <input type="password" name="senha" id="senha" placeholder="Senha" required th:field="*{senha}">
-                        
-                        
+                        <span class="toggle-password" onclick="togglePasswordVisibility()">
+                            <i id="toggleIcon" class="fas fa-eye"></i>
+                        </span>
                         <a href="/ecotech/cliente/novo-cliente" class="esqueci-senha"><br>Criar Conta</a>
                          <a href="/ecotech/cliente/senha" class="esqueci-senha"><br>Esqueci minha senha</a>
                     </div>
                     
                     <br><br><br><br>
                   
-                         
+                        
                         <input type="submit" value="continuar"  style="margin: 0 auto;
                         background-color: #161616; /* Cor de fundo do botão */
                         color: #fff;
@@ -58,7 +59,29 @@
             </div>
     </main>
         <br><br><br><br><br><br><br><br><br><br><br>
-        
+        <script>
+            function togglePasswordVisibility() {
+                const senhaInput = document.getElementById('senha');
+                
+                if (senhaInput.type === 'password') {
+                    senhaInput.type = 'text';
+                } else {
+                    senhaInput.type = 'password';
+                }
+            }
+                function togglePasswordVisibility() {
+                    const senhaInput = document.getElementById('senha');
+                    const toggleButton = document.querySelector('.toggle-password');
+                    
+                    if (senhaInput.type === 'password') {
+                        senhaInput.type = 'text';
+                        toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
+                    } else {
+                        senhaInput.type = 'password';
+                        toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
+                    }
+                }
+            </script>
     <footer>
         <div class="footer-content">
             <div class="footer-section">
