@@ -1,6 +1,8 @@
 package ecotech.tcc.demo.controller;
 
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Controller;
@@ -44,11 +46,7 @@ public class UsuarioController {
 	public String atualizar(Usuario cliente, BindingResult result) {
 		
 		usuarioAtual.setNome(cliente.getNome());
-		usuarioAtual.setSobrenome(cliente.getSobrenome());
-		usuarioAtual.setCpf(cliente.getCpf());
-		usuarioAtual.setTelefone(cliente.getTelefone());
 		usuarioAtual.setEmail(cliente.getEmail());
-		usuarioAtual.setDataNascimento(cliente.getDataNascimento());
 		usuarioAtual.setSenha(cliente.getSenha());
 		
 		clienteRepository.save(usuarioAtual);
@@ -76,7 +74,7 @@ public class UsuarioController {
 	
 		String page = "redirect:/ecotech/cliente/login";
 		Usuario clientedb = clienteRepository.findByEmail(cliente.getEmail());
-		if(clientedb != null && cliente.getSenha().equals(clientedb.getSenha()) && clientedb.isCodStatusUsuario()) {
+		if(clientedb != null && cliente.getSenha().equals(clientedb.getSenha()) && clientedb.isStatusUsuario()) {
 			page = "redirect:/ecotech/cliente/perfil";
 			
 			usuarioAtual = clienteRepository.findByEmail(cliente.getEmail());
@@ -103,13 +101,15 @@ public class UsuarioController {
 	@PostMapping("/add-cliente")
 	public String addCliente(Usuario cliente, Model model) {
 		
-		cliente.setCodStatusUsuario(true);
+		cliente.setStatusUsuario(true);
 		Usuario clientedb = clienteRepository.findByEmail(cliente.getEmail());
-		if(clientedb != null && clientedb.isCodStatusUsuario())
+		if(clientedb != null && clientedb.isStatusUsuario())
 		{
 			return "redirect:/ecotech/cliente/novo-cliente";
 		}
 		else {
+			
+			cliente.setDataCadastro(LocalDate.now());
 			Usuario clienteDb = clienteRepository.save(cliente);
 			return "redirect:/ecotech/cliente/login";
 		}
@@ -122,7 +122,7 @@ public class UsuarioController {
 	
 	@GetMapping("/excluir")
 	public String excluir() {
-		usuarioAtual.setCodStatusUsuario(false);
+		usuarioAtual.setStatusUsuario(false);
 		usuarioAtual.setEmail(null); 
 		clienteRepository.save(usuarioAtual);
 		usuarioAtual = null;

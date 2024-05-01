@@ -41,10 +41,10 @@
             <div id="profile_infsBox"> 
                 <h1>Seu perfil</h1>
                 <div class="profile_infs" th:each="c : ${cliente}">
-                    <p>nome: <span th:text="${c.nome}"></span> <span th:text="${c.sobrenome}"></span></p>
-                    <p>Cpf: <span th:text="${c.cpf}"></span></p> 
-                    <p>telefone: <span th:text="${c.telefone}"></span> </p>
+                    <p>nome: <span th:text="${c.nome}"></span></span></p>
 					<p>email: <span th:text="${c.email}"></span></p>
+					<p>Data de Registro: <span th:text="${c.dataCadastro}"></span></p>
+					
 					
                    
                 </div>

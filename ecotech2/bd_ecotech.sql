@@ -19,31 +19,31 @@ CREATE TABLE Usuario
    nivelAcesso   VARCHAR(10)    NULL, -- ADMIN ou USER
    foto			 VARBINARY(MAX) NULL,
    dataCadastro	 SMALLDATETIME	NOT NULL,
-   statusUsuario VARCHAR(20)    NOT NULL, -- ATIVO ou INATIVO ou TROCAR_SENHA
+   statusUsuario bit   NOT NULL, -- ATIVO ou INATIVO ou TROCAR_SENHA
 
    PRIMARY KEY (id)
 )
 GO
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Ana Silva', 'ana.silva@example.com', 'senhaAna1', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Ana Silva', 'ana.silva@example.com', 'senhaAna1', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Pedro Santos', 'pedro.santos@example.com', 'senhaPedro2', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Pedro Santos', 'pedro.santos@example.com', 'senhaPedro2', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Mariana Oliveira', 'mariana.oliveira@example.com', 'senhaMariana3', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Mariana Oliveira', 'mariana.oliveira@example.com', 'senhaMariana3', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Lucas Souza', 'lucas.souza@example.com', 'senhaLucas4', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Lucas Souza', 'lucas.souza@example.com', 'senhaLucas4', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Carolina Costa', 'carolina.costa@example.com', 'senhaCarolina5', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Carolina Costa', 'carolina.costa@example.com', 'senhaCarolina5', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Rafael Pereira', 'rafael.pereira@example.com', 'senhaRafael6', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Rafael Pereira', 'rafael.pereira@example.com', 'senhaRafael6', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Gustavo Lima', 'gustavo.lima@example.com', 'senhaGustavo8', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Gustavo Lima', 'gustavo.lima@example.com', 'senhaGustavo8', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Fernanda Almeida', 'fernanda.almeida@example.com', 'senhaFernanda7', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Fernanda Almeida', 'fernanda.almeida@example.com', 'senhaFernanda7', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Isabela Martins', 'isabela.martins@example.com', 'senhaIsabela9', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Isabela Martins', 'isabela.martins@example.com', 'senhaIsabela9', 'ADMIN', NULL, GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, foto, dataCadastro, statusUsuario)
-VALUES ('Henrique Barbosa', 'henrique.barbosa@example.com', 'senhaHenrique10', 'ADMIN', NULL, GETDATE(), 'ATIVO')
+VALUES ('Henrique Barbosa', 'henrique.barbosa@example.com', 'senhaHenrique10', 'ADMIN', NULL, GETDATE(), 1)
 GO
 
 CREATE TABLE GrupoResiduo
@@ -87,7 +87,9 @@ CREATE TABLE EcoPonto
 (
 	id				    INT		    IDENTITY,
 	nome			    VARCHAR(100)	NOT NULL,
-	descricao		    VARCHAR(400)	NOT NULL,
+	email			    VARCHAR(100)    NULL,
+	cnpj			    VARCHAR(100)	 NULL,
+	descricao		    VARCHAR(400)	  NULL,
 	website			    VARCHAR(200)	NULL,
 	logradouro 	        VARCHAR(100)    NOT NULL, -- nome da rua, avenida e etc
 	cep				    CHAR(8)         NOT NULL,
@@ -99,7 +101,8 @@ CREATE TABLE EcoPonto
 	pontoRef 			VARCHAR(200)	NULL,
     telefone			VARCHAR(20)		NULL,
 	horarioFunc			VARCHAR(200)	NULL,
-	statusPonto			VARCHAR(20)		NOT NULL, -- ATIVO ou INATIVO 
+	statusPonto			bit		NOT NULL, -- ATIVO ou INATIVO 
+
     gruporesiduo_id		INT				NOT NULL,
     regiao_id			INT				NOT NULL,
 
@@ -112,25 +115,25 @@ CREATE TABLE EcoPonto
 )
 GO
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id) 
-VALUES ('Ecoponto Alphaville', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Árvores, 123', '06410000', '123', 'Alphaville', 'Barueri', 'SP', NULL, 'Próximo ao shopping', '(11) 1234-5678', 'Seg-Sex: 08:00-18:00', 'ATIVO', 1, 1)
+VALUES ('Ecoponto Alphaville', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Árvores, 123', '06410000', '123', 'Alphaville', 'Barueri', 'SP', NULL, 'Próximo ao shopping', '(11) 1234-5678', 'Seg-Sex: 08:00-18:00', 1, 1, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Vila Cretti', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida dos Rios, 456', '06345000', '456', 'Vila Cretti', 'Carapicuíba', 'SP', NULL, 'Próximo ao centro comercial', '(11) 2345-6789', 'Seg-Sex: 09:00-19:00', 'ATIVO', 2, 1)
+VALUES ('Ecoponto Vila Cretti', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida dos Rios, 456', '06345000', '456', 'Vila Cretti', 'Carapicuíba', 'SP', NULL, 'Próximo ao centro comercial', '(11) 2345-6789', 'Seg-Sex: 09:00-19:00', 1, 2, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
 VALUES ('Ecoponto Amador Bueno', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Flores, 789', '06677000', '789', 'Amador Bueno', 'Itapevi', 'SP', NULL, 'Próximo à estação de trem', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 'ATIVO', 3, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Jardim Alvorada', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida das Aves, 1011', '06600000', '1011', 'Jardim Alvorada', 'Jandira', 'SP', NULL, 'Próximo ao centro de saúde', '(11) 4567-8901', 'Seg-Sex: 10:00-20:00', 'ATIVO', 4, 1)
+VALUES ('Ecoponto Jardim Alvorada', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida das Aves, 1011', '06600000', '1011', 'Jardim Alvorada', 'Jandira', 'SP', NULL, 'Próximo ao centro de saúde', '(11) 4567-8901', 'Seg-Sex: 10:00-20:00', 1, 4, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Jardim das Flores', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua dos Lagos, 1213', '06000000', '1213', 'Jardim das Flores', 'Osasco', 'SP', NULL, 'Próximo ao parque', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 'ATIVO', 5, 1)
+VALUES ('Ecoponto Jardim das Flores', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua dos Lagos, 1213', '06000000', '1213', 'Jardim das Flores', 'Osasco', 'SP', NULL, 'Próximo ao parque', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 1, 5, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Centro', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Pedras, 1415', '06550000', '1415', 'Centro', 'Pirapora do Bom Jesus', 'SP', NULL, 'Próximo à prefeitura', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 'ATIVO', 6, 1)
+VALUES ('Ecoponto Centro', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Pedras, 1415', '06550000', '1415', 'Centro', 'Pirapora do Bom Jesus', 'SP', NULL, 'Próximo à prefeitura', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 1, 6, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Tamboré', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida das Águas, 1617', '06500000', '1617', 'Tamboré', 'Santana de Parnaíba', 'SP', NULL, 'Próximo ao colégio', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 'ATIVO', 1, 1)
+VALUES ('Ecoponto Tamboré', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida das Águas, 1617', '06500000', '1617', 'Tamboré', 'Santana de Parnaíba', 'SP', NULL, 'Próximo ao colégio', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 1, 1, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Aldeia da Serra', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua dos Pinheiros, 1819', '06420000', '1819', 'Aldeia da Serra', 'Barueri', 'SP', NULL, 'Próximo ao campo de futebol', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 'ATIVO', 2, 1)
+VALUES ('Ecoponto Aldeia da Serra', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua dos Pinheiros, 1819', '06420000', '1819', 'Aldeia da Serra', 'Barueri', 'SP', NULL, 'Próximo ao campo de futebol', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 1, 2, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Jardim Maria Beatriz', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida das Rosas, 1920', '06360000', '1920', 'Jardim Maria Beatriz', 'Carapicuíba', 'SP', NULL, 'Próximo ao parque de diversões', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 'ATIVO', 3, 1)
+VALUES ('Ecoponto Jardim Maria Beatriz', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida das Rosas, 1920', '06360000', '1920', 'Jardim Maria Beatriz', 'Carapicuíba', 'SP', NULL, 'Próximo ao parque de diversões', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 1, 3, 1)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id)
-VALUES ('Ecoponto Vila Nova', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua dos Girassóis, 2021', '06688000', '2021', 'Vila Nova', 'Itapevi', 'SP', NULL, 'Próximo à escola municipal', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 'ATIVO', 4, 1)
+VALUES ('Ecoponto Vila Nova', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua dos Girassóis, 2021', '06688000', '2021', 'Vila Nova', 'Itapevi', 'SP', NULL, 'Próximo à escola municipal', '(11) 3456-7890', 'Seg-Sex: 07:00-17:00', 1, 4, 1)
 GO
 
 CREATE TABLE Ocorrencia

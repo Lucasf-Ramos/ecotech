@@ -19,8 +19,6 @@ import ecotech.tcc.demo.model.Usuario;
 @Repository
 public interface LocalReopository extends JpaRepository<Local, Long>{
 	
-	@Query(value="SELECT * from cliente c where c.email=?", nativeQuery = true)
-	Usuario findByEmail (String email);
-	void deleteById(Long id);
+	
 }
  

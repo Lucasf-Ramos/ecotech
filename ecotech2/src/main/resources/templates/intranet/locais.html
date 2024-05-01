@@ -47,7 +47,6 @@
                             <th>Endereço</th>
                             <th>Email</th>
                             <th>CNPJ</th>
-                            <th>Telefone</th>
                             <th>Status</th>
                             <th>Editar</th>
                         </tr>
@@ -56,11 +55,11 @@
                         <tr th:each="local : ${locais}">
                             <td th:text="${local.id}"></td>
                             <td th:text="${local.nome}"></td>
-                            <td th:text="${local.endereco}"></td>
+                            <td th:text="${local.logradouro}"></td>
                             <td th:text="${local.email}"></td>
                             <td th:text="${local.cnpj}"></td>
-                            <td th:text="${local.telefone}"></td>
-                            <td th:text="${local.codStatus ? 'Ativo' : 'Inativo'}"></td>
+               
+                            <td th:text="${local.statusPonto ? 'Ativo' : 'Inativo'}"></td>
                             <td>
                                 <a th:href="@{/ecotech/locais/editar-local/{id}(id=${local.id})}" class="btn btn-primary">
                                     <i class="fas fa-edit ml-2"></i>

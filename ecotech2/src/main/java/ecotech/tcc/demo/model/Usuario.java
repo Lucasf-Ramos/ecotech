@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "cliente")
+@Table(name = "Usuario")
 public class Usuario {
 	
 	
@@ -18,78 +18,72 @@ public class Usuario {
 	private Long id;
 	
 	private String nome;
-	private String sobrenome;
-
-	private LocalDate dataNascimento;
-	
-
 	private String email;
-	private String cpf;
-	private String telefone;
-	private boolean codStatusUsuario;
-	
 	private String senha;
-	private boolean manager;
+	private String nivelAcesso;
+	//variavel pra foto aqui
+	private LocalDate dataCadastro;
+	private boolean statusUsuario;
+
 	
-	public String getSenha() {
-		return senha;
-	}
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
+	
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getCpf() {
-		return cpf;
+
+	public String getSenha() {
+		return senha;
 	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
-	public String getTelefone() {
-		return telefone;
+
+	public String getNivelAcesso() {
+		return nivelAcesso;
 	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+
+	public void setNivelAcesso(String nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
 	}
-	public boolean isCodStatusUsuario() {
-		return codStatusUsuario;
+
+	public LocalDate getDataCadastro() {
+		return dataCadastro;
 	}
-	public void setCodStatusUsuario(boolean codStatusUsuario) {
-		this.codStatusUsuario = codStatusUsuario;
+
+	public void setDataCadastro(LocalDate dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
-	public String getSobrenome() {
-		return sobrenome;
+
+	public boolean isStatusUsuario() {
+		return statusUsuario;
 	}
-	public void setSobrenome(String sobrenome) {
-		this.sobrenome = sobrenome;
+
+	public void setStatusUsuario(boolean statusUsuario) {
+		this.statusUsuario = statusUsuario;
 	}
-	public LocalDate getDataNascimento() {
-		return dataNascimento;
-	}
-	public void setDataNascimento(LocalDate dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-	public boolean isManager() {
-		return manager;
-	}
-	public void setManager(boolean manager) {
-		this.manager = manager;
-	}
+	
+	
+	
 	
 }
