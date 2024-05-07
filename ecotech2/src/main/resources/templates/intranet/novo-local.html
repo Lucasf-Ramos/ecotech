@@ -35,7 +35,8 @@
 
 	<main>
 		<br><br>
-		<form action="#" th:action="@{/ecotech/locais/add-local}" th:object="${local}" method="post">
+		<form action="#" th:action="@{/ecotech/locais/add-local}" style="padding: 30%; padding-top:0%; padding-right: 30%" th:object="${local}" method="post">
+		
 			<div class="row">
 				<div class="form-group col-md-12">
 					<label for="nome" class="col-form-label">Nome:</label>
@@ -50,7 +51,7 @@
 				</div>
 
 				<div class="form-group col-md-12">
-					<label for="email" class="col-form-label">email:</label>
+					<label for="email" class="col-form-label">E-mail:</label>
 					<input type="email" th:field="*{email}" class="form-control" id="email" placeholder="email">
 					<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
 				</div>
@@ -147,7 +148,7 @@
 
 
 				<div class="form-group col-md-12">
-					<input type="submit" class="btn btn-primary mb-2" value="Gravar Novo Local">
+					<input type="submit" class="btn btn-primary mb-2" value="Gravar Novo Local" style="background-color: #82AE64;">
 				</div>
 			</div>
 		</form>
