@@ -1,7 +1,9 @@
 package ecotech.tcc.demo.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,8 +23,9 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nivelAcesso;
-	//variavel pra foto aqui
-	private LocalDate dataCadastro;
+	private String foto;
+	
+	private LocalDateTime dataCadastro;
 	private boolean statusUsuario;
 
 	
@@ -67,11 +70,13 @@ public class Usuario {
 		this.nivelAcesso = nivelAcesso;
 	}
 
-	public LocalDate getDataCadastro() {
+	
+
+	public LocalDateTime getDataCadastro() {
 		return dataCadastro;
 	}
 
-	public void setDataCadastro(LocalDate dataCadastro) {
+	public void setDataCadastro(LocalDateTime dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 
@@ -81,6 +86,14 @@ public class Usuario {
 
 	public void setStatusUsuario(boolean statusUsuario) {
 		this.statusUsuario = statusUsuario;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	
 	

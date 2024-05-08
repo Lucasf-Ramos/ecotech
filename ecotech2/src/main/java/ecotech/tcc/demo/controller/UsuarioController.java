@@ -2,6 +2,7 @@ package ecotech.tcc.demo.controller;
 
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -109,7 +110,7 @@ public class UsuarioController {
 		}
 		else {
 			
-			cliente.setDataCadastro(LocalDate.now());
+			cliente.setDataCadastro(LocalDateTime.now());
 			Usuario clienteDb = clienteRepository.save(cliente);
 			return "redirect:/ecotech/cliente/login";
 		}
