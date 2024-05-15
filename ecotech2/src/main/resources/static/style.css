@@ -301,7 +301,7 @@
     .footer-links a:hover {
         text-decoration: underline;
     }
-     header.black {
+     .black {
       position: sticky;
       top: 0;
       background-color: #000000;
@@ -317,8 +317,28 @@
       padding-top: 3%;
      
     }
+  
+    .nav {
+      display: flex;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
 
-    nav {
+    .nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: color 0.3s, text-decoration 0.3s;
+      text-align: right;
+    }
+
+    .nav a:hover {
+      color: #82ae64;
+      text-decoration: underline;
+    }
+    
+     nav {
       display: flex;
       justify-content: flex-end;
       flex-grow: 1;

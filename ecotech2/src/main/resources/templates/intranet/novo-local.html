@@ -13,29 +13,31 @@
 		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 		integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/img/logoeco.png">
 
-	<title>novo Local</title>
+	<title> Novo Local</title>
 </head>
 
 <body>
-	<header class="black">
-		<!-- Logo -->
-		<img src="/img/logo.png" alt="Logo" class="logo">
-		<!-- Menu -->
-		<nav>
-			<a href="/ecotech/cliente/index">Home</a>
-			<a href="/ecotech/cliente/perfil">Tela Perfil</a>
-			<a href="/ecotech/locais/todos-locais">Centros de coleta</a>
-		</nav>
-		<br> <br>
+	  <header class="black" style="padding-bottom: 3%; padding-top:4%">
+        <!-- Logo -->
+        <img src="/img/logo.png" alt="Logo" class="logo">
+        <!-- Menu -->
+        <nav class="nav">
+            <a href="/ecotech/cliente/index" >Home</a>
+            <a href="/ecotech/cliente/perfil" >Tela Perfil</a>
+            <a href="/ecotech/locais/todos-locais" >Centros de coleta</a>
+        </nav>
+       <br><br> <br>
 
 
+       
+    </header>
 
-	</header>
 
 	<main>
 		<br><br>
-		<form action="#" th:action="@{/ecotech/locais/add-local}" style="padding: 30%; padding-top:0%; padding-right: 30%" th:object="${local}" method="post">
+		<form action="#" th:action="@{/ecotech/locais/add-local}" style="padding: 30%; padding-top:0%; padding-right: 30%; padding-bottom:0%" th:object="${local}" method="post">
 		
 			<div class="row">
 				<div class="form-group col-md-12">
