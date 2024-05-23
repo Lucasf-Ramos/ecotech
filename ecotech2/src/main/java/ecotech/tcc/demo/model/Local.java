@@ -19,6 +19,7 @@ public class Local {
     private String nome;
     
     private String email;
+    private String senha;
     private String cnpj;
     
     private String descricao;
@@ -147,6 +148,12 @@ public class Local {
 	}
 	public void setStatusPonto(boolean statusPonto) {
 		this.statusPonto = statusPonto;
+	}
+	public String getSenha() {
+		return senha;
+	}
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 
 	

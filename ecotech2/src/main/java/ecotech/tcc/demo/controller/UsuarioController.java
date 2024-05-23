@@ -102,7 +102,7 @@ public class UsuarioController {
 	@PostMapping("/add-cliente")
 	public String addCliente(Usuario cliente, Model model) {
 		
-		cliente.setStatusUsuario(true);
+		cliente.setStatusUsuario(true); 
 		Usuario clientedb = clienteRepository.findByEmail(cliente.getEmail());
 		if(clientedb != null && clientedb.isStatusUsuario())
 		{
