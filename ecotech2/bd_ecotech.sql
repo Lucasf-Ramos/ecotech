@@ -90,6 +90,7 @@ CREATE TABLE EcoPonto
 
 	email			    VARCHAR(100)    UNIQUE Not NULL,
 	cnpj			    char(14)	UNIQUE Not NULL,
+	senha				VARCHAR(100)	NOT NULL,
 
 	descricao		    VARCHAR(400)	  NULL,
 	website			    VARCHAR(200)	NULL,
@@ -103,7 +104,7 @@ CREATE TABLE EcoPonto
 	pontoRef 			VARCHAR(200)	NULL,
     telefone			VARCHAR(20)		NULL,
 	horarioFunc			VARCHAR(200)	NULL,
-	statusPonto			bit		NOT NULL, -- ATIVO ou INATIVO 
+	statusPonto			bit		NOT NULL, -- ATIVO(1) ou INATIVO(0) 
 
     gruporesiduo_id		INT				NOT NULL,
     regiao_id			INT				NOT NULL,
@@ -115,7 +116,7 @@ CREATE TABLE EcoPonto
 	
 	
 )
-GO
+GO --adicionar senha a todos os ecopontos
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id, email, cnpj) 
 VALUES ('Ecoponto Alphaville', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Árvores, 123', '06410000', '123', 'Alphaville', 'Barueri', 'SP', NULL, 'Próximo ao shopping', '(11) 1234-5678', 'Seg-Sex: 08:00-18:00', 1, 1, 1, 'contato@ecopontoalphaville.com', '1234567890001')
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, regiao_id, email, cnpj)
