@@ -55,6 +55,7 @@ public class LocalController {
 			return "intranet/novo-local";
 		}
 		local.setStatusPonto(true);
+		local.setSenha(local.getCnpj().toString());
 		localRepository.save(local);
 		return "redirect:/ecotech/locais/todos-locais";
 	}

@@ -32,12 +32,12 @@ public class EcoOwnerController {
 	private Local localAtual;
 
 	@GetMapping("/perfil")
-	public String telaPerfil(Model model, Usuario cliente) {
+	public String telaPerfil(Model model, Local cliente) {
 		if (localAtual != null) {
 			model.addAttribute("local", localAtual); // puxa o id do usuario que esta logado na conta atualmente
-			return " ";
+			return "donoEcoponto/perfil";
 		}
-		return " ";
+		return "donoEcoponto/login";
 
 	}
 
@@ -50,25 +50,25 @@ public class EcoOwnerController {
 	@PostMapping("/add-local")
 	public String gravarNovoProduto(Local local, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			return "intranet/novo-local";
+			return "donoEcoponto/novolocal";
 		}
 		local.setStatusPonto(false);
 		localRepository.save(local);
-		return " ";
+		return "donoEcoponto/login";
 	}
 	@GetMapping("/login")
 	public String login(Local local, Model model) {
 		
 		model.addAttribute("cliente", local);
-		return "intranet/perfil/Login";
+		return "donoEcoponto/login";
 	}
 	@PostMapping("/login")
 	public String efetuarLogin(Local local, Model model) {
 	
-		String page = "";
+		String page = "donoEcoponto/login";
 		Local localdb = localRepository.findByEmail(local.getEmail());
 		if(localdb != null && localdb.getSenha().equals(localdb.getSenha()) && localdb.isStatusPonto()) {
-			page = "";
+			page = "donoEcoponto/perfil";
 			
 			localAtual = localRepository.findByEmail(local.getEmail());
 		}
@@ -77,13 +77,13 @@ public class EcoOwnerController {
 		return page;
 	}
 	
-	@GetMapping("/editar-local")
+	@GetMapping("/editar")
 	public String showUpdateForm(ModelMap model) {
 		Local local = localAtual;
 
 		model.addAttribute("local", local);
 
-		return "intranet/editar-local";
+		return "donoEcoponto/editarlocal";
 	}
 
 	@PostMapping("/update")
@@ -97,7 +97,7 @@ public class EcoOwnerController {
 		}
 
 		localRepository.save(local);
-		return " ";
+		return "donoEcoponto/perfil";
 	}
 
 }
