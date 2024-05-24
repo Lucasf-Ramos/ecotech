@@ -21,15 +21,9 @@ import ecotech.tcc.demo.repository.UsuarioReopository;
 
 //carregar o formulario de cadastro do cliente
 public class indexController {
-	
-	
-	
 	@GetMapping("/index")
 	public String index() {
 		return "index";
 	}
 
-
-	
-	
 }
