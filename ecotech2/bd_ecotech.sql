@@ -15,7 +15,7 @@ CREATE TABLE Usuario
    id            INT			IDENTITY,
    nome          VARCHAR(100)	NOT NULL,
    email         VARCHAR(100)	UNIQUE NOT NULL,
-   senha         VARCHAR(100)	NULL,
+   senha         VARCHAR(100)	not NULL,
    nivelAcesso   VARCHAR(10)    NULL, -- ADMIN ou USER
    foto			 VARBINARY(MAX) NULL,
    dataCadastro	 SMALLDATETIME	NOT NULL,

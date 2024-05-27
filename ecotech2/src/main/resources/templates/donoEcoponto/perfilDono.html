@@ -40,7 +40,7 @@
             </div>
             <div id="profile_infsBox"> 
                 <h1>Seu perfil</h1>
-                <div class="profile_infs" th:each="c : ${cliente}">
+                <div class="profile_infs" th:each="c : ${locais}">
                     <p>nome: <span th:text="${c.nome}"></span></span></p>
 					<p>email: <span th:text="${c.email}"></span></p>
 					

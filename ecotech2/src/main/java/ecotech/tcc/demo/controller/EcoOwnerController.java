@@ -32,10 +32,10 @@ public class EcoOwnerController {
 	private Local localAtual;
 
 	@GetMapping("/perfil")
-	public String telaPerfil(Model model, Local cliente) {
+	public String telaPerfil(Model model, Local local) {
 		if (localAtual != null) {
-			model.addAttribute("local", localAtual); // puxa o id do usuario que esta logado na conta atualmente
-			return "donoEcoponto/perfil";
+			model.addAttribute("locais", localAtual); // puxa o id do usuario que esta logado na conta atualmente
+			return "donoEcoponto/perfilDono";
 		}
 		return "donoEcoponto/login";
 
@@ -59,16 +59,18 @@ public class EcoOwnerController {
 	@GetMapping("/login")
 	public String login(Local local, Model model) {
 		
-		model.addAttribute("cliente", local);
+		model.addAttribute("locais", local);
 		return "donoEcoponto/login";
 	}
 	@PostMapping("/login")
 	public String efetuarLogin(Local local, Model model) {
 	
-		String page = "donoEcoponto/login";
+		String page = "redirect:/ecotech/ecoponto/login";
 		Local localdb = localRepository.findByEmail(local.getEmail());
+		
+		//System.out.println(localdb.getEmail());
 		if(localdb != null && localdb.getSenha().equals(localdb.getSenha()) && localdb.isStatusPonto()) {
-			page = "donoEcoponto/perfil";
+			page = "redirect:/ecotech/ecoponto/perfil";
 			
 			localAtual = localRepository.findByEmail(local.getEmail());
 		}

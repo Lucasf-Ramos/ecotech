@@ -21,6 +21,6 @@ public interface LocalReopository extends JpaRepository<Local, Long>{
 	
 	@Query(value="SELECT * from Usuario c where c.email=?", nativeQuery = true)
 	Local findByEmail (String email);
-	void deleteById(Long id);
+	//void deleteById(Long id);
 }
  
