@@ -6,8 +6,6 @@ body {
 }
 
 
-
-
 .titulo {
   color: #82ae64;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
@@ -167,12 +165,12 @@ body {
   }
 
    svg {
-    height:400px;
-    margin-top: -690px;
-    margin-bottom: -4px;
-    width: 2200px;
+    height:300%;
+    margin-top: -691px;
+    margin-bottom: -9px;
+    width: 2500px;
     z-index: 1; 
-    height:-50%;
+
     margin-left: -30%;
 }
   #bottomInf{
@@ -209,7 +207,6 @@ body {
 main{flex:1}
 
 footer {
-
     background-color: #000;
     color: #fff;
     padding: 15px 0px;
@@ -220,17 +217,49 @@ footer {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
-    margin: 0 auto;
+    margin-left: 450px;;
 }
 
 .footer-products, .footer-values {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 0%;
 }
 
 .footer-products h3, .footer-values h3 {
     font-size: 30px;
-    margin-bottom: 5px;
+    margin-bottom: 35px;
+}
+
+.footer-section {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.footer-left {
+  margin-left: 14px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+
+  margin-left: -215%
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 ul {
@@ -249,16 +278,6 @@ ul li a {
 
 ul li a:hover {
     text-decoration: underline;
-}
-
-.footer-section {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.footer-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
 }
 
 .social-icons, .payment-icons {
@@ -288,26 +307,6 @@ hr {
     margin-top: 20px;
 }
 
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-}
-
-.footer-left {
-    margin-left: 20px;
-}
-
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 300px;
-}
-
-  .footer-links a:hover {
-      text-decoration: underline;
-  }
   .black {
     position: sticky;
     top: 0;
@@ -416,7 +415,7 @@ margin-top: 0%;
 }
 .login-box {
   background-color: #fff;
-  margin-left: 30%;
+  margin-left: 36%;
   margin-top: -5%;
   margin-bottom: 5%;
   border-radius: 10px;
@@ -462,12 +461,14 @@ margin-top: 0%;
   cursor: pointer;
 }
 
-.login-box .esqueci-senha {
+.login-box .criar-conta {
   display: block;
   margin-top: 10px;
   color: #6c757d;
   text-decoration: none;
 }
+
+
 
 .login-box input[type="submit"] {
   background-color: #161616;
@@ -500,14 +501,14 @@ border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 5%; border:solid r
 background-color:#313131;
 }
 
-.esqueci-senha{
+.criar-conta{
 font-size: 15px;
 text-align: center;
 padding-left: -9%;
 color: rgb(172, 172, 172);
 }
 
-.esqueci-senha:hover{
+.criar-conta:hover{
 color: #161616;
 
 }
@@ -528,35 +529,31 @@ background-color:#313131;
 }
 
 .regis_box{
-font-size: 120%;
-
- background-color: rgb(255, 255, 255);
- border-radius: 20px;
- width: 50%; 
- padding: 1%; 
- border:solid rgb(121, 122, 122);
-
- margin-top: 100%;
- margin: 0 auto; /* Define as margens automáticas horizontalmente */
- text-align: center; /* Opcional: centraliza o conteúdo dentro da div */
-
+    font-size: 120%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 50%; 
+    padding: 1%; 
+    border:solid rgb(121, 122, 122);
+    margin-top: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 .bordasSuaves{border-radius: 20px; padding: 2%; width: 40%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
 .bordasSuaves:hover{border:solid #82AE64}
 
 
 .buttonColored{
-border-radius: 20px; 
-padding: 2%; 
-width: 40%; 
-margin-bottom: 1%; 
-border:none; 
-font-size: 120%;
-background-color: #92B560; 
-color:aliceblue;
-
-cursor: pointer;
-transition: background-color 0.3s, color 0.3s;
+  border-radius: 20px; 
+  padding: 2%; 
+  width: 40%; 
+  margin-bottom: 1%; 
+  border:none; 
+  font-size: 120%;
+  background-color: #92B560; 
+  color:aliceblue;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 .buttonColored:hover{ background-color: #80837d; }
 
