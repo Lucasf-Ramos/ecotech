@@ -81,25 +81,34 @@ public class EcoOwnerController {
 	
 	@GetMapping("/editar")
 	public String showUpdateForm(ModelMap model) {
+		//Local local = localAtual;
 		Local local = localAtual;
-
 		model.addAttribute("local", local);
 
-		return "donoEcoponto/editarlocal";
+		return "donoEcoponto/editar";
 	}
 
 	@PostMapping("/update")
 	public String atualizarLocal(Local local, BindingResult result) {
 
-		local = localAtual;
+		localAtual = local;
+		
 
 		if (result.hasErrors()) {
 			local.setId((long) localAtual.getId());
-			return " ";
+			return "donoEcoponto/editar";
 		}
 
 		localRepository.save(local);
-		return "donoEcoponto/perfil";
+	
+		//localAtual = local;
+		return "redirect:/ecotech/ecoponto/perfil";
+	}
+	@GetMapping("/logout")
+	public String logOut() {
+		
+		localAtual = null;
+		return "redirect:/ecotech/cliente/index";
 	}
 
 }

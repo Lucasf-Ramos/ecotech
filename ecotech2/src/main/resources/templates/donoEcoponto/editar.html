@@ -43,7 +43,7 @@
 
 
 <div style="padding-left: 10%;">
-		<form action="#" th:action="@{/ecotech/locais/update/{id}(id=${local.id})} " style="margin:5%; padding-right: 10% " enctype="multipart/form-data"
+		<form action="#" th:action="@{/ecotech/ecoponto/update} " style="margin:5%; padding-right: 10% " enctype="multipart/form-data"
 			th:object="${local}" method="post">
 			<div class="row">
 
@@ -67,6 +67,11 @@
 					<label for="email" class="col-form-label">email:</label>
 					<input type="text" th:field="*{email}" class="form-control" id="email" placeholder="email">
 					<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
+				</div>
+				<div class="form-group col-md-2">
+					<label for="senha" class="col-form-label">senha:</label>
+					<input type="password" th:field="*{senha}" class="form-control" id="senha" placeholder="senha">
+					<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="text-danger"></span>
 				</div>
 				
 
