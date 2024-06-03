@@ -9,6 +9,12 @@
     <script src="/javascript.js"></script>
     <link rel="shortcut icon" href="/img/icone.ico">
     <title>Login</title>
+    <style>
+    	.body{
+		 font-family: hamburg-serial;
+
+		}
+    </style>
 </head>
 <body>
     <header class="black">
@@ -32,7 +38,6 @@
                 <div class="password-input">
                     <input type="password" name="senha" id="senha" placeholder="Senha" required th:field="*{senha}">
                     <span class="toggle-password" onclick="togglePasswordVisibility()">
-                        <i id="toggleIcon" class="fas fa-eye"></i>
                     </span>
                     <a href="/ecotech/cliente/novo-cliente" class="criar-conta">Criar Conta</a>
                     

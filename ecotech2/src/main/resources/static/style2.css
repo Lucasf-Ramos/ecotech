@@ -135,11 +135,11 @@ body {
   border-bottom-width:1px;
 }
 .slide-navigation {
-  top:0 ;
+  margin-bottom:200px ;
 }
 
 .prev, .next {
-  margin-top:47%;
+   margin-top:30%;
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -442,12 +442,13 @@ margin-top: 0%;
 }
 
 .login-box input[type="email"],
-.login-box input[type="password"] {
+.login-box input[type="password"],.login-box input[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color:#000;
 }
 
 .login-box .password-input {
@@ -482,11 +483,14 @@ margin-top: 0%;
 }
 
 
-.loginForm input {
-border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;
-
-
-}
+.loginForm input{
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;}
 
 .loginForm input:focus {
 border-color: #82AE64;
@@ -494,12 +498,16 @@ box-shadow: 0 0 5px rgba(130, 174, 100, 0.5);
 }
 
 .senha{
-border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 5%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;
+color: #fff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
 }
 
-.continue-senha-hover:hover{
-background-color:#313131;
-}
+
 
 .criar-conta{
 font-size: 15px;
