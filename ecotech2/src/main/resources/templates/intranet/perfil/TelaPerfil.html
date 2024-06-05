@@ -31,13 +31,12 @@
     <main>
         <br><br>
         <div class="regis_box profile_box">
-            <div>
+            <div th:each="c : ${cliente}">
 				
                 <img src="/img/logoeco.png"  id="profilePicture"><br><br><br>
                 <a href="/ecotech/cliente/editar">Editar</a><br>
                 <a href="/ecotech/cliente/logout" id="logOut">LogOut</a><br>
                 <a href="/ecotech/cliente/excluir" id="logOut">Excluir conta</a><br>
-                <span th:if="${c.nivelAcesso}=='ADMIN'" th:text="criar perfil de usuário"></span>
             </div>
             <div id="profile_infsBox"> 
                 <h1>Seu perfil</h1>
