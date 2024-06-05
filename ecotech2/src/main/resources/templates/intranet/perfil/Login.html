@@ -27,10 +27,10 @@
         <br><br>
     </header>
 
-    <main >
+    <main th:each="c : ${problem}">
         <br><br><br><br><br><br>
         
-
+      
         <div class="login-box" >
             <h2 class="login-title">Insira seu E-mail para se cadastrar ou entrar</h2><br>
             <form th:action="@{/ecotech/cliente/login}" th:object="${usuario}"  method="post" class="loginForm">
@@ -45,8 +45,8 @@
                     
                 </div>
 
-                <br><br><br><br>
-			
+                <br><br> <span th:if="${c}==true" > <span style="color:red;" >Login ou senha errados</span> </span><br><br>
+			 
                 <input type="submit" value="continuar" class="login_button">
             </form><br><br><br>
         </div>

@@ -65,9 +65,10 @@ public class UsuarioController {
 	
 
 	@GetMapping("/login")
-	public String login(Usuario cliente, Model model, boolean loginProblem) {
+	public String login(Usuario cliente, Model model) {
 		
-		loginProblem = LoginErrado;
+		
+		model.addAttribute("problem", LoginErrado);
 		model.addAttribute("cliente", cliente);
 		return "intranet/perfil/Login";
 	}
@@ -81,6 +82,11 @@ public class UsuarioController {
 			page = "redirect:/ecotech/cliente/perfil";
 			
 			usuarioAtual = clienteRepository.findByEmail(cliente.getEmail());
+			LoginErrado = false;
+		}
+		else {
+			LoginErrado = true;
+			return page;
 		}
 		
 		
@@ -136,7 +142,9 @@ public class UsuarioController {
 
 	@GetMapping("/index")
 	public String index() {
+		LoginErrado = false;
 		return "redirect:/ecotech/index";
+		
 	}
 
 	
