@@ -17,8 +17,8 @@
         <!-- Menu -->
         <nav>
             <a href="/ecotech/cliente/index">Home</a>
-            <a href="/ecotech/cliente/perfil">Tela Perfil</a>
-               <a href="/ecotech/locais/todos-locais">Centros de coleta</a>
+            <a href="/ecotech/ecoponto/perfil">Tela Perfil</a>
+         
         </nav>
        <br>       <br>
 
@@ -41,11 +41,28 @@
             <div id="profile_infsBox"> 
                 <h1>Seu perfil</h1>
                 <div class="profile_infs" th:each="c : ${locais}">
-                    <p>nome: <span th:text="${c.nome}"></span></span></p>
-					<p>email: <span th:text="${c.email}"></span></p>
+                	nome:
+                    <p> <span th:text="${c.nome}"></span></span></p>
+                    email: 
+					<p><span th:text="${c.email}"></span></p>
+					endereço:
+					<p> <span th:text="${c.cidade}"></span>, <span th:text="${c.bairro}"></span>, <span th:text="${c.numResid}"></span>-<span th:text="${c.uf}"></span><br>
+					cep: <span th:text="${c.cep}"></span>,   
+					<i>  <br> <span th:text="${c.pontoRef}"></span></i></p>
+					Descrição:
+					<p><span th:text="${c.descricao}"></span></p>
 					
 					
+					Telefone:
+					<p class="p2"><span th:text="${c.telefone}"></span></p>
+					Horário de funcionamento:
+					<p class="p2"><span th:text="${c.horarioFunc}"></span></p>
 					
+					<p>
+					Status ponto:
+					<span th:if="${c.statusPonto}==true" th:text="Ativo"></span>
+					<span th:if="${c.statusPonto}==false" th:text="Inativo"></span>
+					</p>
                    
                 </div>
             </div>
@@ -70,12 +87,7 @@
                     <li><a href="#"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Intranet</h3>
-                <ul>
-                    <li><a href="#">Acesso funcionário</a></li>
-                </ul>
-            </div>
+            
         </div>
         <hr>
         <div class="footer-bottom">

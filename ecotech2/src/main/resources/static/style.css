@@ -387,16 +387,34 @@
     text-decoration: underline;
 }
 
-.profile_infs{width: 40%; margin: 5%;}
+.profile_infs{width: 40%; margin: 5%; text-align: left;font-weight: bold; }
 .profile_box div{width: 30%; padding: 2%;}
 #profile_infsBox{width: 50%; border-left: solid rgb(82, 82, 82); margin-left: 4%;}
 
 .profile_box p{
-    margin-bottom: 10px; 
+	text-align: left;
+	font-weight: normal;
+    flex-wrap: wrap;
     border-radius: 10px; 
     padding: 5%; 
+    padding-left: 20%;
+    margin-top: 0;
+  	margin-bottom: 15%; 
     width: 300%; 
-    background-color: rgb(236, 236, 236);}
+    background-color: rgb(238, 238, 238);}
+    
+    
+.profile_box .p2{
+	text-align: left;
+	font-weight: normal;
+    flex-wrap: wrap;
+    border-radius: 10px; 
+    padding: 5%; 
+    padding-left: 20%;
+    margin-top: 0;
+  	margin-bottom: 15%; 
+    width: 150%; 
+    background-color: rgb(238, 238, 238);}
 
 .profile_box input{border-radius: 10px; padding: 7%; width: 300%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
 .profile_box input[type="submit"]{border-radius: 15px; padding: 7%; width: 90%; margin-bottom: 1%; border:none rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}

@@ -68,11 +68,16 @@ public class EcoOwnerController {
 		String page = "redirect:/ecotech/ecoponto/login";
 		Local localdb = localRepository.findByEmail(local.getEmail());
 		
-		//System.out.println(localdb.getEmail());
-		if(localdb != null && localdb.getSenha().equals(localdb.getSenha()) && localdb.isStatusPonto()) {
+	
+		if(localdb != null && localdb.getSenha().equals(local.getSenha()) && localdb.isStatusPonto()) {
 			page = "redirect:/ecotech/ecoponto/perfil";
 			
 			localAtual = localRepository.findByEmail(local.getEmail());
+		}
+		else
+		{
+			System.out.println("login ou senha errados \n" + localdb.getEmail() +" "+ localdb.getSenha() + " " + local.getSenha() +""+localdb.isStatusPonto());
+			return page;
 		}
 		
 		
@@ -81,7 +86,7 @@ public class EcoOwnerController {
 	
 	@GetMapping("/editar")
 	public String showUpdateForm(ModelMap model) {
-		//Local local = localAtual;
+		
 		Local local = localAtual;
 		model.addAttribute("local", local);
 
@@ -91,17 +96,18 @@ public class EcoOwnerController {
 	@PostMapping("/update")
 	public String atualizarLocal(Local local, BindingResult result) {
 
-		localAtual = local;
+		//localAtual = local;
 		
 
 		if (result.hasErrors()) {
 			local.setId((long) localAtual.getId());
 			return "donoEcoponto/editar";
 		}
-
+		
+		local.setStatusPonto(localAtual.isStatusPonto());
 		localRepository.save(local);
 	
-		//localAtual = local;
+		localAtual = local;
 		return "redirect:/ecotech/ecoponto/perfil";
 	}
 	@GetMapping("/logout")

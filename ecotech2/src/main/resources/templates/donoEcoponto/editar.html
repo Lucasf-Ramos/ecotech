@@ -26,8 +26,8 @@
         <!-- Menu -->
         <nav class="nav">
             <a href="/ecotech/cliente/index" >Home</a>
-            <a href="/ecotech/cliente/perfil" >Tela Perfil</a>
-            <a href="/ecotech/locais/todos-locais" >Centros de coleta</a>
+            <a href="/ecotech/ecoponto/perfil" >Tela Perfil</a>
+           
         </nav>
        <br><br> <br>
 
@@ -70,7 +70,7 @@
 				</div>
 				<div class="form-group col-md-2">
 					<label for="senha" class="col-form-label">senha:</label>
-					<input type="password" th:field="*{senha}" class="form-control" id="senha" placeholder="senha">
+					<input type="text" th:field="*{senha}" class="form-control" id="senha" placeholder="senha">
 					<span th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="text-danger"></span>
 				</div>
 				
@@ -160,8 +160,11 @@
 
 
 				<div class="form-group col-md-12">
+				 <a href="/ecotech/ecoponto/perfil"class="btn btn-primary mb-2"  style="background-color: rgb(192, 192, 192); border:rgb(192, 192, 192)">Voltar</a>
 					<input type="submit" class="btn btn-primary mb-2" value="Atualizar Local" style="background-color: #82AE64; border:#82AE64">
+					
 				</div>
+		
 
 			</div>
 		</form>
@@ -184,12 +187,7 @@
                     <li><a href="#"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Intranet</h3>
-                <ul>
-                    <li><a href="#">Acesso funcionário</a></li>
-                </ul>
-            </div>
+
         </div>
         <hr>
         <div class="footer-bottom">
