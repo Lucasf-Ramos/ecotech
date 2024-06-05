@@ -37,14 +37,16 @@
                 <a href="/ecotech/cliente/editar">Editar</a><br>
                 <a href="/ecotech/cliente/logout" id="logOut">LogOut</a><br>
                 <a href="/ecotech/cliente/excluir" id="logOut">Excluir conta</a><br>
+                <span th:if="${c.nivelAcesso}=='ADMIN'"> <a href="/ecotech/cliente/novo-cliente">Criar conta de funcionário</a><br> </span>
             </div>
             <div id="profile_infsBox"> 
+            <br><br>
                 <h1>Seu perfil</h1>
                 <div class="profile_infs" th:each="c : ${cliente}">
                     <p>nome: <span th:text="${c.nome}"></span></span></p>
 					<p>email: <span th:text="${c.email}"></span></p>
 					<p>Data de Registro: <span th:text="${c.dataCadastro}"></span></p>
-					
+					<br><br><br><br><br><br>
 					
                    
                 </div>

@@ -28,6 +28,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioReopository clienteRepository;
 	public static Usuario usuarioAtual; //o usuario que esta logado na conta atualmente
+	public boolean LoginErrado;
 	
 	@GetMapping("/perfil")
 	public String telaPerfil(Model model, Usuario cliente) {
@@ -64,8 +65,9 @@ public class UsuarioController {
 	
 
 	@GetMapping("/login")
-	public String login(Usuario cliente, Model model) {
+	public String login(Usuario cliente, Model model, boolean loginProblem) {
 		
+		loginProblem = LoginErrado;
 		model.addAttribute("cliente", cliente);
 		return "intranet/perfil/Login";
 	}
