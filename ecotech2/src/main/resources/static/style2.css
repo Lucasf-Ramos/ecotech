@@ -63,12 +63,6 @@ body {
 
 .slideshow-container {
   position: relative;
-  margin: 14px;
-  width: 90%;
-}
-
-.slideshow-container {
-  position: relative;
   width: 100%;
   margin: -100px;
   right: -100px;
@@ -142,11 +136,10 @@ body {
    margin-top:30%;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 55%;
   transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,37 +150,23 @@ body {
 }
 
   .prev {
-    left: 400px;
+    left: 30%;
   }
 
   .next {
-    right: 400px;
+    right: 30%;
   }
-
-   svg {
-    height:300%;
-    margin-top: -691px;
-    margin-bottom: -9px;
-    width: 2500px;
-    z-index: 1; 
-
-    margin-left: -30%;
-}
-  #bottomInf{
-    width: 100%;
-    text-align: center;
-}
 
 .imagem2 {
   position: relative;
-  bottom: 10px;
+  bottom: 40%;
   margin-top:17%;
-  margin-left:90px;
-  margin-bottom: 9px;
-  height: 500px;
+  margin-left:-145%;
+  margin-bottom: -0.21%;
   z-index: 2; 
   left:50%;
-  
+  height: 900%;
+  width:101%;
 }
 
 .celular-image {
