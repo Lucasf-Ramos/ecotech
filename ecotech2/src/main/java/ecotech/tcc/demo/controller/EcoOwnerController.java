@@ -60,14 +60,16 @@ public class EcoOwnerController {
 	@GetMapping("/login")
 	public String login(Local local, Model model) {
 		
+		
 		model.addAttribute("problem", LoginErrado);
+		System.out.println(LoginErrado);
 		model.addAttribute("locais", local);
 		return "donoEcoponto/login";
 	}
 	@PostMapping("/login")
 	public String efetuarLogin(Local local, Model model) {
 	
-		
+	
 		String page = "redirect:/ecotech/ecoponto/login";
 		Local localdb = localRepository.findByEmail(local.getEmail());
 		
@@ -81,7 +83,7 @@ public class EcoOwnerController {
 		else
 		{
 			LoginErrado = true;
-			System.out.println("login ou senha errados \n" + localdb.getEmail() +" "+ localdb.getSenha() + " " + local.getSenha() +""+localdb.isStatusPonto());
+			
 			
 		}
 		

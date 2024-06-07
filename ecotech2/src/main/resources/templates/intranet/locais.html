@@ -54,6 +54,7 @@
                     </thead>
                     <tbody>
                         <tr th:each="local : ${locais}">
+                        <span th:if="${local.statusPonto} == true">
                             <td th:text="${local.id}"></td>
                             <td th:text="${local.nome}"></td>
                             <td th:text="${local.logradouro}"></td>
@@ -66,6 +67,21 @@
                                     <i class="fas fa-edit ml-2"></i>
                                 </a>
                             </td>
+                        </span>
+                         <span th:if="${local.statusPonto} == false" >
+                            <td th:text="${local.id}" style="background-color: red;"></td>
+                            <td th:text="${local.nome}"></td>
+                            <td th:text="${local.logradouro}"></td>
+                            <td th:text="${local.email}"></td>
+                            <td th:text="${local.cnpj}"></td>
+               
+                            <td th:text="${local.statusPonto ? 'Ativo' : 'Inativo'}"></td>
+                            <td>
+                                <a th:href="@{/ecotech/locais/editar-local/{id}(id=${local.id})}" class="btn btn-primary" style="background-color: #82AE64; border:#82AE64">
+                                    <i class="fas fa-edit ml-2"></i>
+                                </a>
+                            </td>
+                        </span>
                         </tr>
                     </tbody>
                 </table>
