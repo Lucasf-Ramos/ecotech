@@ -86,7 +86,7 @@ public class LocalController {
 			return "intranet/editar-local";
 		}
 		
-
+		local.setSenha(localRepository.findById((long)id).orElseThrow(() -> new IllegalArgumentException("Invalid local Id:" + id)).getSenha());
 		localRepository.save(local);
 		return "redirect:/ecotech/locais/todos-locais";
 	}

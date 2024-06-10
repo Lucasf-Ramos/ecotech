@@ -67,9 +67,10 @@ public class UsuarioController {
 	@GetMapping("/login")
 	public String login(Usuario cliente, Model model) {
 		
-		
-		model.addAttribute("problem", LoginErrado);
+	
+	
 		model.addAttribute("cliente", cliente);
+		model.addAttribute("problem", LoginErrado);
 		return "intranet/perfil/Login";
 	}
 		

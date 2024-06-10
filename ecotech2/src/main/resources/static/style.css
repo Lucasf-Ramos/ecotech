@@ -552,3 +552,5 @@
       border-radius: 10px; 
       box-shadow: 0 0 20px rgba(130, 174, 100, 0.5);
       }
+      
+  .disabled{ color: rgb(192, 192, 192)}
