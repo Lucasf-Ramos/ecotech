@@ -88,13 +88,7 @@ public class Usuario {
 		this.statusUsuario = statusUsuario;
 	}
 
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
+	
 	
 	
 	

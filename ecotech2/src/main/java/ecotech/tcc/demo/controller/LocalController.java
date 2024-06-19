@@ -43,6 +43,22 @@ public class LocalController {
 		return "redirect:/ecotech/cliente/login"; 
 	}
 	
+	@GetMapping("/todos-locais/{id}") 
+	public String filtrar(Model model, @PathVariable("id") int id) {
+	
+		
+		if(UsuarioController.usuarioAtual != null) {
+			model.addAttribute("locais", localRepository.findByStatus(id==0?false:true)); //procura por todos os produtos do banco de dados		
+		    return "intranet/locais"; //retorna o nome da pagina que deve ser aberta
+		}
+		return "redirect:/ecotech/cliente/login"; 
+	}
+	
+
+	
+	
+	
+	
 	@GetMapping("/novo-local")
 	public String novoProduto(Local local, Model model) {
 		model.addAttribute("locais", local);
