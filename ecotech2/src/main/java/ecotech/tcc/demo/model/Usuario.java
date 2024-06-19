@@ -23,7 +23,7 @@ public class Usuario {
 	private String email;
 	private String senha;
 	private String nivelAcesso;
-	private String foto;
+	//private String foto;
 	
 	private LocalDateTime dataCadastro;
 	private boolean statusUsuario;
