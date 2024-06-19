@@ -375,16 +375,18 @@
     color:aliceblue;
 
     text-decoration: none;
-    margin-bottom: 1%;
+    margin-bottom: -2%;
 
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
 }
 #logOut{background-color: rgb(163, 163, 163);}
+#logOut:hover{background-color: rgb(163, 163, 163);   background-color: rgb(128, 128, 128); }
 
 .profile_box a:hover{
-    font-size: 120%;
+    font-size: 105%;
     text-decoration: underline;
+      background-color: rgb(128, 128, 128); 
 }
 
 .profile_infs{width: 40%; margin: 5%; text-align: left;font-weight: bold; }
@@ -539,6 +541,7 @@
 .regis_icon:hover{background-color: #82AE64; color:aliceblue;  padding: 1%; font-size: 110%; border-radius: 11px; cursor:default}
 
 
+<<<<<<< HEAD
 @media screen and (max-width:1020px) {
 
 	.black nav{display:none; }
@@ -552,3 +555,18 @@
 }
 
 
+=======
+ .borda {
+     padding:3%;
+      border-radius: 10px; 
+      margin-bottom: 20px; 
+      margin-top: 50px;
+      margin-left: 70px;
+      margin-right: 70px;
+      border: 1px solid #000000; 
+      border-radius: 10px; 
+      box-shadow: 0 0 20px rgba(130, 174, 100, 0.5);
+      }
+      
+  .disabled{ color: rgb(192, 192, 192)}
+>>>>>>> 6027a88eb8c612fbb1e7d7cac9e607cd1767384a

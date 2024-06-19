@@ -28,6 +28,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioReopository clienteRepository;
 	public static Usuario usuarioAtual; //o usuario que esta logado na conta atualmente
+	public boolean LoginErrado;
 	
 	@GetMapping("/perfil")
 	public String telaPerfil(Model model, Usuario cliente) {
@@ -66,7 +67,10 @@ public class UsuarioController {
 	@GetMapping("/login")
 	public String login(Usuario cliente, Model model) {
 		
+	
+	
 		model.addAttribute("cliente", cliente);
+		model.addAttribute("problem", LoginErrado);
 		return "intranet/perfil/Login";
 	}
 		
@@ -79,6 +83,11 @@ public class UsuarioController {
 			page = "redirect:/ecotech/cliente/perfil";
 			
 			usuarioAtual = clienteRepository.findByEmail(cliente.getEmail());
+			LoginErrado = false;
+		}
+		else {
+			LoginErrado = true;
+			return page;
 		}
 		
 		
@@ -134,7 +143,9 @@ public class UsuarioController {
 
 	@GetMapping("/index")
 	public String index() {
+		LoginErrado = false;
 		return "redirect:/ecotech/index";
+		
 	}
 
 	
