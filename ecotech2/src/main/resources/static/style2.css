@@ -55,7 +55,7 @@ body {
 }
 
 .logo-eco {
-  width: 300px;
+  width: 50%;
   margin-left: auto;
   margin-right: 190px;
   margin-top: 40px;
@@ -308,8 +308,7 @@ hr {
 }
 
   .black {
-    position: sticky;
-    top: 0;
+  
     background-color: #000000;
     padding: 1%;
     color: aliceblue;
@@ -572,5 +571,15 @@ background-color:#313131;
 .regis_icon{transition: background-color 0.3s, color 0.3s, padding 0.3s, font-size 0.4s; }
 .regis_icon:hover{background-color: #82AE64; color:aliceblue;  padding: 1%; font-size: 110%; border-radius: 11px; cursor:default}
 
+@media screen and (max-width:1020px) {
 
+	.black nav{display:none; }
+	.logo{margin:10%; }
+	.logo-eco{display:none}
+	.prev{display:none}
+	.slideshow-container {margin-top: 10%;}
+	.slide-text{margin-top: -5%}
+	.login-box {margin-left: 10%; width:60%}
+	
+}
 

@@ -539,4 +539,16 @@
 .regis_icon:hover{background-color: #82AE64; color:aliceblue;  padding: 1%; font-size: 110%; border-radius: 11px; cursor:default}
 
 
+@media screen and (max-width:1020px) {
+
+	.black nav{display:none; }
+	.logo{margin:10%; }
+	.logo-eco{display:none}
+	.prev{display:none}
+	.slideshow-container {margin-top: 10%;}
+	.slide-text{margin-top: -5%}
+	.login-box {margin-left: 10%; width:60%}
+	
+}
+
 
