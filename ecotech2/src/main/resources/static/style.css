@@ -7,7 +7,6 @@
 
  
 
-   
     .titulo {
       color: #82ae64;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
@@ -33,169 +32,15 @@
 
     }
 
-    .div-container {
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-radius: 10px; 
-      padding: 20px; 
-      margin-bottom: 20px; 
-      margin-top: 50px;
-      margin-left: 70px;
-      margin-right: 70px;
-      border: 1px solid #000000; 
-      border-radius: 10px; 
-      box-shadow: 0 0 20px rgba(130, 174, 100, 0.5);
-      }
-
-    
-    .text-container {
-      flex: 1;
-      margin-right: 20px;
-      margin-top: -40px;
-    }
-
-    .logo-eco {
+   
+  .logo-eco {
       width: 300px;
       margin-left: auto;
       margin-right: 190px;
       margin-top: 40px;
     }
 
-    .slideshow-container {
-      position: relative;
-      margin: 14px;
-      width: 90%;
-    }
 
-    .slideshow-container {
-      position: relative;
-      width: 100%;
-      margin: -100px;
-      right: -100px;
-    }
-  
-    .mySlides {
-      float: left;
-      width: 100%;
-      box-sizing: border-box;
-      position: relative;
-      top: -50px;
-    }
-
-    .numbertext {
-      position: absolute;
-      top: -5%;
-      left: 0;
-      color: rgb(0, 0, 0);
-      width: 100%;
-      text-align: center; 
-    }
-    
-    .mySlides {
-      text-align: center;
-      width: 100%;
-      box-sizing: border-box;
-      position: relative;
-    }
-    
-  
-
-    .slick-carousel {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .slick-slide {
-      text-align: center;
-      position: relative;
-    
-    }
-
-    .slide-text {
-      font-family: 'Franklin Gothic Medium';
-      font-size: 35px !important;
-      position: absolute;
-      left: 50%;
-      top: -25%;
-      transform: translate(-50%, -50%);
-      color: rgb(0, 0, 0);
-     
-     
-    }
-
-    .slide-text2 {
-      font-family: 'Franklin Gothic Medium';
-      font-size: 15px !important;
-      position: absolute;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: rgb(0, 0, 0);
-      border-bottom: 2px solid black;
-      padding-bottom: 1px;
-      border-bottom-width:1px;
-    }
-    .slide-navigation {
-      top:0 ;
-    }
-    
-    .prev, .next {
-      cursor: pointer;
-      position: relative;
-      bottom: -30%;
-      width: 20px;
-      height: 20px;
-      font-size: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 0;
-    }
-    
-    .prev {
-		
-      left: 0;
-    }
-    
-    .next {
-		
-      right: 0;
-    }
-       svg {
-      position: relative;
-     margin:0; padding:0;
-      width: 100%;
-      z-index: 1; 
-    }
-    #bottomInf{
-		width: 100%;
-	text-align: center;
-		
-		
-	}
-    .imagem2 {
-
-		 z-index: 2; 
-		position: relative;
-		bottom: -700px;
-		left: 30%;
-    }
-    .titulo2 {
-		
-		margin-left: 40%;
-		padding: 0;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #82ae64; 
-      font-size: 28px; 
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-weight: bold;
-      z-index: 2;
-    }
-  
-	main{flex:1}
- 
   footer {
     background-color: #000;
     color: #fff;
@@ -361,6 +206,7 @@
 
     }
     
+
     #profilePicture{width: 80%; border-radius: 100%;}
 .profile_box{display: flex; flex-direction: row; align-items: center; width: 70%;}
 .profile_box a{
@@ -426,110 +272,159 @@
    
 }
 
-.login-box {
-    font-size: 120%;
 
+
+.login-box {
+  background-color: #fff;
+  margin-left: 36%;
+  margin-top: -5%;
+  margin-bottom: 5%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 440px;
+  height: 490px;
+  text-align: center;
+  border: 1px solid #000000; 
+  border-radius: 10px; 
+  box-shadow: 0 0 20px rgba(130, 174, 100, 0.5);
+    
+}
+
+.login-box h2 {
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.login-box h4 {
+  text-align: left;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"],.login-box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color:#000;
+}
+
+.login-box .password-input {
+  position: relative;
+}
+
+.login-box .toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.login-box .criar-conta {
+  display: block;
+  margin-top: 10px;
+  color: #6c757d;
+  text-decoration: none;
+}
+
+
+
+.login-box input[type="submit"] {
+  background-color: #161616;
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+
+.loginForm input{
+  color: #fff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;}
+
+.loginForm input:focus {
+border-color: #82AE64;
+box-shadow: 0 0 5px rgba(130, 174, 100, 0.5);
+}
+
+.senha{
+color: #fff;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+
+
+
+
+.criar-conta{
+font-size: 15px;
+text-align: center;
+padding-left: -9%;
+color: rgb(172, 172, 172);
+}
+
+.criar-conta:hover{
+color: #161616;
+
+}
+
+.password-input .toggle-password:hover {
+color: #82AE64;
+border-radius: 5px;
+
+}
+
+.login_button:hover {
+background-color:#313131;
+}
+
+.login-title {
+  color: #363636 !important;
+  font-size: 1.5em;
+}
+
+.regis_box{
+    font-size: 120%;
     background-color: rgb(255, 255, 255);
     border-radius: 20px;
     width: 50%; 
     padding: 1%; 
     border:solid rgb(121, 122, 122);
-
     margin-top: 100%;
-    margin: 0 auto; /* Define as margens automáticas horizontalmente */
-    text-align: center; /* Opcional: centraliza o conteúdo dentro da div */
-}
-
-.login-box h2 {
-    margin-top: 0;
-}
-
-
-.login-box button {
     margin: 0 auto;
-    background-color: #161616; /* Cor de fundo do botão */
-    color: #fff;
-    left: 48%;
-    border: none;
-    padding: 15px 40px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 auto;
-}
-
-
-.loginForm input {
-    border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;
-
-
-}
-
-.loginForm input:focus {
-    border-color: #82AE64;
-    box-shadow: 0 0 5px rgba(130, 174, 100, 0.5);
-}
-
-.senha{
-    border-radius: 10px; padding: 1%; width: 40% ; margin-bottom: 5%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;
-}
-
-.continue-senha-hover:hover{
-    background-color:#313131;
-}
-
-.esqueci-senha{
-    font-size: 15px;
     text-align: center;
-    padding-left: -9%;
-    color: rgb(172, 172, 172);
-}
-
-.esqueci-senha:hover{
-    color: #161616;
-    
-}
-
-.password-input .toggle-password:hover {
-    color: #82AE64;
-    border-radius: 5px;
-    
-}
-
-.login_button:hover {
-    background-color:#313131;
-}
-
-
-.regis_box{
-    font-size: 120%;
-
-     background-color: rgb(255, 255, 255);
-     border-radius: 20px;
-     width: 50%; 
-     padding: 1%; 
-     border:solid rgb(121, 122, 122);
-
-     margin-top: 100%;
-     margin: 0 auto; /* Define as margens automáticas horizontalmente */
-     text-align: center; /* Opcional: centraliza o conteúdo dentro da div */
-
 }
 .bordasSuaves{border-radius: 20px; padding: 2%; width: 40%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
 .bordasSuaves:hover{border:solid #82AE64}
 
 
 .buttonColored{
-    border-radius: 20px; 
-    padding: 2%; 
-    width: 40%; 
-    margin-bottom: 1%; 
-    border:none; 
-    font-size: 120%;
-    background-color: #92B560; 
-    color:aliceblue;
-
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+  border-radius: 20px; 
+  padding: 2%; 
+  width: 40%; 
+  margin-bottom: 1%; 
+  border:none; 
+  font-size: 120%;
+  background-color: #92B560; 
+  color:aliceblue;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 .buttonColored:hover{ background-color: #80837d; }
 
@@ -541,7 +436,8 @@
 .regis_icon:hover{background-color: #82AE64; color:aliceblue;  padding: 1%; font-size: 110%; border-radius: 11px; cursor:default}
 
 
-<<<<<<< HEAD
+
+
 @media screen and (max-width:1020px) {
 
 	.black nav{display:none; }
@@ -554,8 +450,6 @@
 	
 }
 
-
-=======
  .borda {
      padding:3%;
       border-radius: 10px; 
@@ -569,4 +463,4 @@
       }
       
   .disabled{ color: rgb(192, 192, 192)}
->>>>>>> 6027a88eb8c612fbb1e7d7cac9e607cd1767384a
+
