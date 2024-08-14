@@ -9,6 +9,8 @@
   <link rel="stylesheet" type="text/css" href="/style.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+
  
 </head>
 <body>
@@ -26,6 +28,88 @@
     </nav>
   </header>
   
+  <main>
+  	
+ 
+
+  <div id="banner">
+    <img src="/img/banner temporario.png" alt="">
+    <div id="bannerTexts">
+    <h3>Encontre um ecoponto perto de você</h3>
+    <h1>Recicle seu lixo eletrônico com quem entende.</h1>
+    </div>
+  </div>
+
+  <div class="beneficios">
+    <h1>Benefícios de reciclcar seu lixo eletrônico</h1>
+    <div id="beneficio-conteiner">
+      <div class="blocos">
+        <i>icone aqui</i>
+        <h4>Titulo</h4>
+        <p>legenda</p>
+      </div>
+       <div class="blocos">
+        <i>icone aqui</i>
+        <h4>Titulo</h4>
+        <p>legenda</p>
+      </div>
+       <div class="blocos">
+        <i>icone aqui</i>
+        <h4>Titulo</h4>
+        <p>legenda</p>
+      </div>
+       <div class="blocos">
+        <i>icone aqui</i>
+        <h4>Titulo</h4>
+        <p>legenda</p>
+      </div>
+    </div>
+
+
+    <div id="nosso-app">
+      <div>
+        <div id="nssApp-imgs">
+          <img src="" alt="">
+        </div>
+        <div>
+          <p></p>
+        </div>
+      </div>
+      <div>
+        <div class="infs">
+          <div class="nsAp-infs-img"></div>
+          <h2>informação</h2>
+          <h3>sub inf</h3>
+        </div>
+        <div class="infs">
+          <div class="nsAp-infs-img"></div>
+          <h2>informação</h2>
+          <h3>sub inf</h3>
+        </div>
+        <div class="infs">
+          <div class="nsAp-infs-img"></div>
+          <h2>informação</h2>
+          <h3>sub inf</h3>
+        </div>
+        <div class="infs">
+          <div class="nsAp-infs-img"></div>
+          <h2>informação</h2>
+          <h3>sub inf</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="faq">
+    <h1>Perguntas frequentes</h1>
+     <details>
+        <summary>Título da Caixa</summary>
+        <p>Texto 1</p>
+    </details>
+  </div>
+
+   </main>
   
   <br>
 
@@ -67,38 +151,5 @@
     </div>
     </div>
 </footer>
-<script>
-  var slideIndex = 1;
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-  }
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  setInterval(function () {
-    plusSlides(1);
-  }, 5000);
-
-  showSlides(slideIndex);
-</script>
 </body>
 </html>
