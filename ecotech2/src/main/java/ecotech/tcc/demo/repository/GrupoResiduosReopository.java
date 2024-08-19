@@ -14,25 +14,20 @@ import ecotech.tcc.demo.model.Local;
 import ecotech.tcc.demo.model.Usuario;
 import ecotech.tcc.demo.model.GrupoResiduos;
 
+
 /**
  * @author rm86722
  *
  */
 
 @Repository
-public interface LocalReopository extends JpaRepository<Local, Long> {
+public interface GrupoResiduosReopository extends JpaRepository<GrupoResiduos, Long>{
+	
 
-	@Query(value = "SELECT * from EcoPonto c where c.email=?", nativeQuery = true)
-	Local findByEmail(String email);
-	// void deleteById(Long id);
-
-	@Query(value = "SELECT * FROM EcoPonto c WHERE :status IS NULL OR c.statusPonto = :status", nativeQuery = true)
-	List<Local> findByStatus(Boolean status);
-
-	@Query(value = "SELECT DISTINCT c.cidade FROM EcoPonto c", nativeQuery = true)
-	List<String> findAllUniqueCities();
-
+	
 	@Query(value = "SELECT * From GrupoResiduo", nativeQuery = true)
 	List<GrupoResiduos> findAllResidGroup();
+	
 
 }
+ 

@@ -1,5 +1,7 @@
 package ecotech.tcc.demo.controller;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import ecotech.tcc.demo.model.Local;
 import ecotech.tcc.demo.model.Usuario;
+import ecotech.tcc.demo.model.GrupoResiduos;
+import ecotech.tcc.demo.repository.GrupoResiduosReopository;
 import ecotech.tcc.demo.repository.LocalReopository;
 
 @Controller
@@ -29,14 +33,23 @@ public class EcoOwnerController {
 
 	@Autowired
 	private LocalReopository localRepository;
+	@Autowired
+	private GrupoResiduosReopository grupoRepository;
+
 	private Local localAtual;
 	public boolean LoginErrado = false;
 	String errorMsg;
+	String foto;
 
 	@GetMapping("/perfil")
 	public String telaPerfil(Model model, Local local) {
 		if (localAtual != null) {
 			model.addAttribute("locais", localAtual); // puxa o id do usuario que esta logado na conta atualmente
+			if (localAtual.getFoto() != null) {
+				foto = Base64.getEncoder().encodeToString(localAtual.getFoto());
+			}
+			model.addAttribute("foto", foto);
+			
 			return "donoEcoponto/perfilDono";
 		}
 		return "donoEcoponto/login";
@@ -46,7 +59,7 @@ public class EcoOwnerController {
 	@GetMapping("/novo-local") // cria a conta
 	public String novoProduto(Local local, Model model) {
 		model.addAttribute("locais", local);
-		return "intranet/novo-local";
+		return "donoEcoponto/novolocal";
 	}
 
 	@PostMapping("/add-local")
@@ -62,7 +75,7 @@ public class EcoOwnerController {
 	@GetMapping("/login")
 	public String login(Local local, Model model) {
 		LoginErrado = true;
-	
+
 		model.addAttribute("locais", local);
 		model.addAttribute("problem", LoginErrado);
 		model.addAttribute("erro", errorMsg);
@@ -80,12 +93,10 @@ public class EcoOwnerController {
 
 			localAtual = localRepository.findByEmail(local.getEmail());
 			LoginErrado = false;
-		
-		} 
-		else if (localdb != null && localdb.getSenha().equals(local.getSenha()) && !localdb.isStatusPonto()) {
+
+		} else if (localdb != null && localdb.getSenha().equals(local.getSenha()) && !localdb.isStatusPonto()) {
 			errorMsg = "Seu Ecoponto não está ativo no momento. \n Caso ainda tenha dúvida, entre em contato conosco";
-		}
-		else {
+		} else {
 			LoginErrado = true;
 			errorMsg = "Login ou senha errados";
 		}
@@ -97,25 +108,49 @@ public class EcoOwnerController {
 	public String showUpdateForm(ModelMap model) {
 
 		Local local = localAtual;
+		String resid = local.getGrupoResiduos().getNome();
+
+		List<GrupoResiduos> grupoResiduosList = grupoRepository.findAll();
+		List<String> cidades = localRepository.findAllUniqueCities();
+
+		if (local.getFoto() != null) {
+			foto = Base64.getEncoder().encodeToString(local.getFoto());
+		}
+
 		model.addAttribute("local", local);
+		model.addAttribute("residuo", resid);
+		model.addAttribute("grupoResiduosList", grupoResiduosList);
+		model.addAttribute("cidades", cidades);
+		model.addAttribute("foto", foto);
 
 		return "donoEcoponto/editar";
 	}
 
 	@PostMapping("/update")
-	public String atualizarLocal(Local local, BindingResult result) {
+	public String atualizarLocal(Local local, BindingResult result, @RequestParam(value = "file", required = false) MultipartFile file) {
 
-		// localAtual = local;
+		//localAtual = local;
 
 		if (result.hasErrors()) {
 			local.setId((long) localAtual.getId());
 			return "donoEcoponto/editar";
 		}
-
+		if (file != null && !file.getOriginalFilename().isEmpty()) {
+			try {
+				local.setFoto(file.getBytes());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		} else {
+			localAtual.setFoto(null);
+			
+		}
+		
 		local.setStatusPonto(localAtual.isStatusPonto());
 		localRepository.save(local);
 
 		localAtual = local;
+
 		return "redirect:/ecotech/ecoponto/perfil";
 	}
 

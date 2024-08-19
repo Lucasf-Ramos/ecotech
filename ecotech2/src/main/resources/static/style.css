@@ -54,7 +54,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: auto;
+            max-height: 1000px;
             z-index: -1; /* Coloca a imagem atrás do texto */
         }
         
@@ -248,7 +248,16 @@
     }
     
 
-    #profilePicture{width: 80%; border-radius: 100%;}
+    #profilePicture{width: 15em; height: 15em; border-radius: 100%;}
+ 
+    
+    #profilePictureFade{transition: all 0.3s;}
+    #profilePictureFade h3{display: none; color:rgba(0, 0, 0, 0.1);transition: all 0.3s;}
+    #profilePictureFade img{transition: all 0.3s;}
+    
+    #profilePictureFade:hover > img{filter: brightness(50%);}
+    #profilePictureFade:hover > h3{position: absolute; bottom:50%; padding-left: 3%; color: white; display: block;}
+    
 .profile_box{display: flex; flex-direction: row; align-items: center; width: 70%;}
 .profile_box a{
     display: block;
@@ -290,6 +299,7 @@
     margin-top: 0;
   	margin-bottom: 15%; 
     width: 300%; 
+    color: grey;
     background-color: rgb(238, 238, 238);}
     
     
@@ -312,8 +322,24 @@
     margin-top: 0%;  
    
 }
+.exclude_accont{text-align: center; position: fixed; bottom: 40%; left: 30%; display: none;}
+.exclude_accont a{
+	display: block;
+    border-radius: 15px; 
+    padding: 1%; 
+    width: 30%; 
+     
+    border:none; 
+    font-size: 100%;
+    background-color: #92B560; 
+    color:aliceblue;
 
+    text-decoration: none;
+    margin-left: 34%;
 
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
 
 .login-box {
   background-color: #fff;
@@ -488,10 +514,7 @@ background-color:#313131;
 	.slideshow-container {margin-top: 10%;}
 	.slide-text{margin-top: -5%}
 	.login-box {margin-left: 10%; width:60%}
-	
-}
-
- .borda {
+	.borda {
      padding:3%;
       border-radius: 10px; 
       margin-bottom: 20px; 
@@ -504,4 +527,28 @@ background-color:#313131;
       }
       
   .disabled{ color: rgb(192, 192, 192)}
+.profile_box{display: flex; flex-direction: column; align-items: center; width: 70%;}
+#profile_infsBox{width: 90%; border-left: none; margin-left: 0%; margin-right: 10%;}
+ #profilePicture{width: 10em; height: 10em; border-radius: 100%; margin-top: 30%;}
+ .profile_infs{width: 40%; margin: 5%; text-align: left;font-weight: bold; }
+.profile_box div{width: 30%; padding: 0%;}
+.profile_box a{
+    display: block;
+    border-radius: 15px; 
+    padding: 5%; 
+    width: 100%; 
+     
+    border:none; 
+    font-size: 100%;
+    background-color: #92B560; 
+    color:aliceblue;
 
+    text-decoration: none;
+    margin: -5%;
+
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+}
+
+ 
