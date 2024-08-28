@@ -68,7 +68,7 @@
         </div>
       </div>
       <div>
-
+		<br><br><br><br><br><br><br><br>
         <div class="historia">
           <div class="historia-conteudo">
               <div class="imagens">
@@ -114,13 +114,41 @@
           </div>
       </div>
 
-    <div id="faq">
-      <h1>Perguntas frequentes</h1>
-      <details>
-        <summary>Título da Caixa</summary>
-        <p>Texto 1</p>
-      </details>
-    </div>
+    <div class="faq-container">
+    <h2>Perguntas Frequentes</h2>
+    <p>Tudo o que você precisa saber sobre nossa Reciclagem Eletrônica</p>
+    <button class="contact-button">FALE CONOSCO</button>
+
+    <details class="faq-item">
+        <summary>O que é reciclagem eletrônica? <span class="arrow">v</span></summary>
+        <p>A reciclagem eletrônica envolve o processo de desmontagem, separação e recuperação de materiais valiosos de equipamentos eletrônicos descartados, visando reduzir o impacto ambiental e promover a reutilização de recursos.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary>Quais tipos de equipamentos vocês reciclam? <span class="arrow">v</span></summary>
+        <p>Descrição sobre os tipos de equipamentos reciclados.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary>Como posso agendar a coleta dos meus eletrônicos? <span class="arrow">v</span></summary>
+        <p>Descrição sobre como agendar a coleta.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary>Vocês oferecem certificado de destruição de dados? <span class="arrow">v</span></summary>
+        <p>Descrição sobre o certificado de destruição de dados.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary>Quais são os benefícios de reciclar eletrônicos com vocês? <span class="arrow">v</span></summary>
+        <p>Descrição dos benefícios de reciclar eletrônicos.</p>
+    </details>
+
+    <details class="faq-item">
+        <summary>O que acontece com os eletrônicos após a reciclagem? <span class="arrow">v</span></summary>
+        <p>Descrição sobre o processo pós-reciclagem.</p>
+    </details>
+</div>
 
   </main>
 
@@ -162,5 +190,14 @@
     </div>
 
   </footer>
+  
+  <script>
+    document.querySelectorAll('details').forEach((details) => {
+        details.addEventListener('toggle', (event) => {
+            const arrow = event.target.querySelector('.arrow');
+            arrow.textContent = details.open ? '^' : 'v';
+        });
+    });
+</script>
 </body>
 </html>

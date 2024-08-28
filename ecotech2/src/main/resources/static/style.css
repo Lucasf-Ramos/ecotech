@@ -398,7 +398,6 @@ text-decoration: none;
 }
 
 
-
 .login-box input[type="submit"] {
 background-color: #161616;
 color: #fff;
@@ -650,6 +649,61 @@ text-align: center;
 .bordasSuaves{border-radius: 20px; padding: 2%; width: 40%; margin-bottom: 1%; border:solid rgb(82, 82, 82); cursor: pointer; transition: background-color 0.3s, color 0.3s;}
 .bordasSuaves:hover{border:solid #82AE64}
 
+.faq-container {
+    max-width: 800px; /* Increase width to make it longer */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button {
+    background-color: #7ed957;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-item summary {
+    background-color: #d4f5ff;
+    color: #00254a;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    list-style: none;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none; /* Remove border */
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none; /* Remove default arrow */
+}
+
+.faq-item p {
+    background-color: #e9f8ff;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.arrow {
+    font-size: 20px;
+    color: #00254a;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
 
 .buttonColored{
 border-radius: 20px; 
