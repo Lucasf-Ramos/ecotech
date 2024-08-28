@@ -513,6 +513,7 @@ margin-top: -50px;
 
 .historia-conteudo {
 display: flex;
+flex-wrap: wrap;
 align-items: center;
 justify-content: space-between;
 margin-bottom: 40px;
@@ -650,12 +651,12 @@ text-align: center;
 .bordasSuaves:hover{border:solid #82AE64}
 
 .faq-container {
-    max-width: 800px; /* Increase width to make it longer */
+    width: 50%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
 }
 
 .contact-button {
@@ -673,8 +674,8 @@ text-align: center;
 }
 
 .faq-item summary {
-    background-color: #d4f5ff;
-    color: #00254a;
+    background-color:rgb(191, 247, 191);
+    color: rgb(0, 117, 9);
     padding: 15px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -684,15 +685,15 @@ text-align: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: none; /* Remove border */
+    border: none;
 }
 
 .faq-item summary::-webkit-details-marker {
-    display: none; /* Remove default arrow */
+    display: none;
 }
 
 .faq-item p {
-    background-color: #e9f8ff;
+    background-color: rgb(230, 251, 230);
     padding: 15px;
     border-radius: 5px;
     margin-top: 5px;
@@ -700,7 +701,7 @@ text-align: center;
 
 .arrow {
     font-size: 20px;
-    color: #00254a;
+    color: rgb(0, 117, 9);
     font-weight: bold;
     transition: transform 0.3s ease;
 }
@@ -772,6 +773,15 @@ margin: -5%;
 
 cursor: pointer;
 transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+
+.faq-container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+   
 }
 }
 
