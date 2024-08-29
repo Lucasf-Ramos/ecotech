@@ -20,20 +20,20 @@ import ecotech.tcc.demo.model.Usuario;
 import ecotech.tcc.demo.repository.UsuarioReopository;
 
 @Controller
-@RequestMapping("/ecotech/cliente")
+@RequestMapping("/ecotech/user")
 
-//carregar o formulario de cadastro do cliente
+//carregar o formulario de cadastro do user
 public class UsuarioController {
 	
 	@Autowired
-	private UsuarioReopository clienteRepository;
+	private UsuarioReopository userRepository;
 	public static Usuario usuarioAtual; //o usuario que esta logado na conta atualmente
 	public boolean LoginErrado;
 	
 	@GetMapping("/perfil")
-	public String telaPerfil(Model model, Usuario cliente) {
+	public String telaPerfil(Model model, Usuario user) {
 		if(usuarioAtual != null) {
-			model.addAttribute("cliente", usuarioAtual); //puxa o id do usuario que esta logado na conta atualmente
+			model.addAttribute("user", usuarioAtual); //puxa o id do usuario que esta logado na conta atualmente
 			return "intranet/perfil/TelaPerfil";
 		}
 		return "intranet/perfil/login";
@@ -41,18 +41,18 @@ public class UsuarioController {
 	}
 	@GetMapping("/editar")
 	public String EditarPerfil(Model model) {
-		model.addAttribute("cliente", usuarioAtual); //puxa o id do usuario que esta logado na conta atualmente
+		model.addAttribute("user", usuarioAtual); //puxa o id do usuario que esta logado na conta atualmente
 		return "intranet/perfil/EditarPerfil";
 	}
 	@PostMapping("/update")
-	public String atualizar(Usuario cliente, BindingResult result) {
+	public String atualizar(Usuario user, BindingResult result) {
 		
-		usuarioAtual.setNome(cliente.getNome());
-		usuarioAtual.setEmail(cliente.getEmail());
-		usuarioAtual.setSenha(cliente.getSenha());
+		usuarioAtual.setNome(user.getNome());
+		usuarioAtual.setEmail(user.getEmail());
+		usuarioAtual.setSenha(user.getSenha());
 		
-		clienteRepository.save(usuarioAtual);
-		return "redirect:/ecotech/cliente/perfil";
+		userRepository.save(usuarioAtual);
+		return "redirect:/ecotech/user/perfil";
 			
 	}
 	
@@ -60,29 +60,31 @@ public class UsuarioController {
 	public String logOut() {
 		
 		usuarioAtual = null;
-		return "redirect:/ecotech/cliente/index";
+		return "redirect:/ecotech/user/index";
 	}
 	
 
 	@GetMapping("/login")
-	public String login(Usuario cliente, Model model) {
+	public String login(Usuario user, Model model) {
 		
+		if(usuarioAtual!= null) {
+			return "redirect:/ecotech/user/perfil";
+		}
 	
-	
-		model.addAttribute("cliente", cliente);
+		model.addAttribute("usuario", user);
 		model.addAttribute("problem", LoginErrado);
 		return "intranet/perfil/Login";
 	}
 		
 	@PostMapping("/login")
-	public String efetuarLogin(Usuario cliente, Model model) {
+	public String efetuarLogin(Usuario user, Model model) {
 	
-		String page = "redirect:/ecotech/cliente/login";
-		Usuario clientedb = clienteRepository.findByEmail(cliente.getEmail());
-		if(clientedb != null && cliente.getSenha().equals(clientedb.getSenha()) && clientedb.isStatusUsuario()) {
-			page = "redirect:/ecotech/cliente/perfil";
+		String page = "redirect:/ecotech/user/login";
+		Usuario userdb = userRepository.findByEmail(user.getEmail());
+		if(userdb != null && user.getSenha().equals(userdb.getSenha()) && userdb.isStatusUsuario()) {
+			page = "redirect:/ecotech/user/perfil";
 			
-			usuarioAtual = clienteRepository.findByEmail(cliente.getEmail());
+			usuarioAtual = userRepository.findByEmail(user.getEmail());
 			LoginErrado = false;
 		}
 		else {
@@ -96,32 +98,33 @@ public class UsuarioController {
 	
 	
 		
-	@GetMapping("/novo-cliente")
-	public String novocliente(Usuario cliente, Model model){
+	@GetMapping("/novo-user")
+	public String novouser(Usuario user, Model model){
 		
 		
 		
-		model.addAttribute("cliente", cliente);
-		return "intranet/perfil/CadastrarCliente";
+		model.addAttribute("user", user);
+		return "intranet/perfil/CadastrarFuncionario";
 	
 	
 	
 	}
 	
-	@PostMapping("/add-cliente")
-	public String addCliente(Usuario cliente, Model model) {
+	@PostMapping("/add-user")
+	public String adduser(Usuario user, Model model) {
 		
-		cliente.setStatusUsuario(true); 
-		Usuario clientedb = clienteRepository.findByEmail(cliente.getEmail());
-		if(clientedb != null && clientedb.isStatusUsuario())
+		user.setStatusUsuario(true); 
+		Usuario userdb = userRepository.findByEmail(user.getEmail());
+		if(userdb != null && userdb.isStatusUsuario())
 		{
-			return "redirect:/ecotech/cliente/novo-cliente";
+			return "redirect:/ecotech/user/novo-func";
 		}
 		else {
 			
-			cliente.setDataCadastro(LocalDateTime.now());
-			Usuario clienteDb = clienteRepository.save(cliente);
-			return "redirect:/ecotech/cliente/login";
+			user.setDataCadastro(LocalDateTime.now());
+			Usuario userDb = userRepository.save(user);
+			
+			return "redirect:/ecotech/user/perfil";
 		}
 	
 		
@@ -133,8 +136,8 @@ public class UsuarioController {
 	@GetMapping("/excluir")
 	public String excluir() {
 		usuarioAtual.setStatusUsuario(false);
-		usuarioAtual.setEmail(null); 
-		clienteRepository.save(usuarioAtual);
+		usuarioAtual.setEmail(""); 
+		userRepository.save(usuarioAtual);
 		usuarioAtual = null;
 		
 		return "redirect:/ecotech/index";

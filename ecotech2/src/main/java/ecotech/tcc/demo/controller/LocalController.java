@@ -1,6 +1,7 @@
 package ecotech.tcc.demo.controller;
 
 
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
+import ecotech.tcc.demo.model.GrupoResiduos;
 import ecotech.tcc.demo.model.Local;
 import ecotech.tcc.demo.model.Usuario;
+import ecotech.tcc.demo.repository.GrupoResiduosReopository;
 import ecotech.tcc.demo.repository.LocalReopository;
 
 
@@ -32,10 +34,16 @@ public class LocalController {
 	
 	@Autowired
 	private LocalReopository localRepository;
+	@Autowired
+	private GrupoResiduosReopository grupoRepository;
+	String foto;
 	
+	
+
 	@GetMapping("/todos-locais") 
 	public String todos(Model model) {
 		
+		model.addAttribute("title", "");
 		if(UsuarioController.usuarioAtual != null) {
 			model.addAttribute("locais", localRepository.findAll()); //procura por todos os produtos do banco de dados		
 		    return "intranet/locais"; //retorna o nome da pagina que deve ser aberta
@@ -43,17 +51,34 @@ public class LocalController {
 		return "redirect:/ecotech/cliente/login"; 
 	}
 	
-	@GetMapping("/todos-locais/{id}") 
-	public String filtrar(Model model, @PathVariable("id") int id) {
-	
-		
-		if(UsuarioController.usuarioAtual != null) {
-			model.addAttribute("locais", localRepository.findByStatus(id==0?false:true)); //procura por todos os produtos do banco de dados		
-		    return "intranet/locais"; //retorna o nome da pagina que deve ser aberta
-		}
-		return "redirect:/ecotech/cliente/login"; 
+	@PostMapping("/todos-locais/filter") 
+	public String filtrar(Model model, @RequestParam("status") int status) {
+	    if (UsuarioController.usuarioAtual != null) {
+	        if (status > 1) {
+	        	model.addAttribute("title", "");
+	            return "redirect:/ecotech/locais/todos-locais";
+	            
+	        } else {
+	        	
+	        	String txt = status==0?"Todos locais inativos": "todos locais ativos";
+	        	model.addAttribute("title", txt);
+	        	
+	            model.addAttribute("locais", localRepository.findByStatus(status == 0 ? false : true)); // Procura por todos os produtos do banco de dados
+	            return "intranet/locais";
+	        }
+	    }
+	    return "redirect:/ecotech/cliente/login"; 
 	}
-	
+	@PostMapping("/todos-locais/pesquisa") 
+	public String search(Model model, @RequestParam("name") String name) {
+	    if (UsuarioController.usuarioAtual != null) {
+	    		model.addAttribute("title", "você pesquisou por " + name);
+	            model.addAttribute("locais", localRepository.findByNomeContaining(name)); 
+	            return "intranet/locais";
+	        
+	    }
+	    return "redirect:/ecotech/cliente/login"; 
+	}
 
 	
 	
@@ -84,8 +109,19 @@ public class LocalController {
 	@GetMapping("/editar-local/{id}")
 	public String showUpdateForm(@PathVariable("id") long id, ModelMap model) {
 		Local local = localRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid local Id:" + id));
-	
+		String resid = local.getGrupoResiduos().getNome();
+
+		List<GrupoResiduos> grupoResiduosList = grupoRepository.findAll();
+		List<String> cidades = localRepository.findAllUniqueCities();
+
+		if (local.getFoto() != null) {
+			foto = Base64.getEncoder().encodeToString(local.getFoto());
+		}
 		model.addAttribute("local", local);
+		model.addAttribute("residuo", resid);
+		model.addAttribute("grupoResiduosList", grupoResiduosList);
+		model.addAttribute("cidades", cidades);
+		model.addAttribute("foto", foto);
 		//model.addAttribute("tipos", EnumTipoLocal.values());
 
 		
@@ -101,6 +137,7 @@ public class LocalController {
 			local.setId((long)id);
 			return "intranet/editar-local";
 		}
+		
 		
 		local.setSenha(localRepository.findById((long)id).orElseThrow(() -> new IllegalArgumentException("Invalid local Id:" + id)).getSenha());
 		localRepository.save(local);

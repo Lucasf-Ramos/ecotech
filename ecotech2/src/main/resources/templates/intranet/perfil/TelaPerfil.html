@@ -9,6 +9,19 @@
     <script src="/javascript.js"></script>
     <link rel="shortcut icon" href="/img/logoeco.png">
     <title>Perfil</title>
+    
+    
+	<script>
+		function showMenu() {
+			document.getElementById('menu').style.display = 'block';
+		}
+
+		function hideMenu() {
+			document.getElementById('menu').style.display = 'none';
+		}
+
+	</script>
+
 </head>
 <body>
     <header class="black">
@@ -16,9 +29,9 @@
         <img src="/img/logo.png" alt="Logo" class="logo">
         <!-- Menu -->
         <nav>
-            <a href="/ecotech/cliente/index">Home</a>
-            <a href="/ecotech/cliente/perfil">Tela Perfil</a>
-               <a href="/ecotech/locais/todos-locais">Centros de coleta</a>
+            <a href="/ecotech/user/index">Home</a>
+            <a href="/ecotech/user/perfil">Tela Perfil</a>
+            <a href="/ecotech/locais/todos-locais">Centros de coleta</a>
         </nav>
        <br>       <br>
 
@@ -30,19 +43,25 @@
     </header>
     <main>
         <br><br>
+        <div class="regis_box exclude_accont" id="menu">
+			<h3>Deseja mesmo excluir sua conta?</h3>
+
+			<a onclick="hideMenu()" >Não</a><br>
+			<a href="/ecotech/user/excluir" id="logOut">Sim</a><br>
+		</div>
         <div class="regis_box profile_box">
-            <div th:each="c : ${cliente}">
+            <div th:each="c : ${user}">
 				
                 <img src="/img/logoeco.png"  id="profilePicture"><br><br><br>
-                <a href="/ecotech/cliente/editar">Editar</a><br>
-                <a href="/ecotech/cliente/logout" id="logOut">LogOut</a><br>
-                <a href="/ecotech/cliente/excluir" id="logOut">Excluir conta</a><br>
-                <span th:if="${c.nivelAcesso}=='ADMIN'"> <a href="/ecotech/cliente/novo-cliente">Criar conta de funcionário</a><br> </span>
+                <a href="/ecotech/user/editar">Editar</a><br>
+                <a href="/ecotech/user/logout" id="logOut">LogOut</a><br>
+                <a onclick="showMenu()"  id="logOut">Excluir conta</a><br>
+                <span th:if="${c.nivelAcesso}=='ADMIN'"> <a href="/ecotech/user/novo-user">Criar conta de funcionário</a><br> </span>
             </div>
             <div id="profile_infsBox"> 
             <br><br>
                 <h1>Seu perfil</h1>
-                <div class="profile_infs" th:each="c : ${cliente}">
+                <div class="profile_infs" th:each="c : ${user}">
                     <p>nome: <span th:text="${c.nome}"></span></span></p>
 					<p>email: <span th:text="${c.email}"></span></p>
 					<p>Data de Registro: <span th:text="${c.dataCadastro}"></span></p>

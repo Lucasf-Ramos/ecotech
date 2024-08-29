@@ -10,6 +10,19 @@
 	<script src="/javascript.js"></script>
 	<link rel="shortcut icon" href="/img/logoeco.png">
 	<title>Perfil</title>
+
+	<script>
+		function showMenu() {
+			document.getElementById('menu').style.display = 'block';
+		}
+
+		function hideMenu() {
+			document.getElementById('menu').style.display = 'none';
+		}
+
+	</script>
+
+
 </head>
 
 <body>
@@ -18,7 +31,7 @@
 		<img src="/img/logo.png" alt="Logo" class="logo">
 		<!-- Menu -->
 		<nav>
-			<a href="/ecotech/cliente/index">Home</a>
+			<a href="/ecotech/user/index">Home</a>
 			<a href="/ecotech/ecoponto/perfil">Tela Perfil</a>
 
 		</nav>
@@ -32,29 +45,30 @@
 	</header>
 	<main>
 		<br><br>
-			<div class="regis_box exclude_accont">
-				<h3>Deseja mesmo excluir sua conta?</h3>
-				
-				<a href="/ecotech/cliente/excluir" id="logOut" style=" background-color: #92B560;">Não</a><br>
-				<a href="/ecotech/cliente/excluir" id="logOut" style=" background-color: rgb(210, 81, 106);">Sim</a><br>
-			</div>
-		
+		<div class="regis_box exclude_accont" id="menu">
+			<h3>Deseja mesmo excluir sua conta?</h3>
+
+			<a onclick="hideMenu()" >Não</a><br>
+			<a href="/ecotech/ecoponto/excluir" id="logOut">Sim</a><br>
+		</div>
+
 		<div class="regis_box profile_box" style="width: 70%;" th:each="c : ${locais}">
 			<div>
 
-	
-					
-				<img th:if="${foto != null}" th:src="'data:image/jpeg;base64,' + ${foto}" id="profilePicture"><br><br><br>
+
+
+				<img th:if="${foto != null}" th:src="'data:image/jpeg;base64,' + ${foto}"
+					id="profilePicture"><br><br><br>
 				<img th:unless="${foto}" src="/img/logoeco.png" id="profilePicture"><br><br><br>
-				
+
 
 
 				<a href="/ecotech/ecoponto/editar">Editar</a><br>
 				<a href="/ecotech/ecoponto/logout" id="logOut">LogOut</a><br>
-				<a href="/ecotech/cliente/excluir" id="logOut">Excluir conta</a><br>
-				
-			
-				
+				<a onclick="showMenu()" id="logOut">Excluir conta</a><br>
+
+
+
 			</div>
 			<div id="profile_infsBox">
 				<h1>Seu perfil</h1>

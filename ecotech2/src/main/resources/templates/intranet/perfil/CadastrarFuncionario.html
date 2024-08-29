@@ -17,7 +17,7 @@
         <img src="/img/logo.png" alt="Logo" class="logo">
         <!-- Menu -->
         <nav>
-            <a href="/ecotech/cliente/index">Home</a>
+            <a href="/ecotech/user/index">Home</a>
             
         </nav>
        <br>       <br>
@@ -29,7 +29,7 @@
     <main>
         <br/><br/><br/><br/>
       <div class="regis_box">
-        <form th:action="@{/ecotech/cliente/add-cliente}" th:object="${cliente}" method="post">
+        <form th:action="@{/ecotech/user/add-user}" th:object="${user}" method="post">
             <h1>Cadastrar-se</h1>
             <input type="text" th:field="*{nome}" required placeholder="Nome Completo*" class="bordasSuaves">  
             <input type="email" th:field="*{email}" required placeholder="Email*" class="bordasSuaves"><br/>
@@ -38,8 +38,8 @@
             <input type="password" required placeholder="repita sua senha*" class="bordasSuaves" id="senha2"><br/><br/>
 			 <select th:field="*{nivelAcesso}" required class="bordasSuaves">
 			            <option value="">Selecione o Nível de Acesso*</option>
-			            <option value="funcionario">Funcionário</option>
-			            <option value="gerente">Gerente</option>
+			            <option value="ADMIN">Gerente</option>
+			            <option value="USER">Funcionário</option>
 			 </select><br/>
             <input type="submit" class="buttonColored" value="Cadastrar"><br/><br/>
         </form>

@@ -16,8 +16,8 @@
         <img src="/img/logo.png" alt="Logo" class="logo">
         <!-- Menu -->
         <nav>
-            <a href="/ecotech/cliente/index">Home</a>
-            <a href="/ecotech/cliente/perfil">Tela Perfil</a>
+            <a href="/ecotech/user/index">Home</a>
+            <a href="/ecotech/user/perfil">Tela Perfil</a>
                <a href="/ecotech/locais/todos-locais">Centros de coleta</a>
         </nav>
        <br>       <br>
@@ -27,7 +27,7 @@
     </header>
     <main>
         <br><br>
-        <form th:action="@{/ecotech/cliente/update}" th:object="${cliente}" method="post">
+        <form th:action="@{/ecotech/user/update}" th:object="${user}" method="post">
         <div class="regis_box profile_box">
             <div>
                 <img src="/img/logo.png" id="profilePicture"><br><br><br>

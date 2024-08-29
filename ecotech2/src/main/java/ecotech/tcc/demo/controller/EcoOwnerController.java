@@ -95,7 +95,7 @@ public class EcoOwnerController {
 			LoginErrado = false;
 
 		} else if (localdb != null && localdb.getSenha().equals(local.getSenha()) && !localdb.isStatusPonto()) {
-			errorMsg = "Seu Ecoponto não está ativo no momento. \n Caso ainda tenha dúvida, entre em contato conosco";
+			errorMsg = "Seu Ecoponto não está ativo no momento, ele pode ter sido excluido ou inativado pela nossa equipe. \n Caso ainda tenha dúvida, entre em contato conosco";
 		} else {
 			LoginErrado = true;
 			errorMsg = "Login ou senha errados";
@@ -158,7 +158,20 @@ public class EcoOwnerController {
 	public String logOut() {
 
 		localAtual = null;
+		foto = "";
 		return "redirect:/ecotech/cliente/index";
 	}
+	@GetMapping("/excluir")
+	public String excluir() {
+		localAtual.setStatusPonto(false);
+		localAtual.setEmail("");
+		localAtual.setSenha("");
+		localRepository.save(localAtual);
+		
+		localAtual = null;
+		
+		return "redirect:/ecotech/index";
+	}
+	
 
 }

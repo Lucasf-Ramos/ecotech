@@ -25,6 +25,8 @@ GO
 INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Ana Silva', 'ana.silva@example.com', 'senhaAna1', 'ADMIN', GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+VALUES ('Lucas Fantinati', 'lucasframos15@gmail.com', 'senha', 'ADMIN', GETDATE(), 1)
+INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Pedro Santos', 'pedro.santos@example.com', 'senhaPedro2', 'ADMIN', GETDATE(), 1)
 INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Mariana Oliveira', 'mariana.oliveira@example.com', 'senhaMariana3', 'ADMIN', GETDATE(), 1)
