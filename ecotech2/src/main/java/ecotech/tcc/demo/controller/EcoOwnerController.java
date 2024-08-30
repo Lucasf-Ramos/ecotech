@@ -38,7 +38,8 @@ public class EcoOwnerController {
 
 	private Local localAtual;
 	public boolean LoginErrado = false;
-	String errorMsg;
+	String errorMsgLogin;
+	String errorMsgcriarConta;
 	String foto;
 
 	@GetMapping("/perfil")
@@ -47,8 +48,12 @@ public class EcoOwnerController {
 			model.addAttribute("locais", localAtual); // puxa o id do usuario que esta logado na conta atualmente
 			if (localAtual.getFoto() != null) {
 				foto = Base64.getEncoder().encodeToString(localAtual.getFoto());
+				model.addAttribute("foto", foto);
 			}
-			model.addAttribute("foto", foto);
+			else {
+				model.addAttribute("foto", null);
+			}
+			
 			
 			return "donoEcoponto/perfilDono";
 		}
@@ -58,18 +63,51 @@ public class EcoOwnerController {
 
 	@GetMapping("/novo-local") // cria a conta
 	public String novoProduto(Local local, Model model) {
+		
+		model.addAttribute("erroMsg", errorMsgcriarConta);
+		List<GrupoResiduos> grupoResiduosList = grupoRepository.findAll();
+		List<String> cidades = localRepository.findAllUniqueCities();
+		
+		
+		model.addAttribute("grupoResiduosList", grupoResiduosList);
+		model.addAttribute("cidades", cidades);
 		model.addAttribute("locais", local);
 		return "donoEcoponto/novolocal";
 	}
 
 	@PostMapping("/add-local")
-	public String gravarNovoProduto(Local local, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			return "donoEcoponto/novolocal";
-		}
-		local.setStatusPonto(false);
-		localRepository.save(local);
-		return "donoEcoponto/login";
+	public String gravarNovoLocal(Local local, BindingResult result, Model model) {
+
+	    Local localEmail = localRepository.findByEmail(local.getEmail());
+	    Local localCnpj = localRepository.findByCnpj(local.getCnpj());
+	    List<GrupoResiduos> grupoResiduosList = grupoRepository.findAll();
+		List<String> cidades = localRepository.findAllUniqueCities();
+
+	    if (localEmail != null) {
+	        // O email já existe
+	        model.addAttribute("erroMsg", "O email já está em uso");
+	        
+	        model.addAttribute("grupoResiduosList", grupoResiduosList);
+			model.addAttribute("cidades", cidades);
+			model.addAttribute("locais", local);
+			
+			
+	        return "donoEcoponto/novolocal";
+	    } else if (localCnpj != null) {
+	        // O CNPJ já está em uso
+	        model.addAttribute("erroMsg", "O CNPJ já está em uso");
+	        
+	        model.addAttribute("grupoResiduosList", grupoResiduosList);
+			model.addAttribute("cidades", cidades);
+			model.addAttribute("locais", local);
+			
+			
+	        return "donoEcoponto/novolocal";
+	    } else {
+	        local.setStatusPonto(false);
+	        localRepository.save(local);
+	        return "redirect:/ecotech/ecoponto/login";
+	    }
 	}
 
 	@GetMapping("/login")
@@ -78,7 +116,7 @@ public class EcoOwnerController {
 
 		model.addAttribute("locais", local);
 		model.addAttribute("problem", LoginErrado);
-		model.addAttribute("erro", errorMsg);
+		model.addAttribute("erro", errorMsgLogin);
 		return "donoEcoponto/login";
 	}
 
@@ -95,10 +133,10 @@ public class EcoOwnerController {
 			LoginErrado = false;
 
 		} else if (localdb != null && localdb.getSenha().equals(local.getSenha()) && !localdb.isStatusPonto()) {
-			errorMsg = "Seu Ecoponto não está ativo no momento, ele pode ter sido excluido ou inativado pela nossa equipe. \n Caso ainda tenha dúvida, entre em contato conosco";
+			errorMsgLogin = "Seu Ecoponto não está ativo no momento, ele pode ter sido excluido ou inativado pela nossa equipe. \n Caso ainda tenha dúvida, entre em contato conosco";
 		} else {
 			LoginErrado = true;
-			errorMsg = "Login ou senha errados";
+			errorMsgLogin = "Login ou senha errados";
 		}
 
 		return page;
@@ -159,11 +197,13 @@ public class EcoOwnerController {
 
 		localAtual = null;
 		foto = "";
-		return "redirect:/ecotech/cliente/index";
+		return "redirect:/ecotech/user/index";
 	}
 	@GetMapping("/excluir")
 	public String excluir() {
 		localAtual.setStatusPonto(false);
+		
+		localAtual.setNome("Local Excluido");
 		localAtual.setEmail("");
 		localAtual.setSenha("");
 		localRepository.save(localAtual);

@@ -34,14 +34,15 @@
             <input type="text" th:field="*{nome}" required placeholder="Nome Completo*" class="bordasSuaves">  
             <input type="email" th:field="*{email}" required placeholder="Email*" class="bordasSuaves"><br/>
 
-            <input type="password" th:field="*{senha}" required placeholder="digite sua senha*" class="bordasSuaves" id="senha1">
-            <input type="password" required placeholder="repita sua senha*" class="bordasSuaves" id="senha2"><br/><br/>
+            <input type="password" th:field="*{senha}" required placeholder="digite uma senha*" class="bordasSuaves" id="senha1">
+            <input type="password" required placeholder="repita a senha*" class="bordasSuaves" id="senha2"><br/><br/>
 			 <select th:field="*{nivelAcesso}" required class="bordasSuaves">
 			            <option value="">Selecione o Nível de Acesso*</option>
 			            <option value="ADMIN">Gerente</option>
 			            <option value="USER">Funcionário</option>
 			 </select><br/>
             <input type="submit" class="buttonColored" value="Cadastrar"><br/><br/>
+            <span style="color:red; text-align: center;" th:text="${erroMsg}"></span>
         </form>
       </div>
       

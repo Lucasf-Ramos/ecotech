@@ -126,5 +126,7 @@ SELECT * FROM Usuario
 SELECT * FROM GrupoResiduo
 SELECT * FROM EcoPonto
 
+select email, senha from EcoPonto
 
-
+SELECT * from EcoPonto c where c.email='a'
+SELECT * from EcoPonto c where c.cnpj = '1234'

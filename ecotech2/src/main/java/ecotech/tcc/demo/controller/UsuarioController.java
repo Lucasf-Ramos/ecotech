@@ -30,13 +30,17 @@ public class UsuarioController {
 	public static Usuario usuarioAtual; //o usuario que esta logado na conta atualmente
 	public boolean LoginErrado;
 	
+	
+
+	
 	@GetMapping("/perfil")
 	public String telaPerfil(Model model, Usuario user) {
 		if(usuarioAtual != null) {
 			model.addAttribute("user", usuarioAtual); //puxa o id do usuario que esta logado na conta atualmente
 			return "intranet/perfil/TelaPerfil";
 		}
-		return "intranet/perfil/login";
+	
+		return "redirect:/ecotech/user/login";
 		
 	}
 	@GetMapping("/editar")
@@ -101,7 +105,10 @@ public class UsuarioController {
 	@GetMapping("/novo-user")
 	public String novouser(Usuario user, Model model){
 		
-		
+		if(usuarioAtual == null || !usuarioAtual.getNivelAcesso().equals("ADMIN")) {
+			
+			return "redirect:/ecotech/user/perfil";
+		}
 		
 		model.addAttribute("user", user);
 		return "intranet/perfil/CadastrarFuncionario";
@@ -112,12 +119,16 @@ public class UsuarioController {
 	
 	@PostMapping("/add-user")
 	public String adduser(Usuario user, Model model) {
-		
+		if(usuarioAtual == null || !usuarioAtual.getNivelAcesso().equals("ADMIN")) {
+			return "intranet/perfil/login";
+		}
 		user.setStatusUsuario(true); 
 		Usuario userdb = userRepository.findByEmail(user.getEmail());
 		if(userdb != null && userdb.isStatusUsuario())
 		{
-			return "redirect:/ecotech/user/novo-func";
+			model.addAttribute("user", user);
+			model.addAttribute("erroMsg", "Já existe um funcionário com esse email");
+			return "intranet/perfil/CadastrarFuncionario";
 		}
 		else {
 			

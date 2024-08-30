@@ -24,6 +24,10 @@ public interface LocalReopository extends JpaRepository<Local, Long> {
 
 	@Query(value = "SELECT * from EcoPonto c where c.email=?", nativeQuery = true)
 	Local findByEmail(String email);
+	
+	@Query(value = "SELECT * from EcoPonto c where c.cnpj=?", nativeQuery = true)
+	Local findByCnpj(String cnpj);
+	
 	// void deleteById(Long id);
 	@Query(value = "SELECT * FROM EcoPonto c WHERE c.nome LIKE %?1%", nativeQuery = true)
 	List<Local> findByNomeContaining(String nome);

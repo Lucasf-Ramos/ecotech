@@ -38,17 +38,19 @@ public class LocalController {
 	private GrupoResiduosReopository grupoRepository;
 	String foto;
 	
+
 	
 
 	@GetMapping("/todos-locais") 
 	public String todos(Model model) {
 		
-		model.addAttribute("title", "");
+		
 		if(UsuarioController.usuarioAtual != null) {
+			
 			model.addAttribute("locais", localRepository.findAll()); //procura por todos os produtos do banco de dados		
 		    return "intranet/locais"; //retorna o nome da pagina que deve ser aberta
 		}
-		return "redirect:/ecotech/cliente/login"; 
+		return "redirect:/ecotech/user/login"; 
 	}
 	
 	@PostMapping("/todos-locais/filter") 
@@ -67,7 +69,7 @@ public class LocalController {
 	            return "intranet/locais";
 	        }
 	    }
-	    return "redirect:/ecotech/cliente/login"; 
+	    return "redirect:/ecotech/user/login"; 
 	}
 	@PostMapping("/todos-locais/pesquisa") 
 	public String search(Model model, @RequestParam("name") String name) {
@@ -77,37 +79,14 @@ public class LocalController {
 	            return "intranet/locais";
 	        
 	    }
-	    return "redirect:/ecotech/cliente/login"; 
+	    return "redirect:/ecotech/user/login"; 
 	}
 
 	
-	
-	
-	
-	@GetMapping("/novo-local")
-	public String novoProduto(Local local, Model model) {
-		model.addAttribute("locais", local);
-		return "intranet/novo-local";
-	}
-	
-	@PostMapping("/add-local")
-	public String gravarNovoProduto(Local local, BindingResult result, Model model) {
-		if (result.hasErrors()) {
-			return "intranet/novo-local";
-		}
-		local.setStatusPonto(true);
-		local.setSenha(local.getCnpj().toString());
-		localRepository.save(local);
-		return "redirect:/ecotech/locais/todos-locais";
-	}
-	@GetMapping("/todos")
-	public List<Local> listarTodos() {
-		return localRepository.findAll();
-	}
-
 	
 	@GetMapping("/editar-local/{id}")
 	public String showUpdateForm(@PathVariable("id") long id, ModelMap model) {
+		if (UsuarioController.usuarioAtual != null) {
 		Local local = localRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid local Id:" + id));
 		String resid = local.getGrupoResiduos().getNome();
 
@@ -116,16 +95,25 @@ public class LocalController {
 
 		if (local.getFoto() != null) {
 			foto = Base64.getEncoder().encodeToString(local.getFoto());
+			model.addAttribute("foto", foto);
 		}
+		else {
+			
+			foto = "";
+			model.addAttribute("foto", null);
+		}
+		
 		model.addAttribute("local", local);
 		model.addAttribute("residuo", resid);
 		model.addAttribute("grupoResiduosList", grupoResiduosList);
 		model.addAttribute("cidades", cidades);
-		model.addAttribute("foto", foto);
+		
 		//model.addAttribute("tipos", EnumTipoLocal.values());
 
 		
-		return "intranet/editar-local";
+		return "intranet/editar-local";}
+		 return "redirect:/ecotech/user/login"; 
+		
 	}
 
 	@PostMapping("/update/{id}")

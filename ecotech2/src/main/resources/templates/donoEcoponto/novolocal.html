@@ -37,127 +37,157 @@
 
 	<main>
 		<br><br>
-		<form action="#" th:action="@{/ecotech/locais/add-local}" style="padding: 30%; padding-top:0%; padding-right: 30%; padding-bottom:0%" th:object="${local}" method="post">
+		<h1  class="titulo">Deseja ter seu Ecoponto divulgado no nosso App?
+			<h3 style="text-align: center; color: grey; ">Preencha as informações abaixo, <br> e espere pelo retorno de nossa equipe!</h3><br>
+		</h1><br>
 		
+		<form  th:action="@{/ecotech/ecoponto/add-local}"
+		class="regis_box" style="padding: 3%; margin-bottom: 5%; width: 80%; text-align: left; color: grey;"
+		 th:object="${local}" method="post"  enctype="multipart/form-data">
+			
+				<span style="color:red; text-align: center;" th:text="${erroMsg}"></span>
 			<div class="row">
-				<div class="form-group col-md-12">
-					<label for="nome" class="col-form-label">Nome:</label>
-					<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome">
-					<span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="text-danger"></span>
+					
+					<input type="hidden" th:field="*{id}" class="form-control" id="id" placeholder="ID" readonly>
+
+					
+
+					<div class="form-group col-md-6">
+						<label for="nome" class="col-form-label">Nome:</label>
+						<input type="text" th:field="*{nome}" class="form-control" id="nome" placeholder="Nome" required>
+
+					</div>
+					<div class="form-group col-md-5">
+						<label for="cnpj" class="col-form-label">cnpj:</label>
+						<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="cnpj" required>
+
+					</div>
+					<div class="row">
+					</div>
+					<div class="form-group col-md-6">
+						<label for="email" class="col-form-label">email:</label>
+						<input type="email" th:field="*{email}" class="form-control" id="email" placeholder="email" required>
+
+					</div>
+					<div class="form-group col-md-5">
+						<label for="senha" class="col-form-label">senha:</label>
+						<input type="text" th:field="*{senha}" class="form-control" id="senha" placeholder="senha" required>
+
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="form-group col-md-11">
+						<label for="website" class="col-form-label">Website:</label>
+						<input type="text" th:field="*{website}" class="form-control" id="website"
+							placeholder="Website" required>
+
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="form-group col-md-2">
+						<label for="cidade" class="col-form-label">Cidade:</label>
+
+						<input type="text" list="cidades" th:field="*{cidade}" class="form-control" id="cidade"
+							placeholder="Cidade" required>
+						<datalist id="cidades">
+							<option th:each="cidade : ${cidades}" th:value="${cidade}"></option>
+						</datalist>
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="logradouro" class="col-form-label">Logradouro:</label>
+						<input type="text" th:field="*{logradouro}" class="form-control" id="logradouro"
+							placeholder="Logradouro" required>
+
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="cep" class="col-form-label">CEP:</label>
+						<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP" required>
+
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="numResid" class="col-form-label">Número:</label>
+						<input type="text" th:field="*{numResid}" class="form-control" id="numResid"
+							placeholder="Número" required>
+
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="bairro" class="col-form-label">Bairro:</label>
+						<input type="text" th:field="*{bairro}" class="form-control" id="bairro" placeholder="Bairro" required>
+
+					</div>
+
+
+
+					<div class="form-group col-md-1">
+						<label for="uf" class="col-form-label">UF:</label>
+						<input type="text" th:field="*{uf}" class="form-control" id="uf" placeholder="UF" required>
+
+					</div>
+
+					<div class="form-group col-md-2">
+						<label for="complemento" class="col-form-label">Complemento:</label>
+						<input type="text" th:field="*{complemento}" class="form-control" id="complemento"
+							placeholder="Complemento" required>
+
+					</div>
+
+					<div class="form-group col-md-5">
+						<label for="pontoRef" class="col-form-label">Ponto de Referência:</label>
+						<input type="text" th:field="*{pontoRef}" class="form-control" id="pontoRef"
+							placeholder="Ponto de Referência" required>
+
+					</div>
+				</div>
+				<br>
+				<div class="row">
+					<div class="form-group col-md-3">
+						<label for="telefone" class="col-form-label">Telefone:</label>
+						<input type="text" th:field="*{telefone}" class="form-control" id="telefone"
+							placeholder="Telefone" required>
+
+					</div>
+
+					<div class="form-group col-md-4">
+						<label for="horarioFunc" class="col-form-label">Horário de Funcionamento:</label>
+						<input type="text" th:field="*{horarioFunc}" class="form-control" id="horarioFunc"
+							placeholder="Horário de Funcionamento" required>
+
+					</div>
+					<div class="form-group col-md-4">
+						<label for="grupo_residuos" class="col-form-label">Grupo de Resíduo</label>
+						<select th:field="*{grupoResiduos.id}" class="form-control" id="grupo_residuos">
+							<option th:each="grupo : ${grupoResiduosList}" th:value="${grupo.id}"
+								th:text="${grupo.nome}"></option>
+						</select>
+					</div>
+
+					<div class="form-group col-md-11">
+						<label for="descricao" class="col-form-label">Descrição:</label>
+						<textarea th:field="*{descricao}" class="form-control" id="descricao" rows="3"
+							placeholder="Descrição" required></textarea>
+
+					</div>
+
 				</div>
 
 				<div class="form-group col-md-12">
-					<label for="cnpj" class="col-form-label">Cnpj:</label>
-					<input type="text" th:field="*{cnpj}" class="form-control" id="cnpj" placeholder="cnpj">
-					<span th:if="${#fields.hasErrors('cnpj')}" th:errors="*{cnpj}" class="text-danger"></span>
+					<a href="/ecotech/ecoponto/perfil" class="btn btn-primary mb-2"
+						style="background-color: rgb(192, 192, 192); border:rgb(192, 192, 192)">Voltar</a>
+					<input type="submit" class="btn btn-primary mb-2" value="Criar conta"
+						style="background-color: rgb(112, 204, 72);; border:rgb(112, 204, 72);">
+
 				</div>
 
-				<div class="form-group col-md-12">
-					<label for="email" class="col-form-label">E-mail:</label>
-					<input type="email" th:field="*{email}" class="form-control" id="email" placeholder="email">
-					<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-				</div>
+			
+
 				
-				
-				<div class="form-group col-md-12">
-					<label for="email" class="col-form-label">senha:</label>
-					<input type="pasword" th:field="*{senha}" class="form-control" id="senha" placeholder="senha">
-					<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-				</div>
-				<div class="form-group col-md-12">
-					<label for="email" class="col-form-label">repita a senha:</label>
-					<input type="pasword" th:field="*{senha}" class="form-control" id="senha" placeholder="senha">
-					<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
-				</div>
-				
-
-				<div class="form-group col-md-12">
-					<label for="descricao" class="col-form-label">Descrição:</label>
-					<input type="text" th:field="*{descricao}" class="form-control" id="descricao"
-						placeholder="Descrição">
-					<span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-5">
-					<label for="website" class="col-form-label">Website:</label>
-					<input type="text" th:field="*{website}" class="form-control" id="website" placeholder="Website">
-					<span th:if="${#fields.hasErrors('website')}" th:errors="*{website}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-12">
-					<label for="logradouro" class="col-form-label">Logradouro:</label>
-					<input type="text" th:field="*{logradouro}" class="form-control" id="logradouro"
-						placeholder="Logradouro">
-					<span th:if="${#fields.hasErrors('logradouro')}" th:errors="*{logradouro}"
-						class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-12">
-					<label for="cep" class="col-form-label">CEP:</label>
-					<input type="text" th:field="*{cep}" class="form-control" id="cep" placeholder="CEP">
-					<span th:if="${#fields.hasErrors('cep')}" th:errors="*{cep}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-6">
-					<label for="numResid" class="col-form-label">Número:</label>
-					<input type="text" th:field="*{numResid}" class="form-control" id="numResid" placeholder="Número">
-					<span th:if="${#fields.hasErrors('numResid')}" th:errors="*{numResid}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-6">
-					<label for="bairro" class="col-form-label">Bairro:</label>
-					<input type="text" th:field="*{bairro}" class="form-control" id="bairro" placeholder="Bairro">
-					<span th:if="${#fields.hasErrors('bairro')}" th:errors="*{bairro}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-6">
-					<label for="cidade" class="col-form-label">Cidade:</label>
-					<input type="text" th:field="*{cidade}" class="form-control" id="cidade" placeholder="Cidade">
-					<span th:if="${#fields.hasErrors('cidade')}" th:errors="*{cidade}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-3">
-					<label for="uf" class="col-form-label">UF:</label>
-					<input type="text" th:field="*{uf}" class="form-control" id="uf" placeholder="UF">
-					<span th:if="${#fields.hasErrors('uf')}" th:errors="*{uf}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-3">
-					<label for="complemento" class="col-form-label">Complemento:</label>
-					<input type="text" th:field="*{complemento}" class="form-control" id="complemento"
-						placeholder="Complemento">
-					<span th:if="${#fields.hasErrors('complemento')}" th:errors="*{complemento}"
-						class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-12">
-					<label for="pontoRef" class="col-form-label">Ponto de Referência:</label>
-					<input type="text" th:field="*{pontoRef}" class="form-control" id="pontoRef"
-						placeholder="Ponto de Referência">
-					<span th:if="${#fields.hasErrors('pontoRef')}" th:errors="*{pontoRef}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-5">
-					<label for="telefone" class="col-form-label">Telefone:</label>
-					<input type="text" th:field="*{telefone}" class="form-control" id="telefone" placeholder="Telefone">
-					<span th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}" class="text-danger"></span>
-				</div>
-
-				<div class="form-group col-md-7">
-					<label for="horarioFunc" class="col-form-label">Horário de Funcionamento:</label>
-					<input type="text" th:field="*{horarioFunc}" class="form-control" id="horarioFunc"
-						placeholder="Horário de Funcionamento">
-					<span th:if="${#fields.hasErrors('horarioFunc')}" th:errors="*{horarioFunc}"
-						class="text-danger"></span>
-				</div>
 
 
-				
-
-
-				<div class="form-group col-md-12" style="text-align:center;">
-					<input type="submit" class="btn btn-primary mb-2" value="Gravar Novo Local" style="background-color: rgb(112, 204, 72);;  border:none">
-				</div>
 			</div>
 		</form>
 
