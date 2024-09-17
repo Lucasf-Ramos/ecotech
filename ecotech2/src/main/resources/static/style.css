@@ -782,11 +782,13 @@ nav a:hover {
 	margin-bottom: 10px;
 }
 
+
+
 .faq-item summary {
-	background-color: rgb(255, 255, 255);
+	
 	color: rgb(0, 117, 9);
 	border-color:  rgb(0, 117, 9);
-
+	background-color: rgb(208, 253, 214);
 	padding: 15px 20px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -799,12 +801,16 @@ nav a:hover {
 	border: none;
 }
 
+.faq-item summary:hover{
+	background-color: rgb(186, 252, 196);
+}
+
 .faq-item summary::-webkit-details-marker {
 	display: none;
 }
 
 .faq-item p {
-	background-color: rgb(230, 251, 230);
+	background-color: rgb(237, 252, 237);
 	padding: 15px;
 	border-radius: 5px;
 	margin-top: 5px;
