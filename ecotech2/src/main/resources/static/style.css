@@ -5,11 +5,13 @@ html {
 }
 
 body {
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	background-color: #ffffff;
 	overflow-x: hidden;
 	font-family: 'Montserrat', sans-serif;
+	
 }
 
 
@@ -92,8 +94,8 @@ body {
 footer {
 	background-color: #000;
 	color: #fff;
-	padding: 15px 0px;
-	padding: 1%;
+	 padding: 10px 0; 
+    height: 200px; 
 }
 
 .footer-content {
@@ -101,7 +103,7 @@ footer {
 	justify-content: space-between;
 	max-width: 1200px;
 	margin-left: 450px;
-	;
+	
 }
 
 .footer-products,
@@ -198,7 +200,6 @@ hr {
 }
 
 .black {
-	position: sticky;
 	top: 0;
 	background-color: #000000;
 	padding: 1%;
@@ -207,7 +208,7 @@ hr {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	height: 45px;
+	height: 15px;
 	z-index: 100;
 	padding: 2%;
 	padding-top: 3%;
@@ -596,14 +597,8 @@ nav a:hover {
 	margin-top: -50px;
 }
 
-.historia {
-	background: linear-gradient(to bottom,
-			rgb(202, 247, 202, 0) 0%,
-			rgba(202, 247, 202, 1) 94%,
-			rgba(202, 247, 202, 0) 100%);
 
-	padding: 30px;
-}
+
 
 
 
@@ -761,9 +756,10 @@ nav a:hover {
 .faq-container {
 	width: 50%;
 	margin: 0 auto;
-	background-color: #fff;
+	background-color:  #e8f8ec;
 	padding: 20px;
 	border-radius: 8px;
+	color: #097a22;
 
 }
 
@@ -785,7 +781,6 @@ nav a:hover {
 .faq-item summary {
 	background-color: rgb(255, 255, 255);
 	color: rgb(0, 117, 9);
-	border-color:  rgb(0, 117, 9);
 
 	padding: 15px 20px;
 	border-radius: 5px;
