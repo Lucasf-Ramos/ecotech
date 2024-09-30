@@ -94,6 +94,7 @@ body {
 footer {
 	background-color: #000;
 	color: #fff;
+<<<<<<< HEAD
 	 padding: 10px 0; 
     height: 200px; 
 }
@@ -108,48 +109,58 @@ footer {
 
 .footer-products,
 .footer-values {
+=======
+	padding: 15px 0;
+	text-align: center;
+  }
+  .footer-content {
+	display: flex;
+	justify-content: space-between;
+	max-width: 1200px;
+	margin: 0 auto; /* Centraliza horizontalmente */
+  }
+  .footer-products,
+  .footer-values {
+>>>>>>> bce084f98a0084d68696614bd051bb2ba44b396b
 	flex: 1;
-	margin-right: 0%;
-}
-
-.footer-products h3,
-.footer-values h3 {
+	margin-right: 0;
+  }
+  .footer-products h3,
+  .footer-values h3 {
 	font-size: 30px;
 	margin-bottom: 35px;
-}
-
-.footer-section {
+  }
+  .footer-section {
 	flex: 1;
 	margin-right: 10px;
-}
-
-.footer-section h3 {
+	text-align: center;
+  }
+  .footer-section h3 {
 	font-size: 18px;
 	margin-bottom: 10px;
-}
-
-.footer-bottom {
+  }
+  .footer-bottom {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 100px;
-}
-
-.footer-left {
+	max-width: 1200px;
+	margin: 0 auto; /* Centraliza horizontalmente */
+  }
+  .footer-left {
 	margin-left: 14px;
-}
-
-.footer-links a {
+  }
+  .footer-links {
+	margin-left: 0; /* Remove o valor negativo */
+  }
+  .footer-links a {
 	color: #fff;
 	text-decoration: none;
-
-	margin-left: -215%
-}
-
-.footer-links a:hover {
+	margin-left: 15px; /* Ajuste para espaçamento normal */
+  }
+  .footer-links a:hover {
 	text-decoration: underline;
-}
-
+  }
 
 ul {
 	list-style: none;
@@ -174,6 +185,7 @@ ul li a:hover {
 	list-style: none;
 	padding: 0;
 	display: flex;
+	justify-content: center;
 }
 
 .social-icons li,
@@ -778,10 +790,17 @@ nav a:hover {
 	margin-bottom: 10px;
 }
 
-.faq-item summary {
-	background-color: rgb(255, 255, 255);
-	color: rgb(0, 117, 9);
 
+
+.faq-item summary {
+	
+	color: rgb(0, 117, 9);
+<<<<<<< HEAD
+
+=======
+	border-color:  rgb(0, 117, 9);
+	background-color: rgb(208, 253, 214);
+>>>>>>> bce084f98a0084d68696614bd051bb2ba44b396b
 	padding: 15px 20px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -794,12 +813,16 @@ nav a:hover {
 	border: none;
 }
 
+.faq-item summary:hover{
+	background-color: rgb(186, 252, 196);
+}
+
 .faq-item summary::-webkit-details-marker {
 	display: none;
 }
 
 .faq-item p {
-	background-color: rgb(230, 251, 230);
+	background-color: rgb(237, 252, 237);
 	padding: 15px;
 	border-radius: 5px;
 	margin-top: 5px;
