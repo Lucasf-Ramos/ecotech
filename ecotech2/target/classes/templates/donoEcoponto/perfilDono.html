@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/style.css">
+	<script src="https://kit.fontawesome.com/a11b8c2525.js" crossorigin="anonymous"></script>
+	<script src="/javascript.js"></script>
+	<link rel="shortcut icon" href="/img/logoeco.png">
+	<title>Perfil</title>
+
+	<script>
+		function showMenu() {
+			document.getElementById('menu').style.display = 'block';
+		}
+
+		function hideMenu() {
+			document.getElementById('menu').style.display = 'none';
+		}
+
+	</script>
+
+
+</head>
+
+<body>
+	<header class="black">
+		<!-- Logo -->
+		<img src="/img/logo.png" alt="Logo" class="logo">
+		<!-- Menu -->
+		<nav>
+			<a href="/ecotech/user/index">Home</a>
+			<a href="/ecotech/ecoponto/perfil">Tela Perfil</a>
+
+		</nav>
+		<br> <br>
+
+
+
+	</header>
+
+
+	</header>
+	<main>
+		<br><br>
+		<div class="regis_box exclude_accont" id="menu">
+			<h3>Deseja mesmo excluir sua conta?</h3>
+
+			<a onclick="hideMenu()" >Não</a><br>
+			<a href="/ecotech/ecoponto/excluir" id="logOut">Sim</a><br>
+		</div>
+
+		<div class="regis_box profile_box" style="width: 70%;" th:each="c : ${locais}">
+			<div>
+
+
+
+				<img th:if="${foto != null}" th:src="'data:image/jpeg;base64,' + ${foto}"
+					id="profilePicture"><br><br><br>
+				<img th:unless="${foto}" src="/img/logoeco.png" id="profilePicture"><br><br><br>
+
+
+
+				<a href="/ecotech/ecoponto/editar">Editar</a><br>
+				<a href="/ecotech/ecoponto/logout" id="logOut">LogOut</a><br>
+				<a onclick="showMenu()" id="logOut">Excluir conta</a><br>
+
+
+
+			</div>
+			<div id="profile_infsBox">
+				<h1>Seu perfil</h1>
+				<div class="profile_infs">
+					nome:
+					<p> <span th:text="${c.nome}"></span></span></p>
+					email:
+					<p><span th:text="${c.email}"></span></p>
+					endereço:
+					<p> <span th:text="${c.cidade}"></span>, <span th:text="${c.bairro}"></span>, <span
+							th:text="${c.numResid}"></span>-<span th:text="${c.uf}"></span><br>
+						cep: <span th:text="${c.cep}"></span>,
+						<i> <br> <span th:text="${c.pontoRef}"></span></i>
+					</p>
+					Descrição:
+					<p><span th:text="${c.descricao}"></span></p>
+
+
+					Telefone:
+					<p class="p2"><span th:text="${c.telefone}"></span></p>
+					Horário de funcionamento:
+					<p class="p2"><span th:text="${c.horarioFunc}"></span></p>
+
+					<p>
+						Status ponto:
+						<span th:if="${c.statusPonto}==true" th:text="Ativo" style="color: lightseagreen"></span>
+						<span th:if="${c.statusPonto}==false" th:text="Inativo" style="color: crimson"></span>
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+		<br><br><br>
+	</main>
+	<footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Suporte</h3>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Fale Conosco</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Redes Sociais</h3>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fa fa-whatsapp" style="font-size:24px"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram" style="font-size:24px"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Intranet</h3>
+        <ul>
+          <li><a href="/ecotech/user/login">Acesso funcionário</a></li>
+          <li><a href="/ecotech/ecoponto/perfil">Acesso dono de Ecoponto</a></li><br><br><br><br><br><br>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-left">
+        <p style="font-size: larger;">Brasil</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+      </div>   
+    </div>
+
+  </footer>
+</body>
+
+</html>

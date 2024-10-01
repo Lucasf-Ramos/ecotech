@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-DemoApplication<myproject2f>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "ecotech.tcc.demo.DemoApplication",
+            "projectName": "myproject2f",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
