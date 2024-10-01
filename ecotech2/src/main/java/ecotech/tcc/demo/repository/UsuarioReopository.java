@@ -18,7 +18,7 @@ import ecotech.tcc.demo.model.Usuario;
 @Repository
 public interface UsuarioReopository extends JpaRepository<Usuario, Long>{
 	
-	@Query(value="SELECT * from Usuario c where c.email=?", nativeQuery = true)
+	@Query(value="SELECT * from Admnistrador c where c.email=?", nativeQuery = true)
 	Usuario findByEmail (String email);
 	void deleteById(Long id);
 }

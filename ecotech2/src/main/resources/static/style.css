@@ -94,22 +94,7 @@ body {
 footer {
 	background-color: #000;
 	color: #fff;
-<<<<<<< HEAD
-	 padding: 10px 0; 
-    height: 200px; 
-}
 
-.footer-content {
-	display: flex;
-	justify-content: space-between;
-	max-width: 1200px;
-	margin-left: 450px;
-	
-}
-
-.footer-products,
-.footer-values {
-=======
 	padding: 15px 0;
 	text-align: center;
   }
@@ -121,7 +106,7 @@ footer {
   }
   .footer-products,
   .footer-values {
->>>>>>> bce084f98a0084d68696614bd051bb2ba44b396b
+
 	flex: 1;
 	margin-right: 0;
   }
@@ -143,7 +128,7 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding-top: 100px;
+	padding-top: 0;
 	max-width: 1200px;
 	margin: 0 auto; /* Centraliza horizontalmente */
   }
@@ -795,12 +780,12 @@ nav a:hover {
 .faq-item summary {
 	
 	color: rgb(0, 117, 9);
-<<<<<<< HEAD
 
-=======
+
+
 	border-color:  rgb(0, 117, 9);
 	background-color: rgb(208, 253, 214);
->>>>>>> bce084f98a0084d68696614bd051bb2ba44b396b
+
 	padding: 15px 20px;
 	border-radius: 5px;
 	cursor: pointer;

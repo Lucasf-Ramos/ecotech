@@ -100,7 +100,7 @@ CREATE TABLE EcoPonto
 )
 GO 
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, email, cnpj, senha, foto)
-VALUES ('Ecoponto Alphaville', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Árvores, 123', '06410000', '123', 'Alphaville', 'Barueri', 'SP', NULL, 'Próximo ao shopping', '(11) 1234-5678', 'Seg-Sex: 08:00-18:00', 1, 2, 'contato@ecopontoalphaville.com', '1234567890001', 'EcopontoAlphaville_1234', NULL)
+VALUES ('Ecoponto Alphaville', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Árvores, 123', '06410000', '123', 'Alphaville', 'Barueri', 'SP', NULL, 'Próximo ao shopping', '(11) 1234-5678', 'Seg-Sex: 08:00-18:00', 1, 2, 'contato@ecopontoalphaville.com', '1234567890001', 'EcopontoAlphaville_1234', null)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, email, cnpj, senha, foto)
 VALUES ('Ecoponto Vila Cretti', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida dos Rios, 456', '06345000', '456', 'Vila Cretti', 'Carapicuíba', 'SP', NULL, 'Próximo ao centro comercial', '(11) 2345-6789', 'Seg-Sex: 09:00-19:00', 1, 1, 'contato@ecopontovilacretti.com', '2345678900001', 'EcopontoVilaCretti_5678', NULL)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, email, cnpj, senha, foto)
@@ -127,6 +127,7 @@ SELECT * FROM GrupoResiduo
 SELECT * FROM EcoPonto
 
 select email, senha from EcoPonto
+select foto from EcoPonto
 
 SELECT * from EcoPonto c where c.email='a'
 SELECT * from EcoPonto c where c.cnpj = '1234'
