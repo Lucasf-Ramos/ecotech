@@ -154,6 +154,10 @@ public class EcoOwnerController {
 		if (local.getFoto() != null) {
 			foto = Base64.getEncoder().encodeToString(local.getFoto());
 		}
+		else {
+			model.addAttribute("foto", null);
+		}
+		
 
 		model.addAttribute("local", local);
 		model.addAttribute("residuo", resid);
