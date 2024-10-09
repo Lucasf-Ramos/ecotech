@@ -27,7 +27,7 @@ public class Local {
     private String cnpj;
     private byte[] foto;
     private String descricao;
-    private String website;
+    //private String website;
     private String logradouro;
     private String cep;
     private String numResid;
@@ -78,12 +78,7 @@ public class Local {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public String getWebsite() {
-		return website;
-	}
-	public void setWebsite(String website) {
-		this.website = website;
-	}
+
 	public String getLogradouro() {
 		return logradouro;
 	}

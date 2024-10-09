@@ -3,14 +3,14 @@ USE MASTER IF EXISTS(
  drop database bd_EcoTech
  go 
 
--- CRIAR UM BANCO DE DADOS a
+-- CRIAR UM BANCO DE DADOS
 CREATE DATABASE bd_EcoTech
 GO
 -- ACESSAR O BANCO DE DADOS
 USE bd_EcoTech
 GO
 
-CREATE TABLE Usuario
+CREATE TABLE Admnistrador
 ( 
    id            INT			IDENTITY,
    nome          VARCHAR(100)	NOT NULL,
@@ -22,27 +22,27 @@ CREATE TABLE Usuario
    PRIMARY KEY (id)
 )
 GO
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Ana Silva', 'ana.silva@example.com', 'senhaAna1', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Lucas Fantinati', 'lucasframos15@gmail.com', 'senha', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Pedro Santos', 'pedro.santos@example.com', 'senhaPedro2', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Mariana Oliveira', 'mariana.oliveira@example.com', 'senhaMariana3', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Lucas Souza', 'lucas.souza@example.com', 'senhaLucas4', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Carolina Costa', 'carolina.costa@example.com', 'senhaCarolina5', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Rafael Pereira', 'rafael.pereira@example.com', 'senhaRafael6', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Gustavo Lima', 'gustavo.lima@example.com', 'senhaGustavo8', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Fernanda Almeida', 'fernanda.almeida@example.com', 'senhaFernanda7', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Isabela Martins', 'isabela.martins@example.com', 'senhaIsabela9', 'ADMIN', GETDATE(), 1)
-INSERT Usuario (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
+INSERT Admnistrador (nome, email, senha, nivelAcesso, dataCadastro, statusUsuario)
 VALUES ('Henrique Barbosa', 'henrique.barbosa@example.com', 'senhaHenrique10', 'ADMIN', GETDATE(), 1)
 GO
 
@@ -100,7 +100,7 @@ CREATE TABLE EcoPonto
 )
 GO 
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, email, cnpj, senha, foto)
-VALUES ('Ecoponto Alphaville', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Árvores, 123', '06410000', '123', 'Alphaville', 'Barueri', 'SP', NULL, 'Próximo ao shopping', '(11) 1234-5678', 'Seg-Sex: 08:00-18:00', 1, 2, 'contato@ecopontoalphaville.com', '1234567890001', 'EcopontoAlphaville_1234', null)
+VALUES ('Ecoponto Alphaville', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Rua das Árvores, 123', '06410000', '123', 'Alphaville', 'Barueri', 'SP', NULL, 'Próximo ao shopping', '(11) 1234-5678', 'Seg-Sex: 08:00-18:00', 1, 2, 'contato@ecopontoalphaville.com', '1234567890001', 'EcopontoAlphaville_1234', NULL)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, email, cnpj, senha, foto)
 VALUES ('Ecoponto Vila Cretti', 'Coleta seletiva de resíduos eletrônicos', NULL, 'Avenida dos Rios, 456', '06345000', '456', 'Vila Cretti', 'Carapicuíba', 'SP', NULL, 'Próximo ao centro comercial', '(11) 2345-6789', 'Seg-Sex: 09:00-19:00', 1, 1, 'contato@ecopontovilacretti.com', '2345678900001', 'EcopontoVilaCretti_5678', NULL)
 INSERT EcoPonto (nome, descricao, website, logradouro, cep, numResid, bairro, cidade, uf, complemento, pontoRef, telefone, horarioFunc, statusPonto, gruporesiduo_id, email, cnpj, senha, foto)
@@ -122,12 +122,26 @@ VALUES ('Ecoponto Vila Nova', 'Coleta seletiva de resíduos eletrônicos', NULL, '
 GO
 
 
-SELECT * FROM Usuario
+CREATE TABLE UsuarioApp
+(
+	id				    INT				IDENTITY,
+	nome			    VARCHAR(100)	NOT NULL,
+	email				VARCHAR(100)	UNIQUE NOT NULL,
+	avaliacao			FLOAT				NULL,
+
+	PRIMARY KEY (id),
+	
+)
+
+
+SELECT * FROM Admnistrador
 SELECT * FROM GrupoResiduo
 SELECT * FROM EcoPonto
+SELECT * FROM UsuarioApp
 
 select email, senha from EcoPonto
-select foto from EcoPonto
 
 SELECT * from EcoPonto c where c.email='a'
 SELECT * from EcoPonto c where c.cnpj = '1234'
+
+
