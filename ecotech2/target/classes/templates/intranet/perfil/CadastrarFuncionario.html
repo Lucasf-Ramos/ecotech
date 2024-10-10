@@ -32,7 +32,7 @@
 		<br /><br /><br /><br />
 		<div class="regis_box" style=" color: grey;">
 			<form th:action="@{/ecotech/user/add-user}" th:object="${user}" method="post">
-				<h1 style="text-align: center;">Cadastrar-se</h1>
+				<h1 style="text-align: center;">Cadastro</h1>
 				<input type="text" th:field="*{nome}" required placeholder="Nome Completo*" class="bordasSuaves">
 				<input type="email" th:field="*{email}" required placeholder="Email*" class="bordasSuaves"><br />
 

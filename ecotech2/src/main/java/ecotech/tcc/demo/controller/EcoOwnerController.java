@@ -133,7 +133,7 @@ public class EcoOwnerController {
 			LoginErrado = false;
 
 		} else if (localdb != null && localdb.getSenha().equals(local.getSenha()) && !localdb.isStatusPonto()) {
-			errorMsgLogin = "Seu Ecoponto não está ativo no momento, ele pode ter sido excluido ou inativado pela nossa equipe. \n Caso ainda tenha dúvida, entre em contato conosco";
+			errorMsgLogin = "Seu Ecoponto não está ativo no momento, ele pode ter sido inativado pela nossa equipe.";
 		} else {
 			LoginErrado = true;
 			errorMsgLogin = "Login ou senha errados";
