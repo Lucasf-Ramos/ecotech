@@ -1,7 +1,6 @@
-
-
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
+
 }
 
 body {
@@ -11,9 +10,10 @@ body {
 	background-color: #ffffff;
 	overflow-x: hidden;
 	font-family: 'Montserrat', sans-serif;
-	
+
 }
 
+a:hover{color:#3ae6d4}
 
 .titulo {
 	color: rgb(112, 204, 72);
@@ -97,55 +97,69 @@ footer {
 
 	padding: 15px 0;
 	text-align: center;
-  }
-  .footer-content {
+}
+
+.footer-content {
 	display: flex;
 	justify-content: space-between;
 	max-width: 1200px;
-	margin: 0 auto; /* Centraliza horizontalmente */
-  }
-  .footer-products,
-  .footer-values {
+	margin: 0 auto;
+	/* Centraliza horizontalmente */
+}
+
+.footer-products,
+.footer-values {
 
 	flex: 1;
 	margin-right: 0;
-  }
-  .footer-products h3,
-  .footer-values h3 {
+}
+
+.footer-products h3,
+.footer-values h3 {
 	font-size: 30px;
 	margin-bottom: 35px;
-  }
-  .footer-section {
+}
+
+.footer-section {
 	flex: 1;
 	margin-right: 10px;
 	text-align: center;
-  }
-  .footer-section h3 {
+}
+
+.footer-section h3 {
 	font-size: 18px;
 	margin-bottom: 10px;
-  }
-  .footer-bottom {
+}
+
+.footer-bottom {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	padding-top: 0;
 	max-width: 1200px;
-	margin: 0 auto; /* Centraliza horizontalmente */
-  }
-  .footer-left {
+	margin: 0 auto;
+	/* Centraliza horizontalmente */
+}
+
+.footer-left {
 	margin-left: 14px;
-  }
-  .footer-links {
-	margin-left: 0; /* Remove o valor negativo */
-  }
-  .footer-links a {
+}
+
+.footer-links {
+	margin-left: 0;
+	/* Remove o valor negativo */
+}
+
+.footer-links a {
 	color: #fff;
 	text-decoration: none;
-	margin-left: 15px; /* Ajuste para espaçamento normal */
-  }
-  .footer-links a:hover {
+	margin-left: 15px;
+	/* Ajuste para espaçamento normal */
+}
+
+.footer-links a:hover {
 	text-decoration: underline;
-  }
+}
 
 ul {
 	list-style: none;
@@ -307,7 +321,7 @@ nav a:hover {
 
 	border: none;
 	font-size: 100%;
-	background-color:rgb(112, 204, 72);
+	background-color: rgb(112, 204, 72);
 	color: rgb(240, 255, 243);
 
 	text-decoration: none;
@@ -428,7 +442,8 @@ nav a:hover {
 	cursor: pointer;
 	transition: background-color 0.3s, color 0.3s, font-size 0.3s;
 }
-.exclude_accont a:hover{
+
+.exclude_accont a:hover {
 	font-size: 110%;
 	background-color: #6c757d;
 }
@@ -602,25 +617,30 @@ nav a:hover {
 .historia-conteudo {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
+	align-items: start;
+	justify-content: center;
+
+	gap: 10%;
+	margin: 1%;
 	margin-bottom: 40px;
 
 }
 
 .imagens {
-	display: flex;
-	gap: 10px;
+	width: 40%;
 }
 
 .imagens img {
-	width: 100px;
+	width: 100%;
 	height: auto;
 	border-radius: 5px;
 }
 
 .texto {
-	max-width: 600px;
+	width: 40%;
+	text-align: justify;
+	height: auto;
+
 }
 
 .texto h1 {
@@ -753,16 +773,21 @@ nav a:hover {
 .faq-container {
 	width: 50%;
 	margin: 0 auto;
-	background-color:  #e8f8ec;
+	background-color: #e8f8ec;
 	padding: 20px;
 	border-radius: 8px;
 	color: #097a22;
 
 }
 
+#faq h1 {
+	color: #097a22;
+	text-align: center;
+}
+
 .contact-button {
 	background-color: #7ed957;
-	
+
 	color: white;
 	padding: 10px 20px;
 	border: none;
@@ -773,17 +798,19 @@ nav a:hover {
 
 .faq-item {
 	margin-bottom: 10px;
+
 }
 
 
 
+
 .faq-item summary {
-	
+
 	color: rgb(0, 117, 9);
 
 
 
-	border-color:  rgb(0, 117, 9);
+	border-color: rgb(0, 117, 9);
 	background-color: rgb(255, 255, 255);
 
 	padding: 15px 20px;
@@ -796,10 +823,15 @@ nav a:hover {
 	justify-content: space-between;
 	align-items: center;
 	border: none;
+	transition: all 0.5s;
 }
 
-.faq-item summary:hover{
+.faq-item summary:hover {
 	background-color: rgb(255, 255, 255);
+
+	color: #3ae6d4;
+	border: solid 1px #3ae6d4;
+	transform: scale(1.01);
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -869,7 +901,21 @@ nav a:hover {
 	cursor: default
 }
 
+.fade {
+	opacity: 0;
+	transform: translateY(10px);
+	transition: opacity 0.5s ease-out, transform 1s ease-out;
+}
 
+.fade.hide {
+	opacity: 0;
+	transform: translateY(10px);
+}
+
+.fade.show {
+	opacity: 1;
+	transform: translateY(0);
+}
 
 
 @media screen and (max-width:1020px) {
@@ -960,7 +1006,7 @@ nav a:hover {
 
 		border: none;
 		font-size: 100%;
-		background-color:rgb(128, 213, 91);
+		background-color: rgb(128, 213, 91);
 		color: rgb(240, 255, 243);
 
 		text-decoration: none;
@@ -978,8 +1024,8 @@ nav a:hover {
 		border-radius: 8px;
 
 	}
-	
+
 	.profile_box a :hover {
-		background-color:rgb(88, 184, 48);
+		background-color: rgb(88, 184, 48);
 	}
 }
