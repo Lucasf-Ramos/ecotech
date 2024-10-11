@@ -784,7 +784,7 @@ nav a:hover {
 
 
 	border-color:  rgb(0, 117, 9);
-	background-color: rgb(208, 253, 214);
+	background-color: rgb(255, 255, 255);
 
 	padding: 15px 20px;
 	border-radius: 5px;
@@ -799,7 +799,7 @@ nav a:hover {
 }
 
 .faq-item summary:hover{
-	background-color: rgb(186, 252, 196);
+	background-color: rgb(255, 255, 255);
 }
 
 .faq-item summary::-webkit-details-marker {
