@@ -207,9 +207,11 @@ public class EcoOwnerController {
 	public String excluir() {
 		localAtual.setStatusPonto(false);
 		
-		localAtual.setNome("Local Excluido");
+		localAtual.setNome(localAtual.getNome()+"(Local Excluido)");
 		localAtual.setEmail("");
 		localAtual.setSenha("");
+		localAtual.setFoto(null);
+		foto = "";
 		localRepository.save(localAtual);
 		
 		localAtual = null;
